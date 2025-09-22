@@ -1,0 +1,107 @@
+@use "../abstracts/" as *;
+
+.faq-page {
+    padding: 100px 0;
+
+    &__heading {
+        text-align: center;
+        font-family: 'Syne', sans-serif;
+        font-size: 5.6rem;
+        font-weight: 600;
+        line-height: 1.2;
+        margin: 0 auto 80px;
+        max-width: 600px;
+    }
+
+    &__body {
+        display: flex;
+        align-items: flex-start; // Canh lề trên
+        gap: 80px;
+    }
+
+    &__content {
+        flex: 1;
+    }
+
+    &__media {
+        width: 45%;
+        flex-shrink: 0;
+    }
+
+    &__image-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image {
+        position: relative;
+        z-index: 1;
+        max-width: 85%;
+        height: auto;
+    }
+}
+
+.faq-accordion {
+    &__item {
+        margin-top: 10px;
+        margin-left: 100px;
+        border-bottom: 1px solid #dee2e6;
+        padding: 20px 0;
+        &--active {
+            .faq-accordion__answer {
+                max-height: 250px;
+                padding-top: 16px;
+            }
+            .faq-accordion__icon {
+                background-color: #ff5b26;
+                border-color: #ff5b26;
+                color: #fff;
+                &::before { content: "−"; }
+            }
+        }
+    }
+    &__question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    &__title {
+        font-family: 'Syne', sans-serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin: 0;
+        padding-right: 20px;
+    }
+    &__icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid #191B1D;
+        color: #191B1D;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+        font-size: 20px;
+        line-height: 1;
+        &::before { content: "+"; }
+    }
+    &__answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, padding-top 0.4s ease-out;
+        color: #6c757d;
+        font-size: 1.6rem;
+        line-height: 1.7;
+        padding-right: 50px;
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+    }
+}

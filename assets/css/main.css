@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -1535,6 +1536,106 @@ h1, h2, h3, h4, h5, h6 {
 .list__btn {
   margin: 0 auto;
   margin-top: 70px;
+}
+
+.faq-page {
+  padding: 100px 0;
+}
+.faq-page__heading {
+  text-align: center;
+  font-family: "Syne", sans-serif;
+  font-size: 5.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 auto 80px;
+  max-width: 600px;
+}
+.faq-page__body {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+}
+.faq-page__content {
+  flex: 1;
+}
+.faq-page__media {
+  width: 45%;
+  flex-shrink: 0;
+}
+.faq-page__image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.faq-page__image {
+  position: relative;
+  z-index: 1;
+  max-width: 85%;
+  height: auto;
+}
+
+.faq-accordion__item {
+  margin-top: 10px;
+  margin-left: 100px;
+  border-bottom: 1px solid #dee2e6;
+  padding: 20px 0;
+}
+.faq-accordion__item--active .faq-accordion__answer {
+  max-height: 250px;
+  padding-top: 16px;
+}
+.faq-accordion__item--active .faq-accordion__icon {
+  background-color: #ff5b26;
+  border-color: #ff5b26;
+  color: #fff;
+}
+.faq-accordion__item--active .faq-accordion__icon::before {
+  content: "−";
+}
+.faq-accordion__question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.faq-accordion__title {
+  font-family: "Syne", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0;
+  padding-right: 20px;
+}
+.faq-accordion__icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #191B1D;
+  color: #191B1D;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  font-size: 20px;
+  line-height: 1;
+}
+.faq-accordion__icon::before {
+  content: "+";
+}
+.faq-accordion__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding-top 0.4s ease-out;
+  color: #6c757d;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  padding-right: 50px;
+}
+.faq-accordion__answer ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 8px;
 }
 
 /*# sourceMappingURL=main.css.map */
