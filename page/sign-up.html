@@ -1,24 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
+    <!-- Font Heading Syne  -->
+    <link rel="stylesheet" href="../assets/font/Syne/stylesheet.css" />
+    <!-- Font Manrope -->
+    <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <!-- CDN Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="../assets/js/scripts.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
-  <link rel="shortcut icon" href="../favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="../favicon/site.webmanifest" />
-  <!-- Font Heading Syne  -->
-  <link rel="stylesheet" href="../assets/font/Syne/stylesheet.css">
-  <!-- Font Manrope -->
-  <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css">
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../assets/css/main.css">
-</head>
-
-<body></body>
-
+  <body>
+    <header id="header" class="header"></header>
+    <script>
+      load("#header", "../template/header.html");
+    </script>
+    <section class="signin">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <div class="signin__media">
+              <h1 class="section-heading">Welcome to our travel guide</h1>
+              <img
+                src="../assets/images/signup/signup_thumb.svg"
+                alt=""
+                class="signin__img"
+              />
+            </div>
+          </div>
+          <div class="col-5 offset-1">
+            <div class="signin__card">
+              <h2 class="signin__heading">Sign Up</h2>
+              <div class="signin__list">
+                <a href="#!" class="signin__list-item"
+                  ><i class="fa-brands fa-facebook" style="color: #0e558b"></i
+                  >Continue with Facebook
+                </a>
+                <a href="#!" class="signin__list-item"
+                  ><i class="fa-brands fa-google" style="color: #0e558b"></i
+                  >Continue with Google
+                </a>
+                <a href="#!" class="signin__list-item">
+                  <i class="fa-brands fa-apple" style="color: #0e558b"></i
+                  >Continue with Apple
+                </a>
+              </div>
+              <span class="signin__link">OR</span>
+              <form action="" class="signin__form">
+                <input type="text" class="signin__input" placeholder="Your first name" />
+                <input type="text" class="signin__input" placeholder="Your last name" />
+                <input type="text" class="signin__input" placeholder="Email" />
+                <input
+                  type="text"
+                  class="signin__input"
+                  placeholder="Password"
+                />
+                <button class="btn btn-signin" type="submit">Sign Up</button>
+              </form>
+              <span class="signin__link"
+                >Have a account?
+                <a href="./sign-in.html" class="signin__link--strong">Sign In</a></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
