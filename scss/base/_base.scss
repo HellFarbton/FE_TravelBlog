@@ -1,6 +1,11 @@
 *,::after,::before{
     box-sizing: border-box;
 }
+:root{
+    --font-color:#191B1D;
+    --desc-color:#4E5358;
+    --main-color:#FF5B26;
+}
 html{
     font-size: 62.5%;
 }

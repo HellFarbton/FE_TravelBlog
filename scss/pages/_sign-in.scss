@@ -1,0 +1,98 @@
+.signin{
+    padding-top: 158px;
+    padding-bottom: 70px;
+    &__media{
+        display: flex;
+        flex-direction:column;
+    }
+    &__img{
+        width: 570px;
+        height: 492px;
+        object-fit: cover;
+        margin-top: 48px;
+        margin-left: auto;
+    }
+    &__card{
+        margin: 0 auto;
+        width: 430px;
+        padding: 30px;
+        border-radius: 12px;
+        background: #FFF;
+        box-shadow: 0 20px 90px 0 rgba(25, 27, 29, 0.10);
+    }
+    &__heading{
+        color: var(--font-color);
+        text-align: center;
+        font-family: Syne;
+        font-size: 2.8rem;
+        font-weight: 600;
+        line-height: 1.35; /* 135.714% */
+    }
+    &__list{
+        margin-top: 30px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+
+        color: var(--desc-color);
+        text-align: center;
+
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.75; /* 175% */
+
+        &-item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+            border-radius: 25px;
+            border: 1px solid rgba(25, 27, 29, 0.15);
+            background: #FFF;
+            padding: 11px;
+
+            &:hover{
+                background-color: var(--main-color);
+                color: #FFF;
+            }
+        }
+    }
+    &__link{
+        display: block;
+        color: var(--desc-color);
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.75; /* 175% */
+        margin-bottom: 20px;
+        transition: 0.5s;
+
+        &--forgot{
+            text-align: right;
+        }
+        &--strong{
+            color: var(--font-color);
+        }
+        &--forgot:hover,&--strong:hover{
+            color: var(--main-color);
+        }
+    } 
+    &__input{
+        margin-bottom: 12px;
+        padding: 30px;
+        width: 100%;
+        height: 60px;
+        border-radius: 30px;
+        border: 1px solid rgba(25, 27, 29, 0.15);
+        background: #FFF;
+        text-align: left;
+        color: var(--desc-color);
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.75; /* 175% */
+    }
+}
