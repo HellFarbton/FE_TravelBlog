@@ -57,4 +57,41 @@
     &:hover{
        opacity: 0.8;
     }
+    &-more{
+        margin-left: auto;
+        width: 200px;
+    }
+    
+    &-more {background-image: linear-gradient(to right, #c21500 0%, #ffc500  51%, #c21500  100%)}
+    &-more {
+        margin-top: 30px;
+        margin-left: auto;
+        padding: 15px 45px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+        box-shadow: 0 0 20px #eee;
+        border-radius: 30px;
+        display: block;
+    }
+
+    &-more:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+    }
+    &-cta{
+        color: #191b1d;
+        text-align: center;
+        background-color: #FFC200;
+        font-size: 1.8rem;
+        padding: 15px 35px;
+        width: 211px;
+
+        &:hover{
+            opacity: 0.8;
+        }
+    }
 }

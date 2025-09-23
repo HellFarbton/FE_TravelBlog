@@ -1,24 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
+    <!-- Font Heading Syne  -->
+    <link rel="stylesheet" href="../assets/font/Syne/stylesheet.css" />
+    <!-- Font Manrope -->
+    <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <!-- JS -->
+    <script src="../assets/js/scripts.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
-  <link rel="shortcut icon" href="../favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="../favicon/site.webmanifest" />
-  <!-- Font Heading Syne  -->
-  <link rel="stylesheet" href="../assets/font/Syne/stylesheet.css">
-  <!-- Font Manrope -->
-  <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css">
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../assets/css/main.css">
-</head>
+  <body>
+    <header id="header" class="header"></header>
+    <script>
+      load("#header", "../template/header.html");
+    </script>
+    <section class="hero">
+      <div class="blog-hero">
+        <h1 class="blog__heading">Travel Blog</h1>
+        <p class="blog__description">
+          We have more than 1000+ articles you can read
+        </p>
+        <form action="" class="form-search" method="get">
+          <div class="form-search-box">
+            <div class="form-search-box-left">
+              <img
+                src="../assets/images/destination/decor.svg"
+                alt=""
+                class="form-search-box-decor"
+              />
+              <input
+                type="text"
+                class="form-search-input"
+                placeholder="Search Articles..."
+                required
+              />
+            </div>
+            <div class="form-search-box-right">
+              <button class="btn btn__search">
+                <img src="../assets/images/destination/search.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </form>
+        <nav class="navtab">
+          <!-- All Articles -->
+          <input
+            type="radio"
+            id="allarticles"
+            name="tab"
+            class="navtab-input"
+            checked
+          />
+          <label for="allarticles" class="navtab-label">All Articles</label>
+          <!-- Food & Drink -->
+          <input type="radio" id="fooddrink" name="tab" class="navtab-input" />
+          <label for="fooddrink" class="navtab-label">Food & Drink</label>
+          <input
+            type="radio"
+            id="inspiration"
+            name="tab"
+            class="navtab-input"
+          />
+          <label for="inspiration" class="navtab-label">Inspiration</label>
+          <!-- Local Guide -->
+          <input type="radio" id="localguide" name="tab" class="navtab-input" />
+          <label for="localguide" class="navtab-label">Local Guides</label>
+          <!-- Tips -->
+          <input type="radio" id="traveltips" name="tab" class="navtab-input" />
+          <label for="traveltips" class="navtab-label">Travel Tips</label>
+        </nav>
+      </div>
+      <img
+        src="../assets/images/destination/Map.png"
+        alt=""
+        class="hero__img-decor"
+      />
+    </section>
+    <section class="blog">
+      <div class="container">
+        <h2 class="blog__heading--small">Lastest</h2>
+        <div class="row">
+          <div class="col-7">
+            <div class="blog-card">
+              <a href="#!" class="blog-card__img-wrap">
+                <img
+                  src="../assets/images/destination/Bali.jpg"
+                  alt=""
+                  class="blog-card__img"
+                />
+              </a>
+              <a href="#!" class="blog-card__heading">
+                8 Amazing Places to Celebrate New Year 2023
+              </a>
+              <a href="#!" class="blog-card__more">By David Warner</a>
+            </div>
+          </div>
+          <div class="col-5">
+            <div class="blog-card">
+              <a href="#!" class="blog-card__img-wrap">
+                <img
+                  src="../assets/images/destination/Bali.jpg"
+                  alt=""
+                  class="blog-card__img"
+                />
+              </a>
+              <a href="#!" class="blog-card__heading">
+                8 Amazing Places to Celebrate New Year 2023
+              </a>
+              <a href="#!" class="blog-card__more">By David Warner</a>
+            </div>
+          </div>
+        </div>
+        <div class="seperator"></div>
+        <div class="row row-cols-lg-3">
+          <div class="col">
+            <div class="blog-card">
+              <a href="#!" class="blog-card__img-wrap">
+                <img
+                  src="../assets/images/destination/Bali.jpg"
+                  alt=""
+                  class="blog-card__img"
+                />
+              </a>
+              <a href="#!" class="blog-card__heading">
+                8 Amazing Places to Celebrate New Year 2023
+              </a>
+              <a href="#!" class="blog-card__more">By David Warner</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="blog-card">
+              <a href="#!" class="blog-card__img-wrap">
+                <img
+                  src="../assets/images/destination/Bali.jpg"
+                  alt=""
+                  class="blog-card__img"
+                />
+              </a>
+              <a href="#!" class="blog-card__heading">
+                8 Amazing Places to Celebrate New Year 2023
+              </a>
+              <a href="#!" class="blog-card__more">By David Warner</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="blog-card">
+              <a href="#!" class="blog-card__img-wrap">
+                <img
+                  src="../assets/images/destination/Bali.jpg"
+                  alt=""
+                  class="blog-card__img"
+                />
+              </a>
+              <a href="#!" class="blog-card__heading">
+                8 Amazing Places to Celebrate New Year 2023
+              </a>
+              <a href="#!" class="blog-card__more">By David Warner</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cta">
+        <img src="../assets/images/blog/cta_img.png" alt="" class="cta__img" />
+        <div class="cta__info">
+          <h2 class="cta__heading">Travel matter</h2>
+          <p class="cta__desc">
+            We believe sustainable tourism matters. MAKE TRAVEL MATTER® is our
+            commitment to preserving the planet.
+          </p>
+        </div>
+        <a href="./destination.html" class="btn btn-cta">Find Destination</a>
+        <img src="../assets/images/blog/map.svg" alt="" class="cta__decor" />
+      </div>
+      <div class="container">
+        <h2 class="blog__heading--small">Hostest</h2>
+        <div class="row row-cols-lg-3 gy-4 gx-4">
+          <div class="col">
+            <div class="blog-card">
+              <a href="#!" class="blog-card__img-wrap">
+                <img
+                  src="../assets/images/destination/Bali.jpg"
+                  alt=""
+                  class="blog-card__img"
+                />
+              </a>
+              <a href="#!" class="blog-card__heading">
+                8 Amazing Places to Celebrate New Year 2023
+              </a>
+              <a href="#!" class="blog-card__more">By David Warner</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="blog-card">
+              <a href="#!" class="blog-card__img-wrap">
+                <img
+                  src="../assets/images/destination/Bali.jpg"
+                  alt=""
+                  class="blog-card__img"
+                />
+              </a>
+              <a href="#!" class="blog-card__heading">
+                8 Amazing Places to Celebrate New Year 2023
+              </a>
 
-<body></body>
-
+              <a href="#!" class="blog-card__more">By David Warner</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="blog-card">
+              <a href="#!" class="blog-card__img-wrap">
+                <img
+                  src="../assets/images/destination/Bali.jpg"
+                  alt=""
+                  class="blog-card__img"
+                />
+              </a>
+              <a href="#!" class="blog-card__heading">
+                8 Amazing Places to Celebrate New Year 2023
+              </a>
+              <a href="#!" class="blog-card__more">By David Warner</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="blog-card">
+              <a href="#!" class="blog-card__img-wrap">
+                <img
+                  src="../assets/images/destination/Bali.jpg"
+                  alt=""
+                  class="blog-card__img"
+                />
+              </a>
+              <a href="#!" class="blog-card__heading">
+                8 Amazing Places to Celebrate New Year 2023
+              </a>
+              <a href="#!" class="blog-card__more">By David Warner</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="blog-card">
+              <a href="#!" class="blog-card__img-wrap">
+                <img
+                  src="../assets/images/destination/Bali.jpg"
+                  alt=""
+                  class="blog-card__img"
+                />
+              </a>
+              <a href="#!" class="blog-card__heading">
+                8 Amazing Places to Celebrate New Year 2023
+              </a>
+              <a href="#!" class="blog-card__more">By David Warner</a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="blog-card">
+              <a href="#!" class="blog-card__img-wrap">
+                <img
+                  src="../assets/images/destination/Bali.jpg"
+                  alt=""
+                  class="blog-card__img"
+                />
+              </a>
+              <a href="#!" class="blog-card__heading">
+                8 Amazing Places to Celebrate New Year 2023
+              </a>
+              <a href="#!" class="blog-card__more">By David Warner</a>
+            </div>
+          </div>
+        </div>
+        <a href="#!" class="btn btn-grad btn-more">Read More</a>
+      </div>
+    </section>
+    <footer id="footer" class="footer"></footer>
+    <script>
+      load("#footer", "../template/footer.html");
+    </script>
+  </body>
 </html>

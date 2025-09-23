@@ -1,0 +1,96 @@
+.blog{
+    overflow-x: hidden;
+    --font-color:#191B1D;
+    padding: 100px;
+    @mixin flex_center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__heading{
+        @include flex_center();
+        color: var(--font-color);
+        font-family: Syne;
+        font-size: 7.2rem;
+        font-weight: 600;
+        line-height: 1; /* 100% */
+        margin-bottom: 18px;
+
+        &--small{
+            font-family: Syne;
+            font-size: 4.8rem;
+            margin-bottom: 30px;
+        }
+    }
+    &__description{
+        @include flex_center();
+        color: #4E5358;
+        font-family: Manrope;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.67; /* 166.667% */
+    }
+    &__nav{
+        @include flex_center();
+        margin-top: 38px;
+    }
+}
+.hero{
+    background: rgba(255, 249, 229, 1);
+    position: relative;
+    overflow: hidden;
+
+    &__img-decor{
+        scale: 1.5;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        z-index: 0;
+    }
+}
+.cta{
+    position: relative;
+    background-color: #1EB482;
+    margin: 100px 0;
+    padding: 100px 135px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    z-index: 10;
+    &__img{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        position: relative;
+        z-index: 10;
+    }
+    &__info{
+        margin-left: 70px;
+    }
+    &__heading{
+        color: #FFF;
+
+        font-family: Syne;
+        font-size: 5.2rem;
+        font-weight: 600;
+        line-height: 1.07; /* 107.692% */
+        margin-bottom: 18px;
+    }
+    &__desc{
+        width: 570px;
+        color: #FFF;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.67; /* 166.667% */
+    }
+    &__decor{
+        position: absolute;
+        left: 18%;
+        top: 3%;
+        z-index: 0;
+    }
+}
