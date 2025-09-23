@@ -1,0 +1,32 @@
+.soon{
+    padding: 120px;
+
+    &__input{
+        width: 395px;
+        height: 60px;
+        padding: 16px 0 16px 16px;
+        border-radius: 30px;
+        border: 1px solid rgba(78,83,88,0.1);
+        
+
+        &::placeholder{
+            color: var(--Grey, #4E5358);
+
+            /* P2 */
+            font-family: Manrope;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.75; /* 175% */
+        }
+    }
+    &__strong{
+        color: #FF5B26;
+    }
+    &__heading{
+        margin-bottom: 18px;
+    }
+    &__desc{
+        margin-bottom: 38px;
+    }
+   
+}

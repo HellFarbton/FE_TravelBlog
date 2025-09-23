@@ -26,3 +26,18 @@ button,input,textarea,select{
 h1,h2,h3,h4,h5,h6{
    font-family: "Syne", sans-serif;
 }
+
+.section-heading{
+    color: #191b1d;
+
+    font-family: Syne;
+    font-size: 7.2rem;
+    font-weight: 600;
+    line-height: 1; /* 100% */
+}
+.section-desc{
+    color: #4E5358;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.67; /* 166.667% */
+}

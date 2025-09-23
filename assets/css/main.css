@@ -1119,6 +1119,21 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Syne", sans-serif;
 }
 
+.section-heading {
+  color: #191b1d;
+  font-family: Syne;
+  font-size: 7.2rem;
+  font-weight: 600;
+  line-height: 1; /* 100% */
+}
+
+.section-desc {
+  color: #4E5358;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.67; /* 166.667% */
+}
+
 .btn {
   --search-btn-bg:#FFC200;
   color: #FFF;
@@ -1914,6 +1929,34 @@ h1, h2, h3, h4, h5, h6 {
 .navtab {
   margin-bottom: 62px;
   margin-top: 38px;
+}
+
+.soon {
+  padding: 120px;
+}
+.soon__input {
+  width: 395px;
+  height: 60px;
+  padding: 16px 0 16px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(78, 83, 88, 0.1);
+}
+.soon__input::placeholder {
+  color: var(--Grey, #4E5358);
+  /* P2 */
+  font-family: Manrope;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.75; /* 175% */
+}
+.soon__strong {
+  color: #FF5B26;
+}
+.soon__heading {
+  margin-bottom: 18px;
+}
+.soon__desc {
+  margin-bottom: 38px;
 }
 
 .blog {
