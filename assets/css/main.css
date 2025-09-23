@@ -1130,6 +1130,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.67; /* 166.667% */
   border-radius: 60px;
   background: var(--orange-primary, #FF5B26);
+  padding: 15px 35px;
 }
 .btn__signup {
   padding: 8px 24px;
@@ -2009,6 +2010,32 @@ h1, h2, h3, h4, h5, h6 {
   left: 18%;
   top: 3%;
   z-index: 0;
+}
+
+.pagenotfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+}
+.pagenotfound__heading {
+  color: #191B1D;
+  font-family: Syne;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.25; /* 125% */
+  margin-top: 40px;
+  margin-bottom: 18px;
+}
+.pagenotfound__desc {
+  width: 570px;
+  color: #4E5358;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.67; /* 166.667% */
+  margin-bottom: 38px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,26 @@
+.pagenotfound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    
+    &__heading{
+        color: #191B1D;
+        font-family: Syne;
+        font-size: 2.4rem;
+        font-weight: 600;
+        line-height: 1.25; /* 125% */
+        margin-top: 40px;
+        margin-bottom: 18px;
+    }
+    &__desc{
+        width: 570px;
+        color: #4E5358;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.67; /* 166.667% */
+        margin-bottom: 38px;
+    }
+}
