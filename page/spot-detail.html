@@ -1,24 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spot Detail</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
+    <!-- Font Heading Syne  -->
+    <link rel="stylesheet" href="../assets/font/Syne/stylesheet.css" />
+    <!-- Font Manrope -->
+    <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <!-- Scripts -->
+    <script src="../assets/js/scripts.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
-  <link rel="shortcut icon" href="../favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="../favicon/site.webmanifest" />
-  <!-- Font Heading Syne  -->
-  <link rel="stylesheet" href="../assets/font/Syne/stylesheet.css">
-  <!-- Font Manrope -->
-  <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css">
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../assets/css/main.css">
-</head>
+  <body>
+    <header id="header" class="header"></header>
+    <script>
+      load("#header", "../template/header.html");
+    </script>
+    <section class="hero-detail">
+      <div class="container">
+        <div class="row">
+          <div class="col col-lg-6 col-md-4 col-sm-2 offset-lg-1">
+            <div class="hero-detail__content">
+              <h1 class="section-heading hero-detail__heading">
+                Sydney Harbour Bridge
+              </h1>
+              <p class="section-desc hero-detail__desc">
+                Sydneysiders love their giant 'coathanger', which opened in
+                1932. The best way to experience this majestic structure is on
+                foot. Stairs and lifts ascend the bridge from both shores,
+                leading to a footpath on the eastern side (the western side is a
+                bike path).
+              </p>
+              <img
+                src="../assets/images/destination/mouse.svg"
+                alt="Decoration"
+                class="hero-detail__decor"
+              />
+            </div>
+          </div>
+          <div class="col-5">
+            <div class="hero-detail__media">
+              <img
+                src="../assets/images/spotdetail/australia.png"
+                alt=""
+                class="hero-detail__img"
+              />
+              <div class="hero-detail__location">
+                <img src="../assets/images/spotdetail/location.svg" alt="" />
+                <span>Sydney Harbour Bridge</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="spot-detail">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="spot-detail__media">
+              <iframe src="" frameborder="0"></iframe
+              ><iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.499326544048!2d151.20821217543673!3d-33.852301818204054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae5d25ead5e3%3A0x68948eb717c0c43e!2zQ-G6p3UgY-G6o25nIFN5ZG5leQ!5e1!3m2!1svi!2s!4v1759302194361!5m2!1svi!2s"
+                width="500"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="spot-detail__map"
+              ></iframe>
+            </div>
+          </div>
+          <div class="col offset-1">
+            <div class="spot-detail__content">
+              <div class="spot-detail__info">
+                <h3 class="spot-detail__heading">Overview</h3>
+                <p class="spot-detail__desc">
+                  Sydneysiders love their giant 'coathanger', which opened in
+                  1932. The best way to experience this majestic structure is on
+                  foot. Stairs and lifts ascend the bridge from both shores,
+                  leading to a footpath on the eastern side (the western side is
+                  a bike path).
+                </p>
+                <p class="spot-detail__desc">
+                  <span class="spot-detail__strong"> Address: </span>
+                  McGuigans Winery, 447 McDonalds Rd. Pokolbin
+                </p>
+              </div>
 
-<body></body>
-
+              <div class="spot-detail__info">
+                <h3 class="spot-detail__heading">Climbing the bridge</h3>
+                <p class="spot-detail__desc">
+                  The BridgeClimb experience takes between 1.5 and 3 hours
+                  depending on which Climb you choose. A thorough safety
+                  briefing as well as special boiler suits, harnesses and a
+                  headset are provided. Climbers are given 15 mins to take
+                  photos at the top of the climb, but it’s a good hour to climb
+                  back down.
+                </p>
+              </div>
+              <div class="spot-detail__info">
+                <h3 class="spot-detail__heading">History</h3>
+                <p class="spot-detail__desc">
+                  The harbour bridge is a spookily big object – moving around
+                  town you’ll catch sight of it in the corner of your eye,
+                  sometimes in the most surprising of places. Its enormous
+                  dimensions, the arch is 134m high (440 feet) from the top to
+                  the water and the span measures 503m (1650 ft). It’s the
+                  biggest (although not quite the longest) steel arch bridge in
+                  the world.
+                </p>
+              </div>
+              <div class="spot-detail__info">
+                <h3 class="spot-detail__heading">
+                  Sydney Harbour Bridge facts
+                </h3>
+                <p class="spot-detail__desc">
+                  Construction began in 1923 and the bridge opened in 1932 --
+                  connecting Sydney city with the northern suburbs. It has four
+                  railroad tracks, a multi-lane highway, a pedestrian walkway
+                  and a cycleway. The bridge is made of 53,000 tonnes of steel,
+                  held together by reportedly six million hand-driven rivets
+                  (we’re not sure who’s willing to check that fact!).
+                </p>
+              </div>
+              <button class="btn btn__suggest">Suggest an Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="detail-related">
+      <div class="container">
+        <div class="detail-related__title">
+          <h2 class="detail-related__heading">Popular places around Sydney</h2>
+          <button class="btn btn__more-destination">More Destinations</button>
+        </div>
+        <div class="detail-related__list">
+          <div class="row row-cols-lg-3 row-cols-sm-1 gy-4">
+            <div class="col">
+              <div class="detail-related__card">
+                <figure class="detail-related__card-img-wrap">
+                  <img
+                    src="../assets/images/spotdetail/sysneytower.png"
+                    alt=""
+                    class="detail-related__card-img"
+                  />
+                  <div class="detail-related__card-rate">
+                    <img
+                      src="../assets/images/destination/star.svg"
+                      alt="star"
+                    />
+                    <span>5.0 Ratings.</span>
+                  </div>
+                </figure>
+                <p class="detail-related__card-desc">Iconic building</p>
+                <h3 class="detail-related__card-heading">Sydney Tower Eye</h3>
+              </div>
+            </div>
+            <div class="col">
+              <div class="detail-related__card">
+                <figure class="detail-related__card-img-wrap">
+                  <img
+                    src="../assets/images/spotdetail/garden.png"
+                    alt=""
+                    class="detail-related__card-img"
+                  />
+                  <div class="detail-related__card-rate">
+                    <img
+                      src="../assets/images/destination/star.svg"
+                      alt="star"
+                    />
+                    <span>5.0 Ratings.</span>
+                  </div>
+                </figure>
+                <p class="detail-related__card-desc">
+                  Oasislike gardens with glasshouses
+                </p>
+                <h3 class="detail-related__card-heading">
+                  Royal Botanic Garden Sydney
+                </h3>
+              </div>
+            </div>
+            <div class="col">
+              <div class="detail-related__card">
+                <figure class="detail-related__card-img-wrap">
+                  <img
+                    src="../assets/images/spotdetail/zoo.png"
+                    alt=""
+                    class="detail-related__card-img"
+                  />
+                  <div class="detail-related__card-rate">
+                    <img
+                      src="../assets/images/destination/star.svg"
+                      alt="star"
+                    />
+                    <span>5.0 Ratings.</span>
+                  </div>
+                </figure>
+                <p class="detail-related__card-desc">Large zoo divided</p>
+                <h3 class="detail-related__card-heading">Taronga Zoo Sydney</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id="footer" class="footer"></footer>
+    <script>
+      load("#footer", "../template/footer.html");
+    </script>
+  </body>
+  
 </html>

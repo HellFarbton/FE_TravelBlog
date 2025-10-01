@@ -99,4 +99,16 @@
         width: 100%;
         margin-bottom: 20px;
     }
+    &__suggest{
+        width: 205px;
+        background-color: var(--search-btn-bg);
+        color: #191B1D;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 30px; /* 166.667% */
+    }
+    &__more-destination{
+        width: 210px;
+    }
 }
