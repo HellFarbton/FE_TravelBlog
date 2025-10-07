@@ -1,40 +1,2942 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Pathway</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
+    <!-- Font Heading Syne  -->
+    <link rel="stylesheet" href="../assets/font/Syne/stylesheet.css" />
+    <!-- Font Manrope -->
+    <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <!-- JS -->
+    <script src="../assets/js/scripts.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pathway</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
-  <link rel="shortcut icon" href="./favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="./favicon/site.webmanifest" />
-  <!-- Font Heading Syne  -->
-  <link rel="stylesheet" href="./assets/font/Syne/stylesheet.css">
-  <!-- Font Manrope -->
-  <link rel="stylesheet" href="./assets/font/Manrope/stylesheet.css">
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="./assets/css/main.css">
-  <link rel="stylesheet" href="./assets/css/styles.min.css">
-  <!-- Script -->
-  <script src="./assets/js/scripts.js"></script>
-</head>
+  <body>
+    <header id="header" class="header"></header>
+    <script>
+      load("#header", "../template/header.html");
+    </script>
+    
+    <section class="hero">
+      <div class="blog-hero">
+        <h1 class="blog__heading">Contact Us</h1>
+        <p class="blog__description">
+          We're here to help you plan your perfect journey
+        </p>
+        <form action="" class="form-search" method="get">
+          <div class="form-search-box">
+            <div class="form-search-box-left">
+              <img
+                src="../assets/images/destination/decor.svg"
+                alt=""
+                class="form-search-box-decor"
+              />
+              <input
+                type="text"
+                class="form-search-input"
+                placeholder="Search FAQ..."
+                id="faqSearch"
+              />
+            </div>
+            <div class="form-search-box-right">
+              <button class="btn btn__search" type="button" onclick="searchFAQ()">
+                <img src="../assets/images/destination/search.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </form>
+        <nav class="navtab">
+          <!-- Contact Info -->
+          <input
+            type="radio"
+            id="contactinfo"
+            name="tab"
+            class="navtab-input"
+            checked
+          />
+          <label for="contactinfo" class="navtab-label">Contact Info</label>
+          <!-- Send Message -->
+          <input type="radio" id="sendmessage" name="tab" class="navtab-input" />
+          <label for="sendmessage" class="navtab-label">Send Message</label>
+          <!-- FAQ -->
+          <input
+            type="radio"
+            id="faq"
+            name="tab"
+            class="navtab-input"
+          />
+          <label for="faq" class="navtab-label">FAQ</label>
+          <!-- Location -->
+          <input type="radio" id="location" name="tab" class="navtab-input" />
+          <label for="location" class="navtab-label">Our Location</label>
+        </nav>
+      </div>
+      <img
+        src="../assets/images/destination/Map.png"
+        alt=""
+        class="hero__img-decor"
+      />
+    </section>
 
-<body>
-  <header id="header" class="header"></header>
+    <section class="blog">
+      <div class="container">
+        <!-- Contact Info Tab Content -->
+        <div class="tab-content" id="contactinfo-content">
+          <h2 class="blog__heading--small">Get in Touch</h2>
+          <div class="row">
+            <div class="col-6">
+              <div class="blog-card">
+                <div class="blog-card__img-wrap">
+                  <div class="custom-contact-image office-building">
+                    <div class="building">
+                      <div class="building-base"></div>
+                      <div class="building-windows">
+                        <div class="window"></div>
+                        <div class="window"></div>
+                        <div class="window"></div>
+                        <div class="window"></div>
+                        <div class="window"></div>
+                        <div class="window"></div>
+                      </div>
+                      <div class="building-door"></div>
+                    </div>
+                    <div class="building-text">OFFICE</div>
+                  </div>
+                </div>
+                <div class="blog-card__heading">Our Office</div>
+                <div class="blog-card__more">3 Cau Giay street, Lang Ha ward, Dong Da District<br>Ha Noi Capital, Vietnam</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="blog-card">
+                <div class="blog-card__img-wrap">
+                  <div class="custom-contact-image phone-support">
+                    <div class="phone">
+                      <div class="phone-body"></div>
+                      <div class="phone-screen"></div>
+                      <div class="phone-button"></div>
+                    </div>
+                    <div class="signal-waves">
+                      <div class="wave wave1"></div>
+                      <div class="wave wave2"></div>
+                      <div class="wave wave3"></div>
+                    </div>
+                    <div class="phone-text">24/7</div>
+                  </div>
+                </div>
+                <div class="blog-card__heading">Call Us</div>
+                <div class="blog-card__more">+84 123 456 789<br>+84 987 654 321</div>
+              </div>
+            </div>
+          </div>
+          <div class="seperator"></div>
+          <div class="row row-cols-lg-3">
+            <div class="col">
+              <div class="blog-card">
+                <div class="blog-card__img-wrap">
+                  <div class="custom-contact-image email-contact">
+                    <div class="envelope">
+                      <div class="envelope-body"></div>
+                      <div class="envelope-flap"></div>
+                      <div class="envelope-seal">@</div>
+                    </div>
+                    <div class="email-lines">
+                      <div class="line line1"></div>
+                      <div class="line line2"></div>
+                      <div class="line line3"></div>
+                    </div>
+                    <div class="email-text">EMAIL</div>
+                  </div>
+                </div>
+                <div class="blog-card__heading">Email</div>
+                <div class="blog-card__more">info@pathway.vn<br>support@pathway.vn</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="blog-card">
+                <div class="blog-card__img-wrap">
+                  <div class="custom-contact-image working-hours">
+                    <div class="clock">
+                      <div class="clock-face"></div>
+                      <div class="clock-center"></div>
+                      <div class="clock-hand hour-hand"></div>
+                      <div class="clock-hand minute-hand"></div>
+                      <div class="clock-numbers">
+                        <div class="number n12">12</div>
+                        <div class="number n3">3</div>
+                        <div class="number n6">6</div>
+                        <div class="number n9">9</div>
+                      </div>
+                    </div>
+                    <div class="hours-text">OPEN</div>
+                  </div>
+                </div>
+                <div class="blog-card__heading">Working Hours</div>
+                <div class="blog-card__more">Mon - Fri: 8:00 - 18:00<br>Sat - Sun: 9:00 - 17:00</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="blog-card">
+                <div class="blog-card__img-wrap">
+                  <div class="custom-contact-image social-media">
+                    <div class="social-network">
+                      <div class="node main-node">
+                        <i class="fas fa-users"></i>
+                      </div>
+                      <div class="connection-lines">
+                        <div class="line line-1"></div>
+                        <div class="line line-2"></div>
+                        <div class="line line-3"></div>
+                        <div class="line line-4"></div>
+                      </div>
+                      <div class="node node-1"><i class="fab fa-facebook-f"></i></div>
+                      <div class="node node-2"><i class="fab fa-instagram"></i></div>
+                      <div class="node node-3"><i class="fab fa-twitter"></i></div>
+                      <div class="node node-4"><i class="fab fa-youtube"></i></div>
+                    </div>
+                    <div class="social-text">CONNECT</div>
+                  </div>
+                </div>
+                <div class="blog-card__heading">Follow Us</div>
+                <div class="blog-card__more">
+                  <div class="social-links-inline">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Send Message Tab Content -->
+        <div class="tab-content" id="sendmessage-content" style="display: none;">
+          <div class="message-hero">
+            <div class="message-hero-content">
+              <h2 class="message-title">Send us a Message</h2>
+              <p class="message-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+              <div class="message-stats">
+                <div class="stat-item">
+                  <div class="stat-number">24h</div>
+                  <div class="stat-label">Response Time</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">98%</div>
+                  <div class="stat-label">Satisfaction Rate</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">24/7</div>
+                  <div class="stat-label">Support Available</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="message-main-content">
+            <div class="row">
+              <div class="col-8">
+                <div class="modern-form-container">
+                  <div class="form-header">
+                    <h3><i class="fas fa-paper-plane"></i> Contact Form</h3>
+                    <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                  </div>
+                  
+                  <form class="modern-contact-form" id="contactForm">
+                    <div class="form-section">
+                      <h4><i class="fas fa-user"></i> Personal Information</h4>
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="modern-form-group">
+                            <input type="text" id="firstName" name="firstName" required>
+                            <label for="firstName">First Name *</label>
+                            <div class="form-highlight"></div>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="modern-form-group">
+                            <input type="text" id="lastName" name="lastName" required>
+                            <label for="lastName">Last Name *</label>
+                            <div class="form-highlight"></div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="modern-form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address *</label>
+                            <div class="form-highlight"></div>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="modern-form-group">
+                            <input type="tel" id="phone" name="phone">
+                            <label for="phone">Phone Number</label>
+                            <div class="form-highlight"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-section">
+                      <h4><i class="fas fa-comment-dots"></i> Your Message</h4>
+                      <div class="modern-form-group">
+                        <select id="subject" name="subject" required>
+                          <option value="">Choose a subject</option>
+                          <option value="general">General Information</option>
+                          <option value="booking">Tour Booking</option>
+                          <option value="complaint">Complaint</option>
+                          <option value="suggestion">Suggestion</option>
+                          <option value="partnership">Partnership</option>
+                          <option value="other">Other</option>
+                        </select>
+                        <label for="subject">Subject *</label>
+                        <div class="form-highlight"></div>
+                      </div>
+                      
+                      <div class="modern-form-group">
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <label for="message">Your Message *</label>
+                        <div class="form-highlight"></div>
+                        <div class="character-count">
+                          <span id="charCount">0</span>/500 characters
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-section">
+                      <h4><i class="fas fa-check-circle"></i> Preferences</h4>
+                      <div class="modern-checkbox-group">
+                        <label class="modern-checkbox">
+                          <input type="checkbox" id="newsletter" name="newsletter">
+                          <span class="checkbox-custom"></span>
+                          <div class="checkbox-content">
+                            <strong>Newsletter Subscription</strong>
+                            <p>Receive updates about new travel packages and special offers</p>
+                          </div>
+                        </label>
+                      </div>
+                      
+                      <div class="modern-checkbox-group">
+                        <label class="modern-checkbox">
+                          <input type="checkbox" id="terms" name="terms" required>
+                          <span class="checkbox-custom required"></span>
+                          <div class="checkbox-content">
+                            <strong>Terms & Privacy *</strong>
+                            <p>I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="privacy-link">Privacy Policy</a></p>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                      <button type="submit" class="modern-submit-btn">
+                        <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                        <span class="btn-text">Send Message</span>
+                        <div class="btn-loading">
+                          <i class="fas fa-spinner fa-spin"></i>
+                        </div>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              
+              <div class="col-4">
+                <div class="message-info-panel">
+                  <div class="info-card">
+                    <div class="info-icon">
+                      <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>Customer Support</h4>
+                    <p>Our support team is available 24/7 to help you with any questions or concerns.</p>
+                  </div>
+                  
+                  <div class="info-card">
+                    <div class="info-icon">
+                      <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Privacy Protected</h4>
+                    <p>Your personal information is encrypted and securely stored according to GDPR standards.</p>
+                  </div>
+                  
+                  <div class="info-card">
+                    <div class="info-icon">
+                      <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4>Quick Response</h4>
+                    <p>We typically respond to all inquiries within 24 hours during business days.</p>
+                  </div>
+                  
+                  <div class="contact-alternatives">
+                    <h4>Other Ways to Reach Us</h4>
+                    <div class="alternative-methods">
+                      <a href="tel:+84123456789" class="alt-method">
+                        <i class="fas fa-phone"></i>
+                        <span>+84 123 456 789</span>
+                      </a>
+                      <a href="mailto:info@pathway.vn" class="alt-method">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@pathway.vn</span>
+                      </a>
+                      <a href="#" class="alt-method" onclick="document.getElementById('location').checked = true; document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none'); document.getElementById('location-content').style.display = 'block';">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Visit Our Office</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Tab Content -->
+        <div class="tab-content" id="faq-content" style="display: none;">
+          <div class="faq-hero">
+            <div class="faq-hero-content">
+              <h2 class="faq-title">Frequently Asked Questions</h2>
+              <p class="faq-subtitle">Find answers to common questions about our travel services</p>
+              <div class="faq-search-box">
+                <div class="search-input-wrapper">
+                  <i class="fas fa-search"></i>
+                  <input type="text" id="faqSearchInput" placeholder="Search for answers..." onkeyup="filterFAQ()">
+                  <button class="clear-search" onclick="clearFAQSearch()">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-main-content">
+            <div class="row">
+              <div class="col-8">
+                <div class="modern-faq-container">
+                  <div class="faq-categories">
+                    <button class="category-btn active" onclick="filterByCategory('all')">
+                      <i class="fas fa-list"></i> All Questions
+                    </button>
+                    <button class="category-btn" onclick="filterByCategory('booking')">
+                      <i class="fas fa-calendar-check"></i> Booking
+                    </button>
+                    <button class="category-btn" onclick="filterByCategory('payment')">
+                      <i class="fas fa-credit-card"></i> Payment
+                    </button>
+                    <button class="category-btn" onclick="filterByCategory('travel')">
+                      <i class="fas fa-plane"></i> Travel
+                    </button>
+                    <button class="category-btn" onclick="filterByCategory('support')">
+                      <i class="fas fa-headset"></i> Support
+                    </button>
+                  </div>
+                  
+                  <div class="modern-faq-list">
+                    <div class="modern-faq-item" data-category="booking">
+                      <div class="faq-question-modern">
+                        <div class="question-content">
+                          <div class="question-icon">
+                            <i class="fas fa-calendar-check"></i>
+                          </div>
+                          <div class="question-text">
+                            <h3>How do I book a tour?</h3>
+                            <span class="question-category">Booking</span>
+                          </div>
+                        </div>
+                        <div class="question-toggle">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </div>
+                      <div class="faq-answer-modern">
+                        <div class="answer-content">
+                          <p>You can book a tour through multiple convenient methods:</p>
+                          <ul>
+                            <li><strong>Online:</strong> Browse and book directly on our website</li>
+                            <li><strong>Phone:</strong> Call us at +84 123 456 789 for personalized assistance</li>
+                            <li><strong>In-person:</strong> Visit our office for face-to-face consultation</li>
+                          </ul>
+                          <p>Our team will help you choose the perfect tour based on your preferences and budget.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modern-faq-item" data-category="booking">
+                      <div class="faq-question-modern">
+                        <div class="question-content">
+                          <div class="question-icon">
+                            <i class="fas fa-ban"></i>
+                          </div>
+                          <div class="question-text">
+                            <h3>What is your cancellation policy?</h3>
+                            <span class="question-category">Booking</span>
+                          </div>
+                        </div>
+                        <div class="question-toggle">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </div>
+                      <div class="faq-answer-modern">
+                        <div class="answer-content">
+                          <p>Our cancellation policy varies based on the tour type and timing:</p>
+                          <div class="policy-table">
+                            <div class="policy-row">
+                              <span class="policy-time">30+ days before</span>
+                              <span class="policy-fee">Full refund</span>
+                            </div>
+                            <div class="policy-row">
+                              <span class="policy-time">15-29 days before</span>
+                              <span class="policy-fee">80% refund</span>
+                            </div>
+                            <div class="policy-row">
+                              <span class="policy-time">7-14 days before</span>
+                              <span class="policy-fee">50% refund</span>
+                            </div>
+                            <div class="policy-row">
+                              <span class="policy-time">Less than 7 days</span>
+                              <span class="policy-fee">No refund</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modern-faq-item" data-category="travel">
+                      <div class="faq-question-modern">
+                        <div class="question-content">
+                          <div class="question-icon">
+                            <i class="fas fa-passport"></i>
+                          </div>
+                          <div class="question-text">
+                            <h3>Do you provide visa assistance?</h3>
+                            <span class="question-category">Travel</span>
+                          </div>
+                        </div>
+                        <div class="question-toggle">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </div>
+                      <div class="faq-answer-modern">
+                        <div class="answer-content">
+                          <p>Yes! We provide comprehensive visa assistance services including:</p>
+                          <ul>
+                            <li>Document preparation and review</li>
+                            <li>Application form completion</li>
+                            <li>Appointment scheduling</li>
+                            <li>Requirements checklist</li>
+                            <li>Status tracking</li>
+                          </ul>
+                          <p>Our visa specialists have years of experience and maintain high approval rates.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modern-faq-item" data-category="travel">
+                      <div class="faq-question-modern">
+                        <div class="question-content">
+                          <div class="question-icon">
+                            <i class="fas fa-user-tie"></i>
+                          </div>
+                          <div class="question-text">
+                            <h3>Are tour guides included?</h3>
+                            <span class="question-category">Travel</span>
+                          </div>
+                        </div>
+                        <div class="question-toggle">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </div>
+                      <div class="faq-answer-modern">
+                        <div class="answer-content">
+                          <p>All our tours include professional, certified tour guides who offer:</p>
+                          <ul>
+                            <li>Local expertise and cultural insights</li>
+                            <li>Multiple language capabilities</li>
+                            <li>Safety and emergency training</li>
+                            <li>Historical and cultural knowledge</li>
+                            <li>Photography assistance</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modern-faq-item" data-category="payment">
+                      <div class="faq-question-modern">
+                        <div class="question-content">
+                          <div class="question-icon">
+                            <i class="fas fa-credit-card"></i>
+                          </div>
+                          <div class="question-text">
+                            <h3>What payment methods do you accept?</h3>
+                            <span class="question-category">Payment</span>
+                          </div>
+                        </div>
+                        <div class="question-toggle">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </div>
+                      <div class="faq-answer-modern">
+                        <div class="answer-content">
+                          <p>We accept various secure payment methods:</p>
+                          <div class="payment-methods">
+                            <div class="payment-method">
+                              <i class="fab fa-cc-visa"></i>
+                              <span>Credit Cards</span>
+                            </div>
+                            <div class="payment-method">
+                              <i class="fas fa-university"></i>
+                              <span>Bank Transfer</span>
+                            </div>
+                            <div class="payment-method">
+                              <i class="fas fa-money-bill-wave"></i>
+                              <span>Cash Payment</span>
+                            </div>
+                            <div class="payment-method">
+                              <i class="fab fa-paypal"></i>
+                              <span>PayPal</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modern-faq-item" data-category="booking">
+                      <div class="faq-question-modern">
+                        <div class="question-content">
+                          <div class="question-icon">
+                            <i class="fas fa-users"></i>
+                          </div>
+                          <div class="question-text">
+                            <h3>Do you offer group discounts?</h3>
+                            <span class="question-category">Booking</span>
+                          </div>
+                        </div>
+                        <div class="question-toggle">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </div>
+                      <div class="faq-answer-modern">
+                        <div class="answer-content">
+                          <p>Yes! We offer attractive group discounts:</p>
+                          <div class="discount-table">
+                            <div class="discount-row">
+                              <span class="group-size">5-9 people</span>
+                              <span class="discount-rate">5% discount</span>
+                            </div>
+                            <div class="discount-row">
+                              <span class="group-size">10-19 people</span>
+                              <span class="discount-rate">10% discount</span>
+                            </div>
+                            <div class="discount-row">
+                              <span class="group-size">20+ people</span>
+                              <span class="discount-rate">15% discount</span>
+                            </div>
+                          </div>
+                          <p>Contact us for custom group packages and additional benefits.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-4">
+                <div class="faq-sidebar">
+                  <div class="help-card">
+                    <div class="help-icon">
+                      <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h4>Still have questions?</h4>
+                    <p>Can't find what you're looking for? Our support team is here to help!</p>
+                    <div class="help-actions">
+                      <a href="#" class="help-btn" onclick="document.getElementById('sendmessage').checked = true; document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none'); document.getElementById('sendmessage-content').style.display = 'block';">
+                        <i class="fas fa-envelope"></i> Send Message
+                      </a>
+                      <a href="tel:+84123456789" class="help-btn">
+                        <i class="fas fa-phone"></i> Call Now
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div class="popular-topics">
+                    <h4>Popular Topics</h4>
+                    <div class="topic-list">
+                      <a href="#" class="topic-item" onclick="searchFAQTopic('booking')">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Booking Process</span>
+                      </a>
+                      <a href="#" class="topic-item" onclick="searchFAQTopic('payment')">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Payment Options</span>
+                      </a>
+                      <a href="#" class="topic-item" onclick="searchFAQTopic('cancellation')">
+                        <i class="fas fa-ban"></i>
+                        <span>Cancellation Policy</span>
+                      </a>
+                      <a href="#" class="topic-item" onclick="searchFAQTopic('visa')">
+                        <i class="fas fa-passport"></i>
+                        <span>Visa Assistance</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location Tab Content -->
+        <div class="tab-content" id="location-content" style="display: none;">
+          <div class="location-hero">
+            <div class="location-hero-content">
+              <h2 class="location-title">Visit Our Office</h2>
+              <p class="location-subtitle">Come and meet our travel experts in person</p>
+              <div class="location-address-card">
+                <div class="address-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="address-details">
+                  <h3>Trường Đại Học Giao Thông Vận Tải</h3>
+                  <p>3 Cau Giay street, Lang Ha ward<br>Dong Da District, Ha Noi Capital, Vietnam</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="location-main-content">
+            <div class="row">
+              <div class="col-8">
+                <div class="modern-map-container">
+                  <div class="map-header">
+                    <h3><i class="fas fa-location-dot"></i> Interactive Map</h3>
+                    <div class="map-controls">
+                      <button class="map-btn" onclick="toggleMapView('satellite')">
+                        <i class="fas fa-satellite"></i> Satellite
+                      </button>
+                      <button class="map-btn" onclick="getDirections()">
+                        <i class="fas fa-route"></i> Directions
+                      </button>
+                    </div>
+                  </div>
+                  <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29792.905824636655!2d105.803421!3d21.028155!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab424a50fff9%3A0xbe3a7f3670c0a45f!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyBHaWFvIFRow7RuZyBW4bqtbiBU4bqjaQ!5e0!3m2!1svi!2sus!4v1759772626743!5m2!1svi!2sus" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0; border-radius: 12px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="map-overlay">
+                      <a href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+H%E1%BB%8Dc+Giao+Th%C3%B4ng+V%E1%BA%ADn+T%E1%BA%A3i/@21.0281445,105.8034943,17z/data=!4m6!3m5!1s0x3135ab424a50fff9:0xbe3a7f3670c0a45f!8m2!3d21.0281545!4d105.8034205!16s%2Fm%2F0vb3l_2?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" 
+                         target="_blank" 
+                         class="view-larger-map">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Larger Map
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-4">
+                <div class="location-info-modern">
+                  <div class="info-header">
+                    <h3><i class="fas fa-compass"></i> How to Find Us</h3>
+                  </div>
+                  
+                  <div class="transport-options">
+                    <div class="transport-card metro">
+                      <div class="transport-icon">
+                        <i class="fas fa-subway"></i>
+                      </div>
+                      <div class="transport-details">
+                        <h4>By Metro</h4>
+                        <p>Line 1 to Cau Giay Station</p>
+                        <span class="duration">1 min walk</span>
+                      </div>
+                    </div>
+                    
+                    <div class="transport-card bus">
+                      <div class="transport-icon">
+                        <i class="fas fa-bus"></i>
+                      </div>
+                      <div class="transport-details">
+                        <h4>By Bus</h4>
+                        <p>Routes 03, 19, 36</p>
+                        <span class="duration">Nearby stops</span>
+                      </div>
+                    </div>
+                    
+                    <div class="transport-card car">
+                      <div class="transport-icon">
+                        <i class="fas fa-car"></i>
+                      </div>
+                      <div class="transport-details">
+                        <h4>By Car</h4>
+                        <p>Parking available</p>
+                        <span class="duration">In building</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="contact-quick-actions">
+                    <h4><i class="fas fa-phone"></i> Need Help Finding Us?</h4>
+                    <div class="quick-actions">
+                      <a href="tel:+84123456789" class="action-btn call">
+                        <i class="fas fa-phone"></i> Call Us
+                      </a>
+                      <a href="mailto:info@pathway.vn" class="action-btn email">
+                        <i class="fas fa-envelope"></i> Email
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="cta">
+        <img src="../assets/images/blog/cta_img.png" alt="" class="cta__img" />
+        <div class="cta__info">
+          <h2 class="cta__heading">Ready to Travel?</h2>
+          <p class="cta__desc">
+            Let us help you plan your perfect journey. Contact our travel experts today for personalized recommendations.
+          </p>
+        </div>
+        <a href="./destination.html" class="btn btn-cta">Explore Destinations</a>
+        <img src="../assets/images/blog/map.svg" alt="" class="cta__decor" />
+      </div>
+    </section>
+
+  <footer id="footer" class="footer"></footer>
   <script>
-    load("#header", "./template/header.html");
+    load("#footer", "../template/footer.html");
   </script>
 
-  <div class="container" style="min-height: 100ch;">
-  </div>
-  <footer id="footer" class="footer">
-
-  </footer>
+  <!-- Contact Page Scripts -->
   <script>
-    load("#footer", "./template/footer.html");
+    // Tab functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabInputs = document.querySelectorAll('.navtab-input');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabInputs.forEach(input => {
+        input.addEventListener('change', function() {
+          if (this.checked) {
+            // Hide all tab contents
+            tabContents.forEach(content => {
+              content.style.display = 'none';
+            });
+            
+            // Show selected tab content
+            const targetContent = document.getElementById(this.id + '-content');
+            if (targetContent) {
+              targetContent.style.display = 'block';
+            }
+          }
+        });
+      });
+    });
+
+    // FAQ Search functionality
+    function searchFAQ() {
+      const searchTerm = document.getElementById('faqSearch').value.toLowerCase();
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+        const answer = item.querySelector('.faq-answer p').textContent.toLowerCase();
+        
+        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+          item.style.display = 'block';
+          if (searchTerm.length > 0) {
+            item.classList.add('highlight');
+          }
+        } else {
+          item.style.display = searchTerm.length > 0 ? 'none' : 'block';
+        }
+      });
+      
+      // Switch to FAQ tab if searching
+      if (searchTerm.length > 0) {
+        document.getElementById('faq').checked = true;
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.style.display = 'none';
+        });
+        document.getElementById('faq-content').style.display = 'block';
+      }
+    }
+
+    // Modern FAQ Toggle functionality
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.faq-question') || e.target.closest('.faq-question-modern')) {
+        const faqItem = e.target.closest('.faq-item') || e.target.closest('.modern-faq-item');
+        const isActive = faqItem.classList.contains('active');
+        
+        // Close all FAQ items
+        document.querySelectorAll('.faq-item, .modern-faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      }
+    });
+
+    // Character counter for message textarea
+    document.addEventListener('input', function(e) {
+      if (e.target.id === 'message') {
+        const charCount = e.target.value.length;
+        const charCountElement = document.getElementById('charCount');
+        if (charCountElement) {
+          charCountElement.textContent = charCount;
+          
+          // Change color based on character count
+          const parent = charCountElement.parentElement;
+          if (charCount > 450) {
+            parent.style.color = '#dc3545';
+          } else if (charCount > 400) {
+            parent.style.color = '#ffc107';
+          } else {
+            parent.style.color = '#6c757d';
+          }
+        }
+      }
+    });
+
+    // Enhanced FAQ search functionality
+    function filterFAQ() {
+      const searchTerm = document.getElementById('faqSearchInput').value.toLowerCase();
+      const faqItems = document.querySelectorAll('.modern-faq-item');
+      let visibleCount = 0;
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.question-text h3').textContent.toLowerCase();
+        const answer = item.querySelector('.answer-content').textContent.toLowerCase();
+        const category = item.getAttribute('data-category');
+        
+        if (question.includes(searchTerm) || answer.includes(searchTerm) || category.includes(searchTerm)) {
+          item.style.display = 'block';
+          item.classList.toggle('highlight', searchTerm.length > 0);
+          visibleCount++;
+        } else {
+          item.style.display = searchTerm.length > 0 ? 'none' : 'block';
+          item.classList.remove('highlight');
+          if (searchTerm.length === 0) visibleCount++;
+        }
+      });
+      
+      // Show/hide clear button
+      const clearBtn = document.querySelector('.clear-search');
+      if (clearBtn) {
+        clearBtn.style.display = searchTerm.length > 0 ? 'block' : 'none';
+      }
+      
+      // Show no results message
+      showNoResultsMessage(visibleCount === 0 && searchTerm.length > 0);
+    }
+
+    function clearFAQSearch() {
+      const searchInput = document.getElementById('faqSearchInput');
+      searchInput.value = '';
+      filterFAQ();
+    }
+
+    function showNoResultsMessage(show) {
+      let noResultsMsg = document.querySelector('.no-results-message');
+      
+      if (show && !noResultsMsg) {
+        noResultsMsg = document.createElement('div');
+        noResultsMsg.className = 'no-results-message';
+        noResultsMsg.innerHTML = `
+          <div style="text-align: center; padding: 3rem; color: #6c757d;">
+            <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+            <h3>No results found</h3>
+            <p>Try searching with different keywords or browse our categories.</p>
+          </div>
+        `;
+        document.querySelector('.modern-faq-list').appendChild(noResultsMsg);
+      } else if (!show && noResultsMsg) {
+        noResultsMsg.remove();
+      }
+    }
+
+    // Category filtering
+    function filterByCategory(category) {
+      const faqItems = document.querySelectorAll('.modern-faq-item');
+      const categoryBtns = document.querySelectorAll('.category-btn');
+      
+      // Update active button
+      categoryBtns.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      // Filter items
+      faqItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        if (category === 'all' || itemCategory === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      
+      // Clear search
+      const searchInput = document.getElementById('faqSearchInput');
+      if (searchInput) {
+        searchInput.value = '';
+      }
+    }
+
+    // Popular topic search
+    function searchFAQTopic(topic) {
+      const searchInput = document.getElementById('faqSearchInput');
+      if (searchInput) {
+        searchInput.value = topic;
+        filterFAQ();
+      }
+      
+      // Switch to FAQ tab
+      document.getElementById('faq').checked = true;
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.style.display = 'none';
+      });
+      document.getElementById('faq-content').style.display = 'block';
+    }
+
+    // Enhanced Contact Form Submission
+    document.addEventListener('submit', function(e) {
+      if (e.target.id === 'contactForm') {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+        
+        // Enhanced validation
+        if (!data.firstName || !data.lastName || !data.email || !data.subject || !data.message) {
+          showFormNotification('Please fill in all required fields.', 'error');
+          return;
+        }
+        
+        if (!data.terms) {
+          showFormNotification('Please agree to the Terms of Service and Privacy Policy.', 'error');
+          return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
+          showFormNotification('Please enter a valid email address.', 'error');
+          return;
+        }
+        
+        // Simulate form submission with modern loading
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnIcon = submitBtn.querySelector('.btn-icon');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        
+        // Show loading state
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+          // Success state
+          submitBtn.classList.remove('loading');
+          submitBtn.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+          btnText.textContent = 'Message Sent!';
+          btnIcon.innerHTML = '<i class="fas fa-check"></i>';
+          
+          showFormNotification('Thank you for contacting us! We will respond within 24 hours.', 'success');
+          
+          // Reset form after delay
+          setTimeout(() => {
+            e.target.reset();
+            submitBtn.disabled = false;
+            submitBtn.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+            btnText.textContent = 'Send Message';
+            btnIcon.innerHTML = '<i class="fas fa-paper-plane"></i>';
+            
+            // Reset character counter
+            const charCount = document.getElementById('charCount');
+            if (charCount) {
+              charCount.textContent = '0';
+              charCount.parentElement.style.color = '#6c757d';
+            }
+          }, 3000);
+        }, 2000);
+      }
+    });
+
+    // Form notification system
+    function showFormNotification(message, type) {
+      // Remove existing notifications
+      const existingNotifications = document.querySelectorAll('.form-notification');
+      existingNotifications.forEach(notification => notification.remove());
+      
+      const notification = document.createElement('div');
+      notification.className = `form-notification ${type}`;
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        color: white;
+        font-weight: 500;
+        z-index: 1000;
+        max-width: 400px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        animation: slideInRight 0.3s ease;
+        ${type === 'success' ? 
+          'background: linear-gradient(135deg, #28a745 0%, #20c997 100%);' : 
+          'background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);'
+        }
+      `;
+      
+      notification.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-triangle'}"></i>
+          <span>${message}</span>
+          <button onclick="this.parentElement.parentElement.remove()" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer; margin-left: auto;">×</button>
+        </div>
+      `;
+      
+      document.body.appendChild(notification);
+      
+      // Add animation styles
+      if (!document.querySelector('#notification-styles')) {
+        const style = document.createElement('style');
+        style.id = 'notification-styles';
+        style.textContent = `
+          @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+      
+      // Auto remove after 5 seconds
+      setTimeout(() => {
+        if (notification.parentElement) {
+          notification.style.animation = 'slideInRight 0.3s ease reverse';
+          setTimeout(() => notification.remove(), 300);
+        }
+      }, 5000);
+    }
+
+    // Map control functions
+    function toggleMapView(viewType) {
+      if (viewType === 'satellite') {
+        // This would typically change the map view, but since we're using an iframe,
+        // we'll show a notification instead
+        showNotification('Satellite view - Click "View Larger Map" to access satellite view on Google Maps');
+      }
+    }
+
+    function getDirections() {
+      const destination = "Trường Đại Học Giao Thông Vận Tải, 3 Cau Giay street, Lang Ha ward, Dong Da District, Ha Noi Capital, Vietnam";
+      const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
+      window.open(googleMapsUrl, '_blank');
+    }
+
+    function showNotification(message) {
+      // Create a simple notification
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0,123,255,0.3);
+        z-index: 1000;
+        font-size: 0.9rem;
+        max-width: 300px;
+        animation: slideIn 0.3s ease;
+      `;
+      notification.textContent = message;
+      document.body.appendChild(notification);
+
+      // Add slide-in animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes slideIn {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Remove notification after 4 seconds
+      setTimeout(() => {
+        notification.style.animation = 'slideIn 0.3s ease reverse';
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 300);
+      }, 4000);
+    }
+
+    // Add some CSS for better styling
+    const style = document.createElement('style');
+    style.textContent = `
+      .contact-icon-large {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        font-size: 3rem;
+        color: var(--primary-color, #007bff);
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-radius: 8px;
+      }
+      
+      .social-links-inline {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      
+      .social-links-inline a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #007bff;
+        color: white;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+      
+      .social-links-inline a:hover {
+        background: #0056b3;
+      }
+      
+      .contact-form-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+      }
+      
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #333;
+      }
+      
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+      
+      .checkbox-group {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      
+      .checkbox-label {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+      
+      .faq-item {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+      }
+      
+      .faq-question {
+        padding: 1rem;
+        background: #f8f9fa;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s;
+      }
+      
+      .faq-question:hover {
+        background: #e9ecef;
+      }
+      
+      .faq-question h3 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+      
+      .faq-answer {
+        padding: 0 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s, padding 0.3s;
+      }
+      
+      .faq-item.active .faq-answer {
+        padding: 1rem;
+        max-height: 200px;
+      }
+      
+      .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+      }
+      
+      .faq-question i {
+        transition: transform 0.3s;
+      }
+      
+      .map-placeholder {
+        height: 400px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px dashed #ddd;
+      }
+      
+      .map-content {
+        text-align: center;
+        color: #666;
+      }
+      
+      .map-content i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #007bff;
+      }
+      
+      .map-button-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.5rem;
+      }
+      
+      .location-info {
+        padding: 2rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+        height: 400px;
+        overflow-y: auto;
+      }
+      
+      .location-detail {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+      }
+      
+      .location-detail:last-child {
+        border-bottom: none;
+      }
+      
+      .location-detail h4 {
+        margin: 0 0 0.5rem 0;
+        color: #007bff;
+        font-size: 1rem;
+      }
+      
+      .location-detail p {
+        margin: 0;
+        color: #666;
+        font-size: 0.9rem;
+      }
+      
+      .faq-item.highlight {
+        border-color: #007bff;
+        box-shadow: 0 0 10px rgba(0,123,255,0.2);
+      }
+      
+      /* Custom Contact Images */
+      .custom-contact-image {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      /* Office Building */
+      .office-building {
+        background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+      }
+      
+      .building {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .building-base {
+        width: 80px;
+        height: 100px;
+        background: #2d3436;
+        border-radius: 4px 4px 0 0;
+        position: relative;
+      }
+      
+      .building-windows {
+        position: absolute;
+        top: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        width: 60px;
+      }
+      
+      .window {
+        width: 12px;
+        height: 12px;
+        background: #fdcb6e;
+        border-radius: 2px;
+      }
+      
+      .building-door {
+        width: 20px;
+        height: 25px;
+        background: #636e72;
+        border-radius: 4px 4px 0 0;
+        margin-top: -25px;
+      }
+      
+      .building-text {
+        color: white;
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: 15px;
+        letter-spacing: 1px;
+      }
+      
+      /* Phone Support */
+      .phone-support {
+        background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+      }
+      
+      .phone {
+        position: relative;
+        margin-bottom: 10px;
+      }
+      
+      .phone-body {
+        width: 40px;
+        height: 70px;
+        background: #2d3436;
+        border-radius: 8px;
+        position: relative;
+      }
+      
+      .phone-screen {
+        width: 30px;
+        height: 45px;
+        background: #74b9ff;
+        border-radius: 4px;
+        position: absolute;
+        top: 8px;
+        left: 5px;
+      }
+      
+      .phone-button {
+        width: 8px;
+        height: 8px;
+        background: #636e72;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 6px;
+        left: 16px;
+      }
+      
+      .signal-waves {
+        position: absolute;
+        right: -30px;
+        top: 20px;
+      }
+      
+      .wave {
+        width: 15px;
+        height: 15px;
+        border: 2px solid white;
+        border-radius: 50%;
+        position: absolute;
+        animation: pulse 2s infinite;
+      }
+      
+      .wave1 { animation-delay: 0s; }
+      .wave2 { animation-delay: 0.3s; left: 8px; }
+      .wave3 { animation-delay: 0.6s; left: 16px; }
+      
+      @keyframes pulse {
+        0% { transform: scale(0.8); opacity: 1; }
+        100% { transform: scale(1.5); opacity: 0; }
+      }
+      
+      .phone-text {
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+      
+      /* Email Contact */
+      .email-contact {
+        background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+      }
+      
+      .envelope {
+        position: relative;
+        margin-bottom: 15px;
+      }
+      
+      .envelope-body {
+        width: 60px;
+        height: 40px;
+        background: white;
+        border-radius: 4px;
+        position: relative;
+      }
+      
+      .envelope-flap {
+        width: 60px;
+        height: 30px;
+        background: #ddd;
+        position: absolute;
+        top: -15px;
+        clip-path: polygon(0 100%, 50% 0, 100% 100%);
+      }
+      
+      .envelope-seal {
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #e84393;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      
+      .email-lines {
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .line {
+        height: 2px;
+        background: rgba(255,255,255,0.6);
+        margin: 3px 0;
+        border-radius: 1px;
+      }
+      
+      .line1 { width: 40px; }
+      .line2 { width: 30px; }
+      .line3 { width: 35px; }
+      
+      .email-text {
+        color: white;
+        font-weight: bold;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+      
+      /* Working Hours */
+      .working-hours {
+        background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+      }
+      
+      .clock {
+        position: relative;
+        margin-bottom: 15px;
+      }
+      
+      .clock-face {
+        width: 80px;
+        height: 80px;
+        background: white;
+        border-radius: 50%;
+        border: 4px solid #2d3436;
+        position: relative;
+      }
+      
+      .clock-center {
+        width: 8px;
+        height: 8px;
+        background: #2d3436;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+      }
+      
+      .clock-hand {
+        position: absolute;
+        background: #2d3436;
+        border-radius: 2px;
+        transform-origin: bottom center;
+        top: 50%;
+        left: 50%;
+      }
+      
+      .hour-hand {
+        width: 3px;
+        height: 25px;
+        margin-left: -1.5px;
+        margin-top: -25px;
+        transform: rotate(90deg);
+      }
+      
+      .minute-hand {
+        width: 2px;
+        height: 35px;
+        margin-left: -1px;
+        margin-top: -35px;
+        transform: rotate(180deg);
+      }
+      
+      .clock-numbers {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .number {
+        position: absolute;
+        font-size: 10px;
+        font-weight: bold;
+        color: #2d3436;
+      }
+      
+      .n12 { top: 5px; left: 50%; transform: translateX(-50%); }
+      .n3 { right: 8px; top: 50%; transform: translateY(-50%); }
+      .n6 { bottom: 5px; left: 50%; transform: translateX(-50%); }
+      .n9 { left: 8px; top: 50%; transform: translateY(-50%); }
+      
+      .hours-text {
+        color: white;
+        font-weight: bold;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+      
+      /* Social Media */
+      .social-media {
+        background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+      }
+      
+      .social-network {
+        position: relative;
+        width: 120px;
+        height: 80px;
+        margin-bottom: 15px;
+      }
+      
+      .node {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2d3436;
+        font-size: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      
+      .main-node {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #74b9ff;
+        color: white;
+        z-index: 2;
+      }
+      
+      .node-1 { top: 0; left: 0; color: #3b5998; }
+      .node-2 { top: 0; right: 0; color: #e4405f; }
+      .node-3 { bottom: 0; left: 0; color: #1da1f2; }
+      .node-4 { bottom: 0; right: 0; color: #ff0000; }
+      
+      .connection-lines .line {
+        position: absolute;
+        height: 2px;
+        background: rgba(255,255,255,0.8);
+        z-index: 1;
+      }
+      
+      .line-1 {
+        width: 35px;
+        top: 15px;
+        left: 15px;
+        transform: rotate(-45deg);
+      }
+      
+      .line-2 {
+        width: 35px;
+        top: 15px;
+        right: 15px;
+        transform: rotate(45deg);
+      }
+      
+      .line-3 {
+        width: 35px;
+        bottom: 15px;
+        left: 15px;
+        transform: rotate(45deg);
+      }
+      
+      .line-4 {
+        width: 35px;
+        bottom: 15px;
+        right: 15px;
+        transform: rotate(-45deg);
+      }
+      
+      .social-text {
+        color: white;
+        font-weight: bold;
+        font-size: 11px;
+        letter-spacing: 1px;
+      }
+      
+      /* Modern Location Interface */
+      .location-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 3rem 2rem;
+        border-radius: 16px;
+        margin-bottom: 2rem;
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .location-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        opacity: 0.3;
+      }
+      
+      .location-hero-content {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .location-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      }
+      
+      .location-subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+      }
+      
+      .location-address-card {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(10px);
+        padding: 1.5rem 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        text-align: left;
+        max-width: 500px;
+      }
+      
+      .address-icon {
+        background: rgba(255,255,255,0.2);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1.5rem;
+        font-size: 1.5rem;
+      }
+      
+      .address-details h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      
+      .address-details p {
+        margin: 0;
+        opacity: 0.9;
+        line-height: 1.4;
+      }
+      
+      .location-main-content {
+        margin-top: 2rem;
+      }
+      
+      .modern-map-container {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        overflow: hidden;
+        border: 1px solid #e0e6ed;
+      }
+      
+      .map-header {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 1.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #dee2e6;
+      }
+      
+      .map-header h3 {
+        margin: 0;
+        color: #2d3436;
+        font-size: 1.3rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .map-header i {
+        color: #007bff;
+      }
+      
+      .map-controls {
+        display: flex;
+        gap: 0.5rem;
+      }
+      
+      .map-btn {
+        background: white;
+        border: 1px solid #dee2e6;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        color: #495057;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .map-btn:hover {
+        background: #007bff;
+        color: white;
+        border-color: #007bff;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+      }
+      
+      .map-wrapper {
+        position: relative;
+        padding: 1.5rem;
+        background: #f8f9fa;
+      }
+      
+      .map-wrapper iframe {
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+      }
+      
+      .map-wrapper:hover iframe {
+        transform: scale(1.02);
+      }
+      
+      .map-overlay {
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 10;
+      }
+      
+      .view-larger-map {
+        background: rgba(0,123,255,0.9);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+      }
+      
+      .view-larger-map:hover {
+        background: rgba(0,123,255,1);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,123,255,0.4);
+        color: white;
+        text-decoration: none;
+      }
+      
+      .location-info-modern {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        overflow: hidden;
+        border: 1px solid #e0e6ed;
+        height: fit-content;
+      }
+      
+      .info-header {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+        padding: 1.5rem 2rem;
+        text-align: center;
+      }
+      
+      .info-header h3 {
+        margin: 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      
+      .transport-options {
+        padding: 1.5rem;
+      }
+      
+      .transport-card {
+        display: flex;
+        align-items: center;
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        border: 1px solid #e9ecef;
+        background: #f8f9fa;
+      }
+      
+      .transport-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        border-color: transparent;
+      }
+      
+      .transport-card.metro {
+        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        border-color: #2196f3;
+      }
+      
+      .transport-card.metro:hover {
+        background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+        color: white;
+      }
+      
+      .transport-card.bus {
+        background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+        border-color: #9c27b0;
+      }
+      
+      .transport-card.bus:hover {
+        background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+        color: white;
+      }
+      
+      .transport-card.car {
+        background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+        border-color: #4caf50;
+      }
+      
+      .transport-card.car:hover {
+        background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+        color: white;
+      }
+      
+      .transport-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        margin-right: 1rem;
+        background: rgba(255,255,255,0.8);
+        color: #2d3436;
+        transition: all 0.3s ease;
+      }
+      
+      .transport-card:hover .transport-icon {
+        background: rgba(255,255,255,0.2);
+        color: white;
+        transform: scale(1.1);
+      }
+      
+      .transport-details h4 {
+        margin: 0 0 0.25rem 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      
+      .transport-details p {
+        margin: 0 0 0.25rem 0;
+        opacity: 0.8;
+        font-size: 0.9rem;
+      }
+      
+      .duration {
+        background: rgba(0,123,255,0.1);
+        color: #007bff;
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        display: inline-block;
+      }
+      
+      .transport-card:hover .duration {
+        background: rgba(255,255,255,0.2);
+        color: white;
+      }
+      
+      .contact-quick-actions {
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-top: 1px solid #e9ecef;
+      }
+      
+      .contact-quick-actions h4 {
+        margin: 0 0 1rem 0;
+        color: #2d3436;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .quick-actions {
+        display: flex;
+        gap: 0.75rem;
+      }
+      
+      .action-btn {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      
+      .action-btn.call {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+        border: 1px solid #28a745;
+      }
+      
+      .action-btn.call:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(40,167,69,0.4);
+        color: white;
+        text-decoration: none;
+      }
+      
+      .action-btn.email {
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        color: white;
+        border: 1px solid #007bff;
+      }
+      
+      .action-btn.email:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,123,255,0.4);
+        color: white;
+        text-decoration: none;
+      }
+      
+      /* Modern Send Message Interface */
+      .message-hero {
+        background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+        padding: 3rem 2rem;
+        border-radius: 16px;
+        margin-bottom: 2rem;
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .message-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        opacity: 0.4;
+      }
+      
+      .message-hero-content {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .message-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      }
+      
+      .message-subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+      }
+      
+      .message-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 2rem;
+      }
+      
+      .stat-item {
+        text-align: center;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      
+      .stat-label {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+      
+      .modern-form-container {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        overflow: hidden;
+        border: 1px solid #e0e6ed;
+      }
+      
+      .form-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
+      
+      .form-header h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      
+      .form-header p {
+        margin: 0;
+        opacity: 0.9;
+      }
+      
+      .modern-contact-form {
+        padding: 2rem;
+      }
+      
+      .form-section {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #e9ecef;
+      }
+      
+      .form-section:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      
+      .form-section h4 {
+        color: #2d3436;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .modern-form-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+      }
+      
+      .modern-form-group input,
+      .modern-form-group select,
+      .modern-form-group textarea {
+        width: 100%;
+        padding: 1rem 1rem 1rem 1rem;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        font-size: 1rem;
+        background: #f8f9fa;
+        transition: all 0.3s ease;
+        outline: none;
+      }
+      
+      .modern-form-group input:focus,
+      .modern-form-group select:focus,
+      .modern-form-group textarea:focus {
+        border-color: #007bff;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+      }
+      
+      .modern-form-group label {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        color: #6c757d;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        background: transparent;
+        padding: 0 0.25rem;
+      }
+      
+      .modern-form-group input:focus + label,
+      .modern-form-group input:not(:placeholder-shown) + label,
+      .modern-form-group select:focus + label,
+      .modern-form-group select:not([value=""]) + label,
+      .modern-form-group textarea:focus + label,
+      .modern-form-group textarea:not(:placeholder-shown) + label {
+        top: -0.5rem;
+        left: 0.75rem;
+        font-size: 0.8rem;
+        color: #007bff;
+        background: white;
+        font-weight: 500;
+      }
+      
+      .form-highlight {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        transition: width 0.3s ease;
+      }
+      
+      .modern-form-group input:focus ~ .form-highlight,
+      .modern-form-group select:focus ~ .form-highlight,
+      .modern-form-group textarea:focus ~ .form-highlight {
+        width: 100%;
+      }
+      
+      .character-count {
+        position: absolute;
+        bottom: 0.5rem;
+        right: 1rem;
+        font-size: 0.8rem;
+        color: #6c757d;
+      }
+      
+      .modern-checkbox-group {
+        margin-bottom: 1rem;
+      }
+      
+      .modern-checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        cursor: pointer;
+        padding: 1rem;
+        border-radius: 8px;
+        transition: background 0.3s ease;
+      }
+      
+      .modern-checkbox:hover {
+        background: #f8f9fa;
+      }
+      
+      .checkbox-custom {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #dee2e6;
+        border-radius: 4px;
+        position: relative;
+        flex-shrink: 0;
+        margin-top: 0.25rem;
+        transition: all 0.3s ease;
+      }
+      
+      .modern-checkbox input:checked + .checkbox-custom {
+        background: #007bff;
+        border-color: #007bff;
+      }
+      
+      .modern-checkbox input:checked + .checkbox-custom::after {
+        content: '✓';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+      
+      .checkbox-content strong {
+        color: #2d3436;
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+        display: block;
+      }
+      
+      .checkbox-content p {
+        margin: 0;
+        color: #6c757d;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+      
+      .modern-submit-btn {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+        border: none;
+        padding: 1rem 3rem;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .modern-submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(40,167,69,0.4);
+      }
+      
+      .btn-loading {
+        display: none;
+      }
+      
+      .modern-submit-btn.loading .btn-text,
+      .modern-submit-btn.loading .btn-icon {
+        display: none;
+      }
+      
+      .modern-submit-btn.loading .btn-loading {
+        display: block;
+      }
+      
+      .message-info-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .info-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border: 1px solid #e9ecef;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      
+      .info-card:hover {
+        transform: translateY(-2px);
+      }
+      
+      .info-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem auto;
+        color: white;
+        font-size: 1.5rem;
+      }
+      
+      .info-card h4 {
+        margin: 0 0 0.5rem 0;
+        color: #2d3436;
+        font-size: 1.1rem;
+      }
+      
+      .info-card p {
+        margin: 0;
+        color: #6c757d;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+      
+      .contact-alternatives {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border: 1px solid #e9ecef;
+      }
+      
+      .contact-alternatives h4 {
+        margin: 0 0 1rem 0;
+        color: #2d3436;
+        font-size: 1.1rem;
+        text-align: center;
+      }
+      
+      .alternative-methods {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      
+      .alt-method {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #2d3436;
+        transition: all 0.3s ease;
+        border: 1px solid #e9ecef;
+      }
+      
+      .alt-method:hover {
+        background: #f8f9fa;
+        color: #007bff;
+        text-decoration: none;
+        transform: translateX(5px);
+      }
+      
+      .alt-method i {
+        width: 20px;
+        text-align: center;
+      }
+      
+      /* Modern FAQ Interface */
+      .faq-hero {
+        background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+        padding: 3rem 2rem;
+        border-radius: 16px;
+        margin-bottom: 2rem;
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .faq-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="waves" width="100" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 Q25 0 50 10 T100 10 V20 H0 Z" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23waves)"/></svg>');
+        opacity: 0.3;
+      }
+      
+      .faq-hero-content {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .faq-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      }
+      
+      .faq-subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+      }
+      
+      .faq-search-box {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      
+      .search-input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 50px;
+        border: 1px solid rgba(255,255,255,0.2);
+        padding: 0.75rem 1.5rem;
+      }
+      
+      .search-input-wrapper i.fa-search {
+        color: rgba(255,255,255,0.8);
+        margin-right: 1rem;
+      }
+      
+      .search-input-wrapper input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 1rem;
+        placeholder-color: rgba(255,255,255,0.7);
+      }
+      
+      .search-input-wrapper input::placeholder {
+        color: rgba(255,255,255,0.7);
+      }
+      
+      .clear-search {
+        background: none;
+        border: none;
+        color: rgba(255,255,255,0.8);
+        cursor: pointer;
+        padding: 0.25rem;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+      
+      .clear-search:hover {
+        background: rgba(255,255,255,0.2);
+        color: white;
+      }
+      
+      .modern-faq-container {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        overflow: hidden;
+        border: 1px solid #e0e6ed;
+      }
+      
+      .faq-categories {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #e9ecef;
+      }
+      
+      .category-btn {
+        background: white;
+        border: 1px solid #dee2e6;
+        padding: 0.75rem 1.25rem;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        color: #495057;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .category-btn:hover,
+      .category-btn.active {
+        background: #007bff;
+        color: white;
+        border-color: #007bff;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+      }
+      
+      .modern-faq-list {
+        padding: 1.5rem;
+      }
+      
+      .modern-faq-item {
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .modern-faq-item:hover {
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border-color: #007bff;
+      }
+      
+      .faq-question-modern {
+        padding: 1.5rem;
+        background: #f8f9fa;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s ease;
+      }
+      
+      .faq-question-modern:hover {
+        background: #e9ecef;
+      }
+      
+      .question-content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex: 1;
+      }
+      
+      .question-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+      }
+      
+      .question-text h3 {
+        margin: 0 0 0.25rem 0;
+        font-size: 1.2rem;
+        color: #2d3436;
+      }
+      
+      .question-category {
+        background: rgba(0,123,255,0.1);
+        color: #007bff;
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      
+      .question-toggle {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #007bff;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+      
+      .modern-faq-item.active .question-toggle {
+        background: #007bff;
+        color: white;
+        transform: rotate(45deg);
+      }
+      
+      .faq-answer-modern {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      
+      .modern-faq-item.active .faq-answer-modern {
+        max-height: 500px;
+      }
+      
+      .answer-content {
+        padding: 1.5rem;
+        background: white;
+        border-top: 1px solid #e9ecef;
+      }
+      
+      .answer-content p {
+        margin: 0 0 1rem 0;
+        color: #495057;
+        line-height: 1.6;
+      }
+      
+      .answer-content ul {
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+      }
+      
+      .answer-content li {
+        margin-bottom: 0.5rem;
+        color: #495057;
+      }
+      
+      .policy-table,
+      .discount-table {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 1rem;
+        margin: 1rem 0;
+      }
+      
+      .policy-row,
+      .discount-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #e9ecef;
+      }
+      
+      .policy-row:last-child,
+      .discount-row:last-child {
+        border-bottom: none;
+      }
+      
+      .policy-time,
+      .group-size {
+        font-weight: 500;
+        color: #2d3436;
+      }
+      
+      .policy-fee,
+      .discount-rate {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+      
+      .payment-methods {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+      
+      .payment-method {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border: 1px solid #e9ecef;
+      }
+      
+      .payment-method i {
+        font-size: 1.5rem;
+        color: #007bff;
+      }
+      
+      .faq-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .help-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border: 1px solid #e9ecef;
+        text-align: center;
+      }
+      
+      .help-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem auto;
+        color: white;
+        font-size: 2rem;
+      }
+      
+      .help-card h4 {
+        margin: 0 0 1rem 0;
+        color: #2d3436;
+        font-size: 1.3rem;
+      }
+      
+      .help-card p {
+        margin: 0 0 1.5rem 0;
+        color: #6c757d;
+        line-height: 1.5;
+      }
+      
+      .help-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      
+      .help-btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      
+      .help-btn:first-child {
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        color: white;
+      }
+      
+      .help-btn:last-child {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+      }
+      
+      .help-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        text-decoration: none;
+        color: white;
+      }
+      
+      .popular-topics {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border: 1px solid #e9ecef;
+      }
+      
+      .popular-topics h4 {
+        margin: 0 0 1rem 0;
+        color: #2d3436;
+        font-size: 1.1rem;
+        text-align: center;
+      }
+      
+      .topic-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .topic-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #2d3436;
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+      }
+      
+      .topic-item:hover {
+        background: #f8f9fa;
+        color: #007bff;
+        text-decoration: none;
+        border-color: #007bff;
+        transform: translateX(5px);
+      }
+      
+      .topic-item i {
+        width: 20px;
+        text-align: center;
+        color: #007bff;
+      }
+    `;
+    document.head.appendChild(style);
   </script>
 </body>
 
