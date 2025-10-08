@@ -1,3 +1,4 @@
+@use "../abstracts";
 .header {
     background: #fffbea;
     padding: 12px 0;
@@ -13,8 +14,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @include abstracts.screen(lg){
+            justify-content: flex-start;
+        }
     }
     .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
         img {
             width: 28px;
             height: 28px;
@@ -25,15 +32,112 @@
             font-weight: bold;
             color: #333;
         }
+        @include abstracts.screen(sm){
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @include abstracts.screen(md){
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @include abstracts.screen(lg){
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
+    .auth {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding-top: 8px;
+        .login {
+            
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+            width: 39px;
 
-    .nav {
+            &:hover {
+                color: #ff5722;
+            }
+        }
+
+    }
+}
+.nav
+    {
+        margin-left: auto;
+        margin-right: auto;
+        @include abstracts.screen(lg){
+            position: fixed;
+            inset: 0 50% 0 0;
+            background-color: #fff;
+            z-index: 9;
+            translate: -100%;
+            transition: 0.5s;
+            &.show{
+                translate: 0;
+            }
+            &.show ~ &__overlay {
+                visibility: visible;
+                opacity: 1;
+            }
+
+        }
+        @include abstracts.screen(md){
+            inset: 0 25% 0 0;
+        }
+        &__close-btn{
+            display: none;
+            @include abstracts.screen(lg){
+                display: block;
+                padding: 20px 40px;
+            }
+            @include abstracts.screen(md){
+                padding: 20px 30px;
+            }
+            @include abstracts.screen(sm){
+                padding: 20px;
+            }
+        }
+        &__overlay{
+            visibility: hidden;
+            opacity: 0;
+            @include abstracts.screen(lg){
+                position: fixed;
+                inset: 0;
+                z-index: 8;
+                background: rgba(0,0,0,0.4);
+                transition: opacity,visibility;
+                transition-duration: 0.5s;
+            }
+        }
         ul {
             li {
-                margin-left: 40px;
+                
+                @include abstracts.screen(lg){
+                    width: calc(100% - 40px);
+                    margin-left: 40px;
+                }
+                @include abstracts.screen(md){
+                    margin-left: 30px;
+                }
+                @include abstracts.screen(sm){
+                    margin-left: 20px;
+                }
 
                 &:first-child {
                     margin-left: 0;
+
+                    @include abstracts.screen(lg){
+                        margin-left: 40px;
+                    }
+                    @include abstracts.screen(md){
+                        margin-left: 30px;
+                    }
+                    @include abstracts.screen(sm){
+                        margin-left: 20px;
+                    }
                 }
 
                 a {
@@ -54,24 +158,21 @@
             align-items: center;
             gap: 42px;
             padding-top: 12px;
+            @include abstracts.screen(lg){
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 21px;
         }
     }
-
-    .auth {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-        padding-top: 8px;
-        .login {
-            
-            font-size: 14px;
-            color: #333;
-            text-decoration: none;
-
-            &:hover {
-                color: #ff5722;
-            }
-        }
-
+}
+.show-on-mobile{
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    @include abstracts.screen(sm){
+        display: block;
+        opacity: 1;
+        visibility: visible;
     }
 }

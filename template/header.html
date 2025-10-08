@@ -1,6 +1,9 @@
 <div class="container">
   <!-- Logo -->
   <div class="header__inner">
+    <button class="header__more js-toggle d-none d-lg-block " toggle-target="#navbar">
+      <img src="../assets/icon/more.svg" alt="" class="header__more-icon" />
+    </button>
     <div class="logo">
       <img
         src="../assets/images/logos/favicon.png"
@@ -11,19 +14,27 @@
     </div>
 
     <!-- Menu -->
-    <nav class="nav">
+    <nav class="nav hide" id="navbar">
+      <button class="nav__close-btn js-toggle" toggle-target="#navbar">
+        <img src="../assets/icon/arrow-left.svg" alt="" />
+      </button>
       <ul class="nav-list">
         <li><a href="#!">Destinations</a></li>
         <li><a href="#!">About</a></li>
         <li><a href="#!">Blog</a></li>
         <li><a href="#!">Page</a></li>
+        <div class="nav-seperator show-on-mobile"></div>
+        <li class="show-on-mobile"><a href="#!" >Sign In</a></li>
+        <li class="show-on-mobile"><a href="#!" >Sign Up</a></li>
       </ul>
     </nav>
+    <div class="nav__overlay js-toggle" toggle-target="#navbar"></div>
 
     <!-- Auth buttons -->
-    <div class="auth">
+    <div class="auth d-sm-none">
       <a href="#!" class="login">Log In</a>
       <a href="#!" class="btn btn__signup">Sign Up</a>
     </div>
   </div>
 </div>
+

@@ -1,3 +1,4 @@
+@use "../abstracts";
 .footer {
     background: #fffbea; // nền vàng nhạt
     padding: 50px 0 20px;
@@ -34,6 +35,10 @@
         align-items: center;
         gap: 16px;
         margin-bottom: 34px;
+        @include abstracts.screen(sm){
+            flex-direction: column;
+            justify-content: flex-start;
+        }
         input {
             width: 285px;
             height: 60px;
@@ -59,6 +64,9 @@
             font-size: 1.8rem;
             font-weight: 600;
             line-height: 1.67;
+            @include abstracts.screen(sm){
+                margin-right: auto;
+            }
 
             &:hover {
                 background: #e64a19;
