@@ -1,12 +1,20 @@
+@use "../abstracts";
 .signin{
     padding-top: 158px;
     padding-bottom: 70px;
+    @include abstracts.screen(md){
+        padding-top: 100px;
+        padding-bottom: 10px;
+    }
     &__media{
         display: flex;
         flex-direction:column;
+        @include abstracts.screen(lg){
+            display: none;
+        }
     }
     &__img{
-        width: 570px;
+        width: 492px;
         height: 492px;
         object-fit: cover;
         margin-top: 60px;
