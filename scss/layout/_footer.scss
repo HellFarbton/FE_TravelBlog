@@ -35,6 +35,10 @@
         align-items: center;
         gap: 16px;
         margin-bottom: 34px;
+        @include abstracts.screen(xl){
+            flex-direction: column;
+            align-items: start;
+        }
         @include abstracts.screen(sm){
             flex-direction: column;
             justify-content: flex-start;
