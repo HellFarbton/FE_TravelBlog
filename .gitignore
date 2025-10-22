@@ -8,3 +8,7 @@
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Ignore mapping SCSS/SASS files
+*.css.map
+*.scss.map

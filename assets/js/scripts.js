@@ -48,8 +48,7 @@ function load(selector, path) {
  */
 function initFaqAccordion() {
   const faqAccordion = document.querySelector("#faq-accordion");
-  if (!faqAccordion) return; // Chỉ chạy nếu đang ở trang FAQ
-
+  if (!faqAccordion) return;  // Chỉ chạy nếu đang ở trang FAQ
   const items = faqAccordion.querySelectorAll(".faq-accordion__item");
   items.forEach(item => {
     const question = item.querySelector(".faq-accordion__question");
@@ -103,6 +102,96 @@ function initJsToggle() {
 }
 
 
+// --- Xử lý Drag & Drop và Upload file ---
+document.addEventListener('DOMContentLoaded', () => {
+    const dropArea = document.getElementById('file-drop-area');
+    const fileInput = document.getElementById('file-upload');
+    const filePreview = document.getElementById('file-preview');
 
+    // --- Xử lý khi click vào drop area ---
+    dropArea.addEventListener('click', () => {
+        fileInput.click(); // Giả lập hành vi click vào input file
+    });
+
+    // --- Xử lý khi file được chọn qua cửa sổ dialog ---
+    fileInput.addEventListener('change', (event) => {
+        const files = event.target.files;
+        if (files.length > 0) {
+            handleFiles(files);
+        }
+    });
+    // --- Xử lý sự kiện Drag & Drop ---
+    // Ngăn chặn hành vi mặc định của trình duyệt
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, preventDefaults, false);
+    });
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    // Xử lý khi thả file
+    dropArea.addEventListener('drop', (event) => {
+        const dt = event.dataTransfer;
+        const files = dt.files;
+        handleFiles(files);
+    }, false);
+    //  // --- Hàm xử lý chung cho các file đã chọn/thả ---
+    function handleFiles(files) {
+        const dropArea = document.getElementById('file-drop-area'); // Lấy chính button drop area
+
+        if (!dropArea) {
+            console.error('Không tìm thấy phần tử .file-drop-area');
+            return;
+        }
+        // Nếu không có file nào thì không làm gì
+        if (files.length === 0) {
+            return;
+        }
+        // Nếu có 1 file, hiển thị tên và kích thước
+        if (files.length === 1) {
+            const file = files[0];
+            const fileName = file.name;
+            const fileSize = (file.size / 1024).toFixed(2) + ' KB';
+            
+            // Cập nhật nội dung HTML bên trong button
+            dropArea.innerHTML = `
+                <span class="file-name-display">
+                    ${fileName} (${fileSize})
+                </span>
+            `;
+        } 
+        // Nếu có nhiều file, hiển thị số lượng
+        else {
+            dropArea.innerHTML = `
+                <span class="file-name-display">
+                    ${files.length} files selected
+                </span>
+            `;
+        }
+    // --- Hàm gửi file lên server ---
+    function uploadFilesToServer(files) {
+        const formData = new FormData();
+        // Bạn có thể đính kèm nhiều file
+        [...files].forEach(file => {
+            formData.append('uploaded_files[]', file); // 'uploaded_files[]' là tên mà backend sẽ nhận
+        });
+
+        // Sử dụng fetch API để gửi dữ liệu
+        fetch('/api/upload', { // Đây là URL của API trên server của bạn
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Upload thành công:', data);
+            alert('Tải file lên thành công!');
+        })
+        .catch(error => {
+            console.error('Lỗi khi upload:', error);
+            alert('Có lỗi xảy ra khi tải file.');
+        });
+    }
+  }
+});
 
 
