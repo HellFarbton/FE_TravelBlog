@@ -17,12 +17,12 @@
     max-width: 700px;
     margin: 0 auto;
 
-    &__group { 
+    &__group {
         margin-bottom: 24px;
     }
 }
 
-.form-label {
+.suggestion-form__label {
     display: block;
     font-family: 'Manrope', sans-serif;
     font-size: 1.6rem;
@@ -30,7 +30,8 @@
     margin-bottom: 8px;
 }
 
-.form-control, .form-select {
+.suggestion-form__control,
+.suggestion-form__select {
     width: 100%;
     padding: 12px 16px;
     font-family: 'Manrope', sans-serif;
@@ -38,7 +39,7 @@
     border: 1px solid #dee2e6;
     border-radius: 8px;
     background-color: #ffff;
-    color: #000000; 
+    color: #000000;
     transition: border-color 0.3s ease;
     &:focus {
         outline: none;
@@ -46,7 +47,7 @@
     }
 }
 
-.form-select {
+.suggestion-form__select {
     appearance: none;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
@@ -54,32 +55,32 @@
     background-size: 16px 12px;
 }
 
-.file-drop-area {
+.suggestion-form__drop-area {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 120px;
+    height: 150px;
     border: 2px dashed #dee2e6;
     border-radius: 8px;
-    background-color: #f8f9fa;
+    background-color: white;
     transition: all 0.3s ease;
     cursor: pointer;
-    padding: 10px; 
-    box-sizing: border-box; 
+    padding: 10px;
+    box-sizing: border-box;
 
     &:hover {
-        border-color: #ff5b26; 
+        border-color: #ff5b26;
         background-color: #fff;
     }
 
-    &__icon {
-        font-size: 3.2rem;
+    .suggestion-form__drop-icon {
+        font-size: 3.8rem; /* Tăng kích thước icon */
         color: #28a745; 
     }
 }
 
-.form-text-divider {
+.suggestion-form__divider {
     text-align: center;
     color: #6c757d;
     margin: 24px 0;
@@ -87,14 +88,14 @@
     font-size: 1.6rem;
 }
 
-.upload-group {
+.suggestion-form__upload-group {
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin-bottom: 32px;
 }
 
-.btn-upload {
+.suggestion-form__upload-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -116,24 +117,24 @@
     }
 
     i {
-        font-size: 2.2rem; 
+        font-size: 2.8rem; /* Tăng kích thước icon cho tất cả các nút upload */
     }
 
-    &__icon--google {
-        color: #4285F4; 
+    .suggestion-form__upload-icon--google {
+        color: #4285f4; /* Màu Google Drive */
     }
 
-    &__icon--dropbox {
-        color: #0061FF; 
+    .suggestion-form__upload-icon--dropbox {
+        color: #0061ff; /* Màu Dropbox */
     }
 
-    &__icon--onedrive {
-        color: #0078D4; 
+    .suggestion-form__upload-icon--onedrive {
+        color: #0078d4; /* Màu OneDrive */
     }
 }
 
-.btn-submit {
-    width: 35%; 
+.suggestion-form__submit {
+    width: 35%;
     padding: 16px;
     font-family: 'Manrope', sans-serif;
     font-size: 1.8rem;
@@ -141,36 +142,36 @@
     color: #fff;
     background-color: #ff5b26;
     border: none;
-    border-radius: 99px; 
+    border-radius: 99px;
     cursor: pointer;
     transition: opacity 0.3s ease;
-    
-    display: block; 
+
+    display: block;
+    margin: 0 auto; /* Căn giữa nút submit */
 
     &:hover {
         opacity: 0.9;
     }
 }
 
-// --- Bắt đầu phần Responsive ---
 @include screen(lg) {
 }
 
 @include screen(md) {
-    // Áp dụng cho màn hình từ 992px trở xuống (tablet)
+    // Tablet
     .suggestion-form {
-        max-width: 100%; 
+        max-width: 100%;
         padding: 30px;
     }
 }
 
 @include screen(sm) {
-    // Áp dụng cho màn hình từ 768px trở xuống (mobile)
+    // mobile
     .suggestion-page {
         padding: 60px 0;
 
         &__heading {
-            font-size: 3.8rem; 
+            font-size: 3.8rem;
             margin-bottom: 30px;
         }
     }
@@ -178,24 +179,23 @@
         padding: 20px;
     }
 
-    .btn-upload {
+    .suggestion-form__upload-btn {
         padding: 12px;
         font-size: 1.6rem;
     }
-    
-    .btn-submit {
+
+    .suggestion-form__submit {
         padding: 12px;
         font-size: 1.6rem;
         width: 60%;
     }
 }
-.file-name-display {
+.suggestion-form__file-name {
     font-family: 'Manrope', sans-serif;
     font-size: 1.6rem;
-    color: #000000; 
+    color: #000000;
     font-weight: 500;
     text-align: center;
-    padding: 0 15px; 
-    word-break: break-all; 
+    padding: 0 15px;
+    word-break: break-all;
 }
-
