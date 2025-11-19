@@ -1,3 +1,11 @@
+$(document).ready(async function () {
+  const token = localStorage.getItem("token");
+
+  if (token == null || token === '') {
+    window.location.href = "page/admin/authentication-login.html";
+  }
+});
+
 loadTemplate("header", "../../template/admin/header.html");
 loadTemplate("sidebar", "../../template/admin/sidebar.html");
 

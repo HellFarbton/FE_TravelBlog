@@ -10,6 +10,20 @@ let userMap = {};
 var currentPage = 1;
 var pageSize = 10;
 
+const BlogStatus = {
+  0: "Draft",
+  1: "In Review",
+  2: "Approved",
+  3: "Rejected"
+};
+
+const StatusClass = {
+  0: "border-secondary text-secondary", 
+  1: "border-warning text-warning",     
+  2: "border-success text-success",     
+  3: "border-danger text-danger"        
+};
+
 $(document).ready(async function () {
   await authentication();
   await fetchUsers();
@@ -68,6 +82,7 @@ async function fetchBlogs() {
     const result = res.result;
     blogs = Array.isArray(result.data) ? result.data : [];
     currentPage = 1;
+    renderTable(currentPage);
   } catch (err) {
     console.error("Failed to fetch blogs:", err);
     blogs = [];
@@ -87,16 +102,23 @@ function renderTable(page) {
 
   const start = (page - 1) * pageSize;
   const pageData = blogs.slice(start, start + pageSize);
-
   let rows = "";
   pageData.forEach((blog, idx) => {
     const author = userMap[blog.authorId] || "N/A";
 
+    const statusValue = 
+
     rows += `<tr>
                     <td>${start + idx + 1}</td>
                     <td>${escapeHtml(blog.title || "")}</td>
-                    <td>${escapeHtml(blog.categoryId || "")}</td>
+                    <td>${escapeHtml(blog.category.name || "")}</td>
+                    <td>${escapeHtml(blog.destination.name || "")}</td>
                     <td>${escapeHtml(author || "")}</td>
+                    <td>  
+                      <span class="status-pill ${StatusClass[blog.status]}">
+                        ${escapeHtml(BlogStatus[blog.status] || "")}
+                      </span>
+                    </td>
                     <td>
                         <button class="btnEditBlog btn btn-sm btn-link text-primary" title="Edit"><i class="ti ti-edit"></i></button>
                         <button class="btn btn-sm btn-link text-danger" title="Archive"><i class="ti ti-archive"></i></button>

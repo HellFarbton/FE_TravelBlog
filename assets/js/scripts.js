@@ -48,20 +48,23 @@ function load(selector, path) {
  */
 function initFaqAccordion() {
   const faqAccordion = document.querySelector("#faq-accordion");
-  if (!faqAccordion) return;  // Chỉ chạy nếu đang ở trang FAQ
+  if (!faqAccordion) return; // Chỉ chạy nếu đang ở trang FAQ
+
   const items = faqAccordion.querySelectorAll(".faq-accordion__item");
-  items.forEach(item => {
+
+  items.forEach((item) => {
     const question = item.querySelector(".faq-accordion__question");
-    question.addEventListener("click", () => {
-      const isActive = item.classList.contains("faq-accordion__item--active");
-      items.forEach(otherItem => {
-        if (otherItem !== item) {
-          otherItem.classList.remove("faq-accordion__item--active");
-        }
+    const icon = item.querySelector(".faq-accordion__icon");
+
+    // Click vào câu hỏi hoặc icon đều được
+    [question, icon].forEach((element) => {
+      if (!element) return;
+      element.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        // Toggle class mở/đóng riêng cho từng item
+        item.classList.toggle("faq-accordion__item--active");
       });
-      if (!isActive) {
-        item.classList.add("faq-accordion__item--active");
-      }
     });
   });
 }
@@ -71,6 +74,7 @@ if (document.readyState === "loading") {
 } else {
   initFaqAccordion();
 }
+
 // Resposive Header
 /**
  * JS toggle
@@ -82,116 +86,160 @@ if (document.readyState === "loading") {
 window.addEventListener("template-loaded", initJsToggle);
 
 function initJsToggle() {
-    $$(".js-toggle").forEach((button) => {
-        const target = button.getAttribute("toggle-target");
-        if (!target) {
-            document.body.innerText = `Cần thêm toggle-target cho: ${button.outerHTML}`;
-        }
-        button.onclick = () => {
-            if (!$(target)) {
-                return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
-            }
-            const isHidden = $(target).classList.contains("hide");
+  $$(".js-toggle").forEach((button) => {
+    const target = button.getAttribute("toggle-target");
+    if (!target) {
+      document.body.innerText = `Cần thêm toggle-target cho: ${button.outerHTML}`;
+    }
+    button.onclick = () => {
+      if (!$(target)) {
+        return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
+      }
+      const isHidden = $(target).classList.contains("hide");
 
-            requestAnimationFrame(() => {
-                $(target).classList.toggle("hide", !isHidden);
-                $(target).classList.toggle("show", isHidden);
-            });
-        };
-    });
+      requestAnimationFrame(() => {
+        $(target).classList.toggle("hide", !isHidden);
+        $(target).classList.toggle("show", isHidden);
+      });
+    };
+  });
 }
 
+function initFileDrop() {
+  const dropArea = document.getElementById("file-drop-area");
+  const fileInput = document.getElementById("file-upload");
+  const filePreview = document.getElementById("file-preview");
 
-// --- Xử lý Drag & Drop và Upload file ---
-document.addEventListener('DOMContentLoaded', () => {
-    const dropArea = document.getElementById('file-drop-area');
-    const fileInput = document.getElementById('file-upload');
-    const filePreview = document.getElementById('file-preview');
+  if (!dropArea || !fileInput) return;
 
-    // --- Xử lý khi click vào drop area ---
-    dropArea.addEventListener('click', () => {
-        fileInput.click(); // Giả lập hành vi click vào input file
-    });
+  // Khi click vào khu vực => mở chọn file
+  dropArea.addEventListener("click", () => fileInput.click());
 
-    // --- Xử lý khi file được chọn qua cửa sổ dialog ---
-    fileInput.addEventListener('change', (event) => {
-        const files = event.target.files;
-        if (files.length > 0) {
-            handleFiles(files);
-        }
+  // Khi chọn file bằng cửa sổ dialog
+  fileInput.addEventListener("change", (e) => {
+    const files = e.target.files;
+    if (files.length > 0) handleFiles(files);
+  });
+
+  // Ngăn hành vi mặc định khi kéo/thả
+  ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
+    dropArea.addEventListener(eventName, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
     });
-    // --- Xử lý sự kiện Drag & Drop ---
-    // Ngăn chặn hành vi mặc định của trình duyệt
-    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-        dropArea.addEventListener(eventName, preventDefaults, false);
-    });
-    function preventDefaults(e) {
-        e.preventDefault();
-        e.stopPropagation();
+  });
+  // Khi thả file vào
+  dropArea.addEventListener("drop", (e) => {
+    const files = e.dataTransfer.files;
+    handleFiles(files);
+  });
+
+  // Hàm xử lý file
+  function handleFiles(files) {
+    if (files.length === 0) return;
+    if (files.length === 1) {
+      const file = files[0];
+      const fileName = file.name;
+      const fileSize = (file.size / 1024).toFixed(2) + " KB";
+      dropArea.innerHTML = `
+        <span class="suggestion-form__file-name">${fileName} (${fileSize})</span>
+      `;
+    } else {
+      dropArea.innerHTML = `
+        <span class="suggestion-form__file-name">${files.length} files selected</span>
+      `;
     }
-    // Xử lý khi thả file
-    dropArea.addEventListener('drop', (event) => {
-        const dt = event.dataTransfer;
-        const files = dt.files;
-        handleFiles(files);
-    }, false);
-    //  // --- Hàm xử lý chung cho các file đã chọn/thả ---
-    function handleFiles(files) {
-        const dropArea = document.getElementById('file-drop-area'); // Lấy chính button drop area
+  }
 
-        if (!dropArea) {
-            console.error('Không tìm thấy phần tử .file-drop-area');
-            return;
-        }
-        // Nếu không có file nào thì không làm gì
-        if (files.length === 0) {
-            return;
-        }
-        // Nếu có 1 file, hiển thị tên và kích thước
-        if (files.length === 1) {
-            const file = files[0];
-            const fileName = file.name;
-            const fileSize = (file.size / 1024).toFixed(2) + ' KB';
-            
-            // Cập nhật nội dung HTML bên trong button
-            dropArea.innerHTML = `
-                <span class="file-name-display">
-                    ${fileName} (${fileSize})
-                </span>
-            `;
-        } 
-        // Nếu có nhiều file, hiển thị số lượng
-        else {
-            dropArea.innerHTML = `
-                <span class="file-name-display">
-                    ${files.length} files selected
-                </span>
-            `;
-        }
-    // --- Hàm gửi file lên server ---
-    function uploadFilesToServer(files) {
-        const formData = new FormData();
-        // Bạn có thể đính kèm nhiều file
-        [...files].forEach(file => {
-            formData.append('uploaded_files[]', file); // 'uploaded_files[]' là tên mà backend sẽ nhận
-        });
+  // (Tùy chọn) Gửi file lên server
+  function uploadFilesToServer(files) {
+    const formData = new FormData();
+    [...files].forEach((file) => formData.append("uploaded_files[]", file));
 
-        // Sử dụng fetch API để gửi dữ liệu
-        fetch('/api/upload', { // Đây là URL của API trên server của bạn
-            method: 'POST',
-            body: formData,
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Upload thành công:', data);
-            alert('Tải file lên thành công!');
-        })
-        .catch(error => {
-            console.error('Lỗi khi upload:', error);
-            alert('Có lỗi xảy ra khi tải file.');
-        });
+    fetch("/api/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Upload thành công:", data);
+        alert("Tải file lên thành công!");
+      })
+      .catch((err) => {
+        console.error("Lỗi khi upload:", err);
+        alert("Có lỗi khi tải file.");
+      });
+  }
+}
+// Gọi hàm khi DOM load
+document.addEventListener("DOMContentLoaded", initFileDrop);
+
+// Testimonial xử lý slider
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.getElementById("testimonial-slider");
+  if (slider) {
+    // Chỉ chạy nếu tìm thấy slider
+    const track = slider.querySelector(".testimonials__track");
+    const slides = Array.from(track.children);
+    const dotsContainer = document.getElementById("testimonial-dots");
+    // 1. Tạo các dấu chấm
+    slides.forEach((slide, index) => {
+      const dot = document.createElement("button");
+      dot.classList.add("testimonials__dot");
+      if (index === 0) {
+        dot.classList.add("testimonials__dot--active");
+      }
+
+      dot.addEventListener("click", () => {
+        goToSlide(index);
+      });
+      dotsContainer.appendChild(dot);
+    });
+    const dots = Array.from(dotsContainer.children);
+    // 2. Hàm di chuyển slide
+    function goToSlide(index) {
+      // Di chuyển track
+      track.style.transform = "translateX(-" + index * 100 + "%)";
+
+      // Cập nhật active dot
+      dots.forEach((dot) => dot.classList.remove("testimonials__dot--active"));
+      dots[index].classList.add("testimonials__dot--active");
     }
   }
 });
 
+function parseJwt(token) {
+  return JSON.parse(atob(token.split(".")[1]));
+}
 
+document.addEventListener("DOMContentLoaded", function () {
+  const auth = document.querySelector(".auth");
+  const userBox = document.querySelector(".auth__user");
+  const avatar = document.querySelector(".auth__avatar");
+  const logoutBtn = document.querySelector(".auth__logout");
+
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    auth.classList.add("auth--logged-in");
+  }
+
+  const payload = parseJwt(localStorage.getItem("token"));
+
+  document.querySelector(".auth__name").innerText = payload.fullName;
+
+  if (avatar) {
+    avatar.addEventListener("click", () => {
+      userBox.classList.toggle("auth__user--show-menu");
+    });
+  }
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("token");
+      localStorage.removeItem("refreshToken");
+
+      window.location.reload();
+    });
+  }
+});

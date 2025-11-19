@@ -1,5 +1,7 @@
 const BASE_URL = "https://localhost:7109/";
 
+const $ = window.jQuery;
+
 async function callApi({
   url,
   method = "GET",
@@ -12,12 +14,12 @@ async function callApi({
       url: BASE_URL + url,
       type: method,
       data: data
-        ? contentType.includes("json")
-          ? JSON.stringify(data)
+        ? contentType && contentType.includes("json")
+          ? data
           : data
         : null,
-      processData: contentType.includes("json"),
-      contentType: contentType,
+      processData: typeof contentType === "string" && contentType.includes("json"),
+      contentType: contentType || undefined,
       headers: token ? { Authorization: "Bearer " + token } : {},
       success: (res) => resolve(res),
       error: (xhr) => reject(xhr),

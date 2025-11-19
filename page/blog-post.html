@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404</title>
+    <title>Travel Blogs - Post</title>
     <!-- Favicon -->
     <link
       rel="icon"
@@ -88,14 +88,35 @@
 
       <section class="blog-similar"></section>
 
+      <hr />
+      <div class="blog-comments container">
+        <h3 class="blog-comments__title">Comments</h3>
+
+        <div class="blog-comments__login-required" style="display: none">
+          <p>You need Log In to comment.</p>
+          <button class="btn-login-comment">Log In</button>
+        </div>
+
+        <!-- Form nhập bình luận -->
+        <div class="blog-comments__form" style="display: none">
+          <textarea
+            class="blog-comments__input"
+            placeholder="Type something..."
+          ></textarea>
+          <button class="blog-comments__submit">Send</button>
+        </div>
+
+        <div class="blog-comments__list"></div>
+      </div>
+
       <footer id="footer" class="footer"></footer>
       <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-      <script type="module" src="../assets/js/blog-post.js"></script>
       <script src="../assets/js/scripts.js"></script>
       <script>
         load("#header", "../template/header.html");
         load("#footer", "../template/footer.html");
       </script>
+      <script type="module" src="../assets/js/blog-post.js"></script>
     </div>
   </body>
 </html>

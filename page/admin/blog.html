@@ -29,6 +29,7 @@
             overflow: hidden;
             border: none;
             padding: 0.5rem 1rem;
+            vertical-align: middle !important;
         }
 
         .card {
@@ -46,6 +47,14 @@
             bottom: 0;
             background: #f8f9fa;
             z-index: 2;
+        }
+        .status-pill {
+            display: inline-block;
+            border: 2px solid;
+            border-radius: 9999px;
+            padding: 6px 18px;
+            background-color: transparent;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -82,7 +91,9 @@
                                         <th>No.</th>
                                         <th>Title</th>
                                         <th>Category</th>
+                                        <th>Destination</th>
                                         <th>Article</th>
+                                        <th>Status</th>
                                         <th style="padding-left: 24px;">Actions</th>
                                     </tr>
                                 </thead>

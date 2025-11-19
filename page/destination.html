@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Destination</title>
+    <title>Travel Blogs - Destination</title>
     <!-- Favicon -->
     <link
       rel="icon"
@@ -24,18 +24,20 @@
     <!-- Font Manrope -->
     <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css" />
     <!-- Main CSS -->
-    <link rel="stylesheet" href="../assets/css/styles.min.css" />
     <link rel="stylesheet" href="../assets/css/main.css" />
 
-    <!-- JS -->
-    <script src="../assets/js/scripts.js"></script>
+    <!-- CDN Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
     <header id="header" class="header"></header>
-    <script>
-      load("#header", "../template/header.html");
-    </script>
 
     <section class="hero">
       <div class="container">
@@ -123,21 +125,11 @@
             <label for="popular" class="navtab-label">Popular</label>
           </div>
           <div class="navtab-item">
-            <input
-              type="radio"
-              name="tab"
-              id="region"
-              class="navtab-input"
-            />
+            <input type="radio" name="tab" id="region" class="navtab-input" />
             <label for="region" class="navtab-label">Regions</label>
           </div>
           <div class="navtab-item">
-            <input
-              type="radio"
-              name="tab"
-              id="country"
-              class="navtab-input"
-            />
+            <input type="radio" name="tab" id="country" class="navtab-input" />
             <label for="country" class="navtab-label">Countries</label>
           </div>
           <div class="navtab-item">
@@ -470,7 +462,9 @@
       </div>
     </section>
     <footer id="footer" class="footer"></footer>
+    <script src="../assets/js/scripts.js"></script>
     <script>
+      load("#header", "../template/header.html");
       load("#footer", "../template/footer.html");
     </script>
   </body>

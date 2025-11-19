@@ -4,12 +4,20 @@ import { authentication } from "../credentials.js";
 var editor;
 var apiCategory = "api/v1/admin/categories/search";
 var blogApi = "api/v1/admin/blogs";
+var countryApi = "api/v1/admin/countries/search";
+var destinationApi = "api/v1/admin/countries/{id}/destinations";
 var thumbnailId = "";
 
 $(document).ready(async function () {
   initEditor();
   await authentication();
   await loadCategories();
+  await loadCountries();
+
+  $(document).on("change", "#countrySelect", async function () {
+    const countryId = $(this).val();
+    await loadDestinationsByCountry(countryId);
+  });
 });
 
 $(document).on("DOMContentLoaded", function () {});
@@ -79,7 +87,7 @@ async function loadCategories() {
   const res = await callApi({
     url: apiCategory,
     method: "POST",
-    data: { ignorePagination: true },
+    data: JSON.stringify({ ignorePagination: true }),
     token: token,
   });
 
@@ -115,4 +123,36 @@ function saveBlog() {
     .catch((error) => {
       console.log("Saving failed: ", error);
     });
+}
+
+async function loadCountries() {
+  const token = localStorage.getItem("token");
+  const res = await callApi({
+    url: countryApi,
+    method: "POST",
+    data: JSON.stringify({ ignorePagination: true }),
+    token: token,
+  });
+
+  const select = $("#countrySelect");
+  select.empty().append('<option value="">-- Select Country --</option>');
+  res.result.data.forEach((country) => {
+    select.append(`<option value="${country.id}">${country.name}</option>`);
+  });
+}
+
+async function loadDestinationsByCountry(id) {
+  const token = localStorage.getItem("token");
+  const url = destinationApi.replace("{id}", id);
+  const res = await callApi({
+    url: url,
+    method: "GET",
+    token: token,
+  });
+
+  const select = $("#destinationSelect");
+  select.empty().append('<option value="">-- Select Destination --</option>');
+  res.result.result.forEach((destination) => {
+    select.append(`<option value="${destination.id}">${destination.name}</option>`);
+  });
 }

@@ -1,24 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More In Place</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
+    <!-- Font Heading Syne  -->
+    <link rel="stylesheet" href="../assets/font/Syne/stylesheet.css" />
+    <!-- Font Manrope -->
+    <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
-  <link rel="shortcut icon" href="../favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="../favicon/site.webmanifest" />
-  <!-- Font Heading Syne  -->
-  <link rel="stylesheet" href="../assets/font/Syne/stylesheet.css">
-  <!-- Font Manrope -->
-  <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css">
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../assets/css/main.css">
-</head>
+    <!-- CDN Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body></body>
+  <body>
+    <header id="header" class="header"></header>
 
+    <main>
+      <section class="hero-places">
+        <img src="../assets/images/more in place/Map.png" alt="" class="hero-places__bg-map" />
+        
+        <div class="container">
+          <div class="hero-places__inner">
+            <h1 class="hero-places__heading">
+              Must see attractions <br />
+              in Sydney <img src="../assets/images/more in place/image 917.png" alt="emoji" class="hero-places__emoji" />
+            </h1>
+            <p class="section-desc hero-places__desc">
+              Discover the world with local experts, one tailor-made trip at a time. One planet. Endless possibilities. The most amazing destinations in the world are waiting for you.
+            </p>
+
+            <div class="hero-places__gallery">
+              <div class="hero-places__circle-item">
+                <img src="../assets/images/more in place/Rectangle 6084.png" alt="Attraction" class="hero-places__circle-img" />
+              </div>
+              <div class="hero-places__circle-item">
+                <img src="../assets/images/more in place/Rectangle 6085.png" alt="Attraction" class="hero-places__circle-img" />
+              </div>
+              <div class="hero-places__circle-item">
+                <img src="../assets/images/more in place/Rectangle 6086.png" alt="Attraction" class="hero-places__circle-img" />
+              </div>
+              <div class="hero-places__circle-item">
+                <img src="../assets/images/more in place/Rectangle 6088.png" alt="Attraction" class="hero-places__circle-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="places-list">
+        <div class="container">
+          <div class="places-list__filter">
+            <button class="btn-filter btn-filter--active">Sights</button>
+            <button class="btn-filter">Restaurants</button>
+            <button class="btn-filter">Entertainment</button>
+            <button class="btn-filter">Shopping</button>
+            <button class="btn-filter">Hotels</button>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-5 justify-content-center">
+            <div class="col d-flex justify-content-center">
+              <article class="place-card">
+                <div class="place-card__thumb">
+                  <img src="../assets/images/more in place/Rectangle 6097.png" alt="Bondi Beach" class="place-card__img" />
+                  <span class="place-card__tag">
+                     <img src="../assets/images/more in place/Location.png" alt="icon"> Sydney
+                  </span>
+                </div>
+                <div class="place-card__content">
+                  <h7 class="place-card__title">Bondi Beach</h7>
+                  <p class="place-card__desc">Definitively Sydney, Bondi is one of the world's great beaches. It's the closest ocean...</p>
+                  <div class="place-card__rating">
+                     <img src="../assets/images/more in place/Star.png" style="width:16px; height:16px;" alt="">
+                    <span>4.5 Ratings</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+              <article class="place-card">
+                <div class="place-card__thumb">
+                  <img src="../assets/images/more in place/Rectangle 6097 (3).png" alt="Sydney Harbour Bridge" class="place-card__img" />
+                  <span class="place-card__tag">
+                     <img src="../assets/images/more in place/Location.png" alt="icon"> Sydney
+                  </span>
+                </div>
+                <div class="place-card__content">
+                  <h7 class="place-card__title">Sydney Harbour Bridge</h7>
+                  <p class="place-card__desc">Sydneysiders love their giant 'coathanger', which opened in 1932. The best way to...</p>
+                  <div class="place-card__rating">
+                     <img src="../assets/images/more in place/Star.png" style="width:16px; height:16px;" alt="">
+                    <span>4.8 Ratings</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+              <article class="place-card">
+                <div class="place-card__thumb">
+                  <img src="../assets/images/more in place/Rectangle 6097 (4).png" alt="Watsons Bay" class="place-card__img" />
+                  <span class="place-card__tag">
+                     <img src="../assets/images/more in place/Location.png" alt="icon"> Sydney
+                  </span>
+                </div>
+                <div class="place-card__content">
+                  <h7 class="place-card__title">Watsons Bay</h7>
+                  <p class="place-card__desc">Lovely Watsons Bay, east of the city center and north of Bondi, was once a small...</p>
+                  <div class="place-card__rating">
+                     <img src="../assets/images/more in place/Star.png" style="width:16px; height:16px;" alt="">
+                    <span>4.9 Ratings</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+              <article class="place-card">
+                <div class="place-card__thumb">
+                  <img src="../assets/images/more in place/Rectangle 6097 (2).png" alt="Bondi Beach" class="place-card__img" />
+                  <span class="place-card__tag">
+                     <img src="../assets/images/more in place/Location.png" alt="icon"> Sydney
+                  </span>
+                </div>
+                <div class="place-card__content">
+                  <h7 class="place-card__title">Bondi Beach</h7>
+                  <p class="place-card__desc">Definitively Sydney, Bondi is one of the world's great beaches. It's the closest ocean...</p>
+                  <div class="place-card__rating">
+                     <img src="../assets/images/more in place/Star.png" style="width:16px; height:16px;" alt="">
+                    <span>4.5 Ratings</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+            
+            <div class="col d-flex justify-content-center">
+              <article class="place-card">
+                <div class="place-card__thumb">
+                  <img src="../assets/images/more in place/Rectangle 6097 (5).png" alt="Sydney Harbour Bridge" class="place-card__img" />
+                  <span class="place-card__tag">
+                     <img src="../assets/images/more in place/Location.png" alt="icon"> Sydney
+                  </span>
+                </div>
+                <div class="place-card__content">
+                  <h7 class="place-card__title">Sydney Harbour Bridge</h7>
+                  <p class="place-card__desc">Sydneysiders love their giant 'coathanger', which opened in 1932. The best way to...</p>
+                  <div class="place-card__rating">
+                     <img src="../assets/images/more in place/Star.png" style="width:16px; height:16px;" alt="">
+                    <span>4.8 Ratings</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+              <article class="place-card">
+                <div class="place-card__thumb">
+                  <img src="../assets/images/more in place/Rectangle 6097 (9).png" alt="Watsons Bay" class="place-card__img" />
+                  <span class="place-card__tag">
+                     <img src="../assets/images/more in place/Location.png" alt="icon"> Sydney
+                  </span>
+                </div>
+                <div class="place-card__content">
+                  <h7 class="place-card__title">Watsons Bay</h7>
+                  <p class="place-card__desc">Lovely Watsons Bay, east of the city center and north of Bondi, was once a small...</p>
+                  <div class="place-card__rating">
+                     <img src="../assets/images/more in place/Star.png" style="width:16px; height:16px;" alt="">
+                    <span>4.9 Ratings</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+              <article class="place-card">
+                <div class="place-card__thumb">
+                  <img src="../assets/images/more in place/Rectangle 6097 (2).png" alt="Bondi Beach" class="place-card__img" />
+                  <span class="place-card__tag">
+                     <img src="../assets/images/more in place/Location.png" alt="icon"> Sydney
+                  </span>
+                </div>
+                <div class="place-card__content">
+                  <h7 class="place-card__title">Bondi Beach</h7>
+                  <p class="place-card__desc">Definitively Sydney, Bondi is one of the world's great beaches. It's the closest ocean...</p>
+                  <div class="place-card__rating">
+                     <img src="../assets/images/more in place/Star.png" style="width:16px; height:16px;" alt="">
+                    <span>4.5 Ratings</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+              <article class="place-card">
+                <div class="place-card__thumb">
+                  <img src="../assets/images/more in place/Rectangle 6097 (3).png" alt="Sydney Harbour Bridge" class="place-card__img" />
+                  <span class="place-card__tag">
+                     <img src="../assets/images/more in place/Location.png" alt="icon"> Sydney
+                  </span>
+                </div>
+                <div class="place-card__content">
+                  <h7 class="place-card__title">Sydney Harbour Bridge</h7>
+                  <p class="place-card__desc">Sydneysiders love their giant 'coathanger', which opened in 1932. The best way to...</p>
+                  <div class="place-card__rating">
+                     <img src="../assets/images/more in place/Star.png" style="width:16px; height:16px;" alt="">
+                    <span>4.8 Ratings</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+              <article class="place-card">
+                <div class="place-card__thumb">
+                  <img src="../assets/images/more in place/Rectangle 6097 (4).png" alt="Watsons Bay" class="place-card__img" />
+                  <span class="place-card__tag">
+                     <img src="../assets/images/more in place/Location.png" alt="icon"> Sydney
+                  </span>
+                </div>
+                <div class="place-card__content">
+                  <h7 class="place-card__title">Watsons Bay</h7>
+                  <p class="place-card__desc">Lovely Watsons Bay, east of the city center and north of Bondi, was once a small...</p>
+                  <div class="place-card__rating">
+                     <img src="../assets/images/more in place/Star.png" style="width:16px; height:16px;" alt="">
+                    <span>4.9 Ratings</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+              <article class="place-card">
+                <div class="place-card__thumb">
+                  <img src="../assets/images/more in place/Rectangle 6097.png" alt="Bondi Beach" class="place-card__img" />
+                  <span class="place-card__tag">
+                     <img src="../assets/images/more in place/Location.png" alt="icon"> Sydney
+                  </span>
+                </div>
+                <div class="place-card__content">
+                  <h7 class="place-card__title">Bondi Beach</h7>
+                  <p class="place-card__desc">Definitively Sydney, Bondi is one of the world's great beaches. It's the closest ocean...</p>
+                  <div class="place-card__rating">
+                     <img src="../assets/images/more in place/Star.png" style="width:16px; height:16px;" alt="">
+                    <span>4.5 Ratings</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+              <article class="place-card">
+                <div class="place-card__thumb">
+                  <img src="../assets/images/more in place/Rectangle 6097 (5).png" alt="Sydney Harbour Bridge" class="place-card__img" />
+                  <span class="place-card__tag">
+                     <img src="../assets/images/more in place/Location.png" alt="icon"> Sydney
+                  </span>
+                </div>
+                <div class="place-card__content">
+                  <h7 class="place-card__title">Sydney Harbour Bridge</h7>
+                  <p class="place-card__desc">Sydneysiders love their giant 'coathanger', which opened in 1932. The best way to...</p>
+                  <div class="place-card__rating">
+                     <img src="../assets/images/more in place/Star.png" style="width:16px; height:16px;" alt="">
+                    <span>4.8 Ratings</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+              <article class="place-card">
+                <div class="place-card__thumb">
+                  <img src="../assets/images/more in place/Rectangle 6097 (9).png" alt="Watsons Bay" class="place-card__img" />
+                  <span class="place-card__tag">
+                     <img src="../assets/images/more in place/Location.png" alt="icon"> Sydney
+                  </span>
+                </div>
+                <div class="place-card__content">
+                  <h7 class="place-card__title">Watsons Bay</h7>
+                  <p class="place-card__desc">Lovely Watsons Bay, east of the city center and north of Bondi, was once a small...</p>
+                  <div class="place-card__rating">
+                     <img src="../assets/images/more in place/Star.png" style="width:16px; height:16px;" alt="">
+                    <span>4.9 Ratings</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="text-center mt-5">
+            <button class="places-list__btn">Load More</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="footer"></footer>
+
+    <script src="../assets/js/scripts.js"></script>
+    <script>
+      load("#header", "../template/header.html");
+      load("#footer", "../template/footer.html");
+    </script>
+  </body>
 </html>
