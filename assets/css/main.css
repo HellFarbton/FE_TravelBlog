@@ -3267,6 +3267,317 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(0);
   }
 }
+.hero-places {
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 100px;
+  background-color: #fffbea;
+  overflow: hidden;
+  text-align: center;
+}
+.hero-places__bg-map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+  object-fit: contain;
+  z-index: 0;
+  opacity: 1;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.hero-places__inner {
+  position: relative;
+  z-index: 2;
+}
+.hero-places__heading {
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 5.6rem;
+  line-height: 1;
+  color: #191B1D;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+.hero-places__emoji {
+  width: 103px;
+  height: 64px;
+  vertical-align: top;
+}
+.hero-places__desc {
+  font-family: "Manrope";
+  font-size: 1.8rem;
+  color: #5B5D5F;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 80px;
+}
+.hero-places__gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.hero-places__circle-item {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: none;
+}
+.hero-places__circle-item:nth-child(even) {
+  transform: translateY(40px);
+}
+.hero-places__circle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.hero-places__circle-img:hover {
+  transform: scale(1.1);
+}
+
+.places-list {
+  padding-top: 80px;
+  padding-bottom: 120px;
+  background-color: #fff;
+}
+.places-list__filter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 60px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.btn-filter {
+  font-family: "Manrope";
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #191B1D;
+  background: #fff;
+  border: 1px solid #EBEBEB;
+  padding: 10px 28px;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn-filter:hover {
+  background-color: #f9f9f9;
+  border-color: #ddd;
+}
+.btn-filter--active {
+  background-color: #FF5B2D;
+  color: #fff;
+  border-color: #FF5B2D;
+  box-shadow: 0 4px 12px rgba(255, 91, 45, 0.25);
+}
+.btn-filter--active:hover {
+  background-color: rgb(255, 71.0857142857, 19.5);
+}
+
+.place-card {
+  width: 370px;
+  height: 528px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease;
+}
+.place-card:hover {
+  transform: translateY(-10px);
+}
+.place-card:hover .place-card__img {
+  transform: scale(1.2);
+}
+.place-card__thumb {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.place-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.place-card__tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: "Manrope";
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #191B1D;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  z-index: 1;
+}
+.place-card__tag img {
+  width: 12px;
+  height: auto;
+}
+.place-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.place-card__title {
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #191B1D;
+  margin-bottom: 12px;
+  line-height: 28px;
+  min-height: 56px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.place-card__desc {
+  font-family: "Manrope";
+  color: #7D7D7D;
+  line-height: 1.75;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.place-card__rating {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Manrope";
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #191B1D;
+}
+
+.places-list__btn {
+  background-image: linear-gradient(to right, #FF512F 0%, #F09819 51%, #FF512F 100%);
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 42px;
+  display: block;
+  border: none;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin: 50px auto 0 auto;
+}
+.places-list__btn:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 991.98px) {
+  .hero-places__bg-map {
+    top: 60%;
+    opacity: 0.6;
+  }
+}
+@media (max-width: 767.98px) {
+  .hero-places {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+  .hero-places__heading {
+    font-size: 3.6rem;
+    margin-bottom: 16px;
+  }
+  .hero-places__emoji {
+    width: 50px;
+    height: 32px;
+    margin-left: 4px;
+  }
+  .hero-places__desc {
+    font-size: 1.6rem;
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+  .hero-places__gallery {
+    gap: 15px;
+  }
+  .hero-places__circle-item {
+    width: 140px;
+    height: 140px;
+  }
+  .hero-places__circle-item:nth-child(even) {
+    transform: none;
+  }
+  .places-list {
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+  .places-list__filter {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  .btn-filter {
+    padding: 8px 20px;
+    font-size: 1.4rem;
+  }
+  .place-card {
+    width: 100%;
+    max-width: 370px;
+    height: auto;
+    margin: 0 auto;
+  }
+  .place-card__thumb {
+    height: 280px;
+  }
+  .place-card__content {
+    padding-bottom: 10px;
+  }
+  .place-card__title {
+    font-size: 2rem;
+    line-height: 26px;
+    min-height: 52px;
+  }
+  .places-list__btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 30px;
+    font-size: 1.4rem;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 374.98px) {
+  .hero-places__circle-item {
+    width: 120px;
+    height: 120px;
+  }
+}
 .hero {
   padding-top: 120px;
   padding-bottom: 100px;
