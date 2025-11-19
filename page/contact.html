@@ -41,30 +41,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pathway</title>
   <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+  <link rel="shortcut icon" href="./favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="./favicon/site.webmanifest" />
   <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
   <link rel="shortcut icon" href="../favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
   <link rel="manifest" href="../favicon/site.webmanifest" />
   <!-- Font Heading Syne  -->
+  <link rel="stylesheet" href="./assets/font/Syne/stylesheet.css">
   <link rel="stylesheet" href="../assets/font/Syne/stylesheet.css">
   <!-- Font Manrope -->
+  <link rel="stylesheet" href="./assets/font/Manrope/stylesheet.css">
   <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css">
   <!-- Main CSS -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/styles.min.css">
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="../assets/css/styles.min.css">
   <link rel="stylesheet" href="../assets/css/contact.css">
- 
+  <link rel="stylesheet" href="../assets/css/header-footer.css">
   <!-- Script -->
+  <script src="./assets/js/scripts.js"></script>
   <script src="../assets/js/scripts.js"></script>
 </head>
 
 <body>
   <header id="header" class="header"></header>
   <script>
+    load("#header", "./template/header.html");
     load("#header", "../template/header.html");
   </script>
 
+  <div class="container" style="min-height: 100ch;">
+  </div>
   <!-- Contact Hero Section -->
   <section class="contact-hero">
     <div class="container">
@@ -146,8 +159,7 @@
 
   </footer>
   <script>
+    load("#footer", "./template/footer.html");
     load("#footer", "../template/footer.html");
   </script>
 </body>
-
-</html>
