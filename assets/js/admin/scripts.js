@@ -9,6 +9,11 @@ $(document).ready(async function () {
 loadTemplate("header", "../../template/admin/header.html");
 loadTemplate("sidebar", "../../template/admin/sidebar.html");
 
+$("#btnLogout").on("click", "#btnLogout", function () {
+    localStorage.removeItem("admin_token");
+    window.location.href = "page/admin/authentication-login.html";
+});
+
 function loadTemplate(selector, path) {
     fetch(path)
         .then(res => res.text())

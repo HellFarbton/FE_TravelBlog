@@ -119,6 +119,7 @@
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease;
+  position: relative;
 
   &:hover {
     transform: translateY(-5px);
@@ -158,6 +159,139 @@
       i {
         color: #e74c3c;
       }
+    }
+  }
+
+  &__status {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.6rem 0.6rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow-y: auto;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px; // tăng font tổng thể
+
+  &.active {
+    display: block;
+  }
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  &__content {
+    background: #fff;
+    width: 85vw; // modal rộng hơn
+    max-width: 1250px;
+    height: 90vh; // chiếm gần hết màn hình
+    margin: 3vh auto;
+    padding: 2.2rem 2.8rem;
+    border-radius: 14px;
+    position: relative;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeUp 0.25s ease-out;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
+      font-weight: 800;
+      color: #e74c3c;
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    background: transparent;
+    border: none;
+    font-size: 2.8rem;
+    cursor: pointer;
+    color: #777;
+
+    &:hover {
+      color: #e74c3c;
+    }
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.create-post-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  overflow-y: auto;
+  padding-right: 6px;
+
+  label {
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+
+  input[type="text"],
+  select,
+  input[type="file"] {
+    padding: 1rem;
+    font-size: 1.3rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 10px;
+  }
+
+  #editorjs {
+    min-height: 350px;
+    border: 1px solid #cbd5e0;
+    border-radius: 12px;
+    padding: 12px;
+    background: #fafafa;
+  }
+
+  .btn-submit {
+    background-color: #e74c3c;
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 1.1rem;
+    font-size: 1.45rem;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 1rem;
+    transition: 0.25s;
+
+    &:hover {
+      background-color: darken(#e74c3c, 8%);
     }
   }
 }

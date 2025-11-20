@@ -1,4 +1,5 @@
 import { callApi, uploadFileApi } from "../apiHelper.js";
+import { getCurrentUserId } from "../common.js";
 
 var editor;
 var apiCategory = "api/v1/admin/categories/search";
@@ -109,7 +110,7 @@ function saveBlog() {
           title: $("#title-input").val(),
           content: JSON.stringify(outputData),
           thumbnailId: thumbnailId,
-          authorId: 1,
+          authorId: getCurrentUserId(),
           categoryId: $("#categorySelect").val(),
           destinationId: 1,
         }),

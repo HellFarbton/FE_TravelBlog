@@ -4978,6 +4978,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease;
+  position: relative;
 }
 .post-card:hover {
   transform: translateY(-5px);
@@ -5012,6 +5013,216 @@ h1, h2, h3, h4, h5, h6 {
 }
 .post-card__content > .post-card__destination i {
   color: #e74c3c;
+}
+.post-card__status {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.6rem 0.6rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  user-select: none;
+  pointer-events: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow-y: auto;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+}
+.modal.active {
+  display: block;
+}
+.modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+.modal__content {
+  background: #fff;
+  width: 85vw;
+  max-width: 1250px;
+  height: 90vh;
+  margin: 3vh auto;
+  padding: 2.2rem 2.8rem;
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeUp 0.25s ease-out;
+}
+.modal__content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+  font-weight: 800;
+  color: #e74c3c;
+}
+.modal__close-btn {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  background: transparent;
+  border: none;
+  font-size: 2.8rem;
+  cursor: pointer;
+  color: #777;
+}
+.modal__close-btn:hover {
+  color: #e74c3c;
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.create-post-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+.create-post-form label {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.create-post-form input[type=text],
+.create-post-form select,
+.create-post-form input[type=file] {
+  padding: 1rem;
+  font-size: 1.3rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 10px;
+}
+.create-post-form #editorjs {
+  min-height: 350px;
+  border: 1px solid #cbd5e0;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fafafa;
+}
+.create-post-form .btn-submit {
+  background-color: #e74c3c;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 1.1rem;
+  font-size: 1.45rem;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 1rem;
+  transition: 0.25s;
+}
+.create-post-form .btn-submit:hover {
+  background-color: rgb(222.7808219178, 45.698630137, 27.4191780822);
+}
+
+.post-detail {
+  max-width: 900px;
+  margin: auto;
+  padding-top: 158px;
+  padding-bottom: 70px;
+  font-size: 1.3rem;
+  font-family: "Manrope", sans-serif;
+}
+.post-detail__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.post-detail__btn {
+  padding: 12px 22px;
+  font-size: 1.6rem;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  transition: 0.25s;
+}
+.post-detail__btn--back {
+  padding: 0px;
+}
+.post-detail__btn--back:hover {
+  color: #e74c3c;
+}
+.post-detail__btn--cancel {
+  background: #c0392b;
+  color: white;
+}
+.post-detail__btn--cancel:hover {
+  background: rgb(162.8323404255, 48.3408510638, 36.4676595745);
+}
+.post-detail__title {
+  margin-top: 5px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.post-detail__status {
+  padding: 6px 18px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+}
+.post-detail__status--publish {
+  background: #27ae60;
+}
+.post-detail__status--in-review {
+  background: #f39c12;
+}
+.post-detail__status--cancelled {
+  background: #c0392b;
+}
+.post-detail__status--all {
+  background: #7f8c8d;
+}
+.post-detail__thumbnail {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 25px 0;
+}
+@media (max-width: 768px) {
+  .post-detail__thumbnail {
+    height: 300px;
+  }
+}
+.post-detail__info {
+  font-size: 1.25rem;
+  color: #555;
+}
+.post-detail__info p {
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.post-detail__content {
+  margin-top: 32px;
+  line-height: 1.65;
+  font-size: 1.25rem;
 }
 
 /*# sourceMappingURL=main.css.map */

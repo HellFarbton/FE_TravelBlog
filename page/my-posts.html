@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travel Blogs - FAQ</title>
+    <title>Travel Blogs - My Posts</title>
     <link rel="stylesheet" href="../assets/css/main.css" />
     <link
       rel="stylesheet"
@@ -29,6 +29,32 @@
     <link rel="manifest" href="../favicon/site.webmanifest" />
     <!-- Font Manrope -->
     <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css" />
+
+    <style>
+      #editorjs {
+        min-height: fit-content !important;
+      }
+
+      .container-card {
+        margin: 0 auto;
+        padding: 100px 20px 0px 20px;
+      }
+
+      .codex-editor .codex-editor__redactor {
+        padding-bottom: 0px !important;
+        min-height: 250px !important;
+      }
+
+      .ce-block__content {
+        max-width: 100% !important;
+        margin: 10px 65px 10px 20px;
+      }
+
+      .ce-toolbar {
+        left: auto !important;
+        margin-right: 10px;
+      }
+    </style>
   </head>
   <body>
     <header id="header" class="header"></header>
@@ -40,9 +66,9 @@
             <li class="my-posts__tab my-posts__tab--active" data-status="all">
               All
             </li>
-            <li class="my-posts__tab" data-status="in-review">In Review</li>
-            <li class="my-posts__tab" data-status="publish">Publish</li>
-            <li class="my-posts__tab" data-status="cancelled">Cancelled</li>
+            <li class="my-posts__tab" data-status="1">In Review</li>
+            <li class="my-posts__tab" data-status="2">Publish</li>
+            <li class="my-posts__tab" data-status="3">Cancelled/Rejected</li>
           </ul>
         </nav>
 
@@ -57,12 +83,86 @@
     </main>
 
     <footer id="footer" class="footer"></footer>
+
+    <!-- Modal Overlay -->
+    <div
+      class="modal"
+      id="create-post-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="modal__overlay"></div>
+      <div
+        class="modal__content"
+        role="document"
+        tabindex="0"
+        aria-labelledby="modal-title"
+      >
+        <button
+          class="modal__close-btn"
+          id="close-modal"
+          aria-label="Close Modal"
+        >
+          &times;
+        </button>
+        <h2 id="modal-title">Create Request Post</h2>
+        <form
+          id="create-post-form"
+          class="create-post-form"
+          enctype="multipart/form-data"
+        >
+          <label for="post-title">Title</label>
+          <input type="text" id="post-title" name="title" required />
+
+          <label for="post-country">Country</label>
+          <select id="post-country" name="country" required>
+            <option value="" disabled selected>Select country</option>
+          </select>
+
+          <label for="post-destination">Destination</label>
+          <select id="post-destination" name="destination" required disabled>
+            <option value="" disabled selected>Select destination</option>
+          </select>
+
+          <label for="post-category">Category</label>
+          <select id="post-category" name="category" required>
+            <option value="" disabled selected>Select category</option>
+          </select>
+
+          <label for="post-thumbnail">Thumbnail</label>
+          <input
+            type="file"
+            id="post-thumbnail"
+            name="thumbnail"
+            accept="image/*"
+            required
+          />
+          <img
+            id="thumbnail-preview"
+            alt="Thumbnail Preview"
+            style="max-width: 100%; margin-top: 0.5rem; display: none"
+          />
+
+          <label>Content</label>
+          <div id="editorjs"></div>
+
+          <button type="submit" class="btn-submit">Submit Post</button>
+        </form>
+      </div>
+    </div>
+
     <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../assets/js/scripts.js"></script>
     <script>
       load("#header", "../template/header.html");
       load("#footer", "../template/footer.html");
     </script>
-    <script src="../assets/js/my-posts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/raw@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script>
+    <script type="module" src="../assets/js/my-posts.js"></script>
   </body>
 </html>
