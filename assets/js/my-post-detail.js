@@ -4,6 +4,13 @@ let jq = jQuery.noConflict();
 
 const token = localStorage.getItem("token");
 
+jq(document).ready(() => {
+  if (!token) {
+    window.location.href = "sign-in.html";
+    return;
+  }
+});
+
 const postStatus = {
   0: "All",
   1: "In Review",

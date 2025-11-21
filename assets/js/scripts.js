@@ -209,6 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function parseJwt(token) {
+  if (!token) return null;
   return JSON.parse(atob(token.split(".")[1]));
 }
 
@@ -226,7 +227,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const payload = parseJwt(localStorage.getItem("token"));
 
-  document.querySelector(".auth__name").innerText = payload.fullName;
+  if (payload) {
+    document.querySelector(".auth__name").innerText = payload.fullName;
+  }
 
   if (avatar) {
     avatar.addEventListener("click", () => {
