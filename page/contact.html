@@ -39,45 +39,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pathway</title>
+  <title>Contact Us - Travel Blog</title>
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
-  <link rel="shortcut icon" href="./favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="./favicon/site.webmanifest" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
   <link rel="shortcut icon" href="../favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="../favicon/site.webmanifest" />
-  <!-- Font Heading Syne  -->
-  <link rel="stylesheet" href="./assets/font/Syne/stylesheet.css">
-  <link rel="stylesheet" href="../assets/font/Syne/stylesheet.css">
-  <!-- Font Manrope -->
-  <link rel="stylesheet" href="./assets/font/Manrope/stylesheet.css">
-  <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Main CSS -->
-  <link rel="stylesheet" href="./assets/css/main.css">
-  <link rel="stylesheet" href="./assets/css/styles.min.css">
   <link rel="stylesheet" href="../assets/css/main.css">
-  <link rel="stylesheet" href="../assets/css/styles.min.css">
-  <link rel="stylesheet" href="../assets/css/contact.css">
   <link rel="stylesheet" href="../assets/css/header-footer.css">
-  <!-- Script -->
-  <script src="./assets/js/scripts.js"></script>
+  <!-- Scripts -->
   <script src="../assets/js/scripts.js"></script>
 </head>
 
 <body>
+  <!-- Header -->
   <header id="header" class="header"></header>
   <script>
-    load("#header", "./template/header.html");
     load("#header", "../template/header.html");
   </script>
 
-  <div class="container" style="min-height: 100ch;">
-  </div>
   <!-- Contact Hero Section -->
   <section class="contact-hero">
     <div class="container">
@@ -155,11 +140,985 @@
       </form>
     </div>
   </section>
-  <footer id="footer" class="footer">
 
-  </footer>
+  <!-- Main Content -->
+  <section class="blog">
+      <div class="container">
+
+        <!-- Send Message Tab Content -->
+        <div class="tab-content" id="sendmessage-content" style="display: none;">
+          <div class="message-hero">
+            <div class="message-hero-content">
+              <h2 class="message-title">Send us a Message</h2>
+              <p class="message-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+              <div class="message-stats">
+                <div class="stat-item">
+                  <div class="stat-number">24h</div>
+                  <div class="stat-label">Response Time</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">98%</div>
+                  <div class="stat-label">Satisfaction Rate</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">24/7</div>
+                  <div class="stat-label">Support Available</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="message-main-content">
+            <div class="row">
+              <div class="col-8">
+                <div class="modern-form-container">
+                  <div class="form-header">
+                    <h3><i class="fas fa-paper-plane"></i> Contact Form</h3>
+                    <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                  </div>
+                  
+                  <form class="modern-contact-form" id="contactForm">
+                    <div class="form-section">
+                      <h4><i class="fas fa-user"></i> Personal Information</h4>
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="modern-form-group">
+                            <input type="text" id="firstName" name="firstName" required>
+                            <label for="firstName">First Name *</label>
+                            <div class="form-highlight"></div>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="modern-form-group">
+                            <input type="text" id="lastName" name="lastName" required>
+                            <label for="lastName">Last Name *</label>
+                            <div class="form-highlight"></div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="modern-form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address *</label>
+                            <div class="form-highlight"></div>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="modern-form-group">
+                            <input type="tel" id="phone" name="phone">
+                            <label for="phone">Phone Number</label>
+                            <div class="form-highlight"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-section">
+                      <h4><i class="fas fa-comment-dots"></i> Your Message</h4>
+                      <div class="modern-form-group">
+                        <select id="subject" name="subject" required>
+                          <option value="">Choose a subject</option>
+                          <option value="general">General Information</option>
+                          <option value="booking">Tour Booking</option>
+                          <option value="complaint">Complaint</option>
+                          <option value="suggestion">Suggestion</option>
+                          <option value="partnership">Partnership</option>
+                          <option value="other">Other</option>
+                        </select>
+                        <label for="subject">Subject *</label>
+                        <div class="form-highlight"></div>
+                      </div>
+                      
+                      <div class="modern-form-group">
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <label for="message">Your Message *</label>
+                        <div class="form-highlight"></div>
+                        <div class="character-count">
+                          <span id="charCount">0</span>/500 characters
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-section">
+                      <h4><i class="fas fa-check-circle"></i> Preferences</h4>
+                      <div class="modern-checkbox-group">
+                        <label class="modern-checkbox">
+                          <input type="checkbox" id="newsletter" name="newsletter">
+                          <span class="checkbox-custom"></span>
+                          <div class="checkbox-content">
+                            <strong>Newsletter Subscription</strong>
+                            <p>Receive updates about new travel packages and special offers</p>
+                          </div>
+                        </label>
+                      </div>
+                      
+                      <div class="modern-checkbox-group">
+                        <label class="modern-checkbox">
+                          <input type="checkbox" id="terms" name="terms" required>
+                          <span class="checkbox-custom required"></span>
+                          <div class="checkbox-content">
+                            <strong>Terms & Privacy *</strong>
+                            <p>I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="privacy-link">Privacy Policy</a></p>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                      <button type="submit" class="modern-submit-btn">
+                        <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                        <span class="btn-text">Send Message</span>
+                        <div class="btn-loading">
+                          <i class="fas fa-spinner fa-spin"></i>
+                        </div>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              
+              <div class="col-4">
+                <div class="message-info-panel">
+                  <div class="info-card">
+                    <div class="info-icon">
+                      <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>Customer Support</h4>
+                    <p>Our support team is available 24/7 to help you with any questions or concerns.</p>
+                  </div>
+                  
+                  <div class="info-card">
+                    <div class="info-icon">
+                      <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Privacy Protected</h4>
+                    <p>Your personal information is encrypted and securely stored according to GDPR standards.</p>
+                  </div>
+                  
+                  <div class="info-card">
+                    <div class="info-icon">
+                      <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4>Quick Response</h4>
+                    <p>We typically respond to all inquiries within 24 hours during business days.</p>
+                  </div>
+                  
+                  <div class="contact-alternatives">
+                    <h4>Other Ways to Reach Us</h4>
+                    <div class="alternative-methods">
+                      <a href="tel:+84123456789" class="alt-method">
+                        <i class="fas fa-phone"></i>
+                        <span>+84 123 456 789</span>
+                      </a>
+                      <a href="mailto:info@pathway.vn" class="alt-method">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@pathway.vn</span>
+                      </a>
+                      <a href="#" class="alt-method" onclick="document.getElementById('location').checked = true; document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none'); document.getElementById('location-content').style.display = 'block';">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Visit Our Office</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Tab Content -->
+        <div class="tab-content" id="faq-content" style="display: none;">
+          <div class="faq-hero">
+            <div class="faq-hero-content">
+              <h2 class="faq-title">Frequently Asked Questions</h2>
+              <p class="faq-subtitle">Find answers to common questions about our travel services</p>
+              <div class="faq-search-box">
+                <div class="search-input-wrapper">
+                  <i class="fas fa-search"></i>
+                  <input type="text" id="faqSearchInput" placeholder="Search for answers..." onkeyup="filterFAQ()">
+                  <button class="clear-search" onclick="clearFAQSearch()">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-main-content">
+            <div class="row">
+              <div class="col-8">
+                <div class="modern-faq-container">
+                  <div class="faq-categories">
+                    <button class="category-btn active" onclick="filterByCategory('all')">
+                      <i class="fas fa-list"></i> All Questions
+                    </button>
+                    <button class="category-btn" onclick="filterByCategory('booking')">
+                      <i class="fas fa-calendar-check"></i> Booking
+                    </button>
+                    <button class="category-btn" onclick="filterByCategory('payment')">
+                      <i class="fas fa-credit-card"></i> Payment
+                    </button>
+                    <button class="category-btn" onclick="filterByCategory('travel')">
+                      <i class="fas fa-plane"></i> Travel
+                    </button>
+                    <button class="category-btn" onclick="filterByCategory('support')">
+                      <i class="fas fa-headset"></i> Support
+                    </button>
+                  </div>
+                  
+                  <div class="modern-faq-list">
+                    <div class="modern-faq-item" data-category="booking">
+                      <div class="faq-question-modern">
+                        <div class="question-content">
+                          <div class="question-icon">
+                            <i class="fas fa-calendar-check"></i>
+                          </div>
+                          <div class="question-text">
+                            <h3>How do I book a tour?</h3>
+                            <span class="question-category">Booking</span>
+                          </div>
+                        </div>
+                        <div class="question-toggle">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </div>
+                      <div class="faq-answer-modern">
+                        <div class="answer-content">
+                          <p>You can book a tour through multiple convenient methods:</p>
+                          <ul>
+                            <li><strong>Online:</strong> Browse and book directly on our website</li>
+                            <li><strong>Phone:</strong> Call us at +84 123 456 789 for personalized assistance</li>
+                            <li><strong>In-person:</strong> Visit our office for face-to-face consultation</li>
+                          </ul>
+                          <p>Our team will help you choose the perfect tour based on your preferences and budget.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modern-faq-item" data-category="booking">
+                      <div class="faq-question-modern">
+                        <div class="question-content">
+                          <div class="question-icon">
+                            <i class="fas fa-ban"></i>
+                          </div>
+                          <div class="question-text">
+                            <h3>What is your cancellation policy?</h3>
+                            <span class="question-category">Booking</span>
+                          </div>
+                        </div>
+                        <div class="question-toggle">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </div>
+                      <div class="faq-answer-modern">
+                        <div class="answer-content">
+                          <p>Our cancellation policy varies based on the tour type and timing:</p>
+                          <div class="policy-table">
+                            <div class="policy-row">
+                              <span class="policy-time">30+ days before</span>
+                              <span class="policy-fee">Full refund</span>
+                            </div>
+                            <div class="policy-row">
+                              <span class="policy-time">15-29 days before</span>
+                              <span class="policy-fee">80% refund</span>
+                            </div>
+                            <div class="policy-row">
+                              <span class="policy-time">7-14 days before</span>
+                              <span class="policy-fee">50% refund</span>
+                            </div>
+                            <div class="policy-row">
+                              <span class="policy-time">Less than 7 days</span>
+                              <span class="policy-fee">No refund</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modern-faq-item" data-category="travel">
+                      <div class="faq-question-modern">
+                        <div class="question-content">
+                          <div class="question-icon">
+                            <i class="fas fa-passport"></i>
+                          </div>
+                          <div class="question-text">
+                            <h3>Do you provide visa assistance?</h3>
+                            <span class="question-category">Travel</span>
+                          </div>
+                        </div>
+                        <div class="question-toggle">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </div>
+                      <div class="faq-answer-modern">
+                        <div class="answer-content">
+                          <p>Yes! We provide comprehensive visa assistance services including:</p>
+                          <ul>
+                            <li>Document preparation and review</li>
+                            <li>Application form completion</li>
+                            <li>Appointment scheduling</li>
+                            <li>Requirements checklist</li>
+                            <li>Status tracking</li>
+                          </ul>
+                          <p>Our visa specialists have years of experience and maintain high approval rates.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modern-faq-item" data-category="travel">
+                      <div class="faq-question-modern">
+                        <div class="question-content">
+                          <div class="question-icon">
+                            <i class="fas fa-user-tie"></i>
+                          </div>
+                          <div class="question-text">
+                            <h3>Are tour guides included?</h3>
+                            <span class="question-category">Travel</span>
+                          </div>
+                        </div>
+                        <div class="question-toggle">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </div>
+                      <div class="faq-answer-modern">
+                        <div class="answer-content">
+                          <p>All our tours include professional, certified tour guides who offer:</p>
+                          <ul>
+                            <li>Local expertise and cultural insights</li>
+                            <li>Multiple language capabilities</li>
+                            <li>Safety and emergency training</li>
+                            <li>Historical and cultural knowledge</li>
+                            <li>Photography assistance</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modern-faq-item" data-category="payment">
+                      <div class="faq-question-modern">
+                        <div class="question-content">
+                          <div class="question-icon">
+                            <i class="fas fa-credit-card"></i>
+                          </div>
+                          <div class="question-text">
+                            <h3>What payment methods do you accept?</h3>
+                            <span class="question-category">Payment</span>
+                          </div>
+                        </div>
+                        <div class="question-toggle">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </div>
+                      <div class="faq-answer-modern">
+                        <div class="answer-content">
+                          <p>We accept various secure payment methods:</p>
+                          <div class="payment-methods">
+                            <div class="payment-method">
+                              <i class="fab fa-cc-visa"></i>
+                              <span>Credit Cards</span>
+                            </div>
+                            <div class="payment-method">
+                              <i class="fas fa-university"></i>
+                              <span>Bank Transfer</span>
+                            </div>
+                            <div class="payment-method">
+                              <i class="fas fa-money-bill-wave"></i>
+                              <span>Cash Payment</span>
+                            </div>
+                            <div class="payment-method">
+                              <i class="fab fa-paypal"></i>
+                              <span>PayPal</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modern-faq-item" data-category="booking">
+                      <div class="faq-question-modern">
+                        <div class="question-content">
+                          <div class="question-icon">
+                            <i class="fas fa-users"></i>
+                          </div>
+                          <div class="question-text">
+                            <h3>Do you offer group discounts?</h3>
+                            <span class="question-category">Booking</span>
+                          </div>
+                        </div>
+                        <div class="question-toggle">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </div>
+                      <div class="faq-answer-modern">
+                        <div class="answer-content">
+                          <p>Yes! We offer attractive group discounts:</p>
+                          <div class="discount-table">
+                            <div class="discount-row">
+                              <span class="group-size">5-9 people</span>
+                              <span class="discount-rate">5% discount</span>
+                            </div>
+                            <div class="discount-row">
+                              <span class="group-size">10-19 people</span>
+                              <span class="discount-rate">10% discount</span>
+                            </div>
+                            <div class="discount-row">
+                              <span class="group-size">20+ people</span>
+                              <span class="discount-rate">15% discount</span>
+                            </div>
+                          </div>
+                          <p>Contact us for custom group packages and additional benefits.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-4">
+                <div class="faq-sidebar">
+                  <div class="help-card">
+                    <div class="help-icon">
+                      <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h4>Still have questions?</h4>
+                    <p>Can't find what you're looking for? Our support team is here to help!</p>
+                    <div class="help-actions">
+                      <a href="#" class="help-btn" onclick="document.getElementById('sendmessage').checked = true; document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none'); document.getElementById('sendmessage-content').style.display = 'block';">
+                        <i class="fas fa-envelope"></i> Send Message
+                      </a>
+                      <a href="tel:+84123456789" class="help-btn">
+                        <i class="fas fa-phone"></i> Call Now
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div class="popular-topics">
+                    <h4>Popular Topics</h4>
+                    <div class="topic-list">
+                      <a href="#" class="topic-item" onclick="searchFAQTopic('booking')">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Booking Process</span>
+                      </a>
+                      <a href="#" class="topic-item" onclick="searchFAQTopic('payment')">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Payment Options</span>
+                      </a>
+                      <a href="#" class="topic-item" onclick="searchFAQTopic('cancellation')">
+                        <i class="fas fa-ban"></i>
+                        <span>Cancellation Policy</span>
+                      </a>
+                      <a href="#" class="topic-item" onclick="searchFAQTopic('visa')">
+                        <i class="fas fa-passport"></i>
+                        <span>Visa Assistance</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location Tab Content -->
+        <div class="tab-content" id="location-content" style="display: none;">
+          <div class="location-hero">
+            <div class="location-hero-content">
+              <h2 class="location-title">Visit Our Office</h2>
+              <p class="location-subtitle">Come and meet our travel experts in person</p>
+              <div class="location-address-card">
+                <div class="address-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="address-details">
+                  <h3>Trường Đại Học Giao Thông Vận Tải</h3>
+                  <p>3 Cau Giay street, Lang Ha ward<br>Dong Da District, Ha Noi Capital, Vietnam</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="location-main-content">
+            <div class="row">
+              <div class="col-8">
+                <div class="modern-map-container">
+                  <div class="map-header">
+                    <h3><i class="fas fa-location-dot"></i> Interactive Map</h3>
+                    <div class="map-controls">
+                      <button class="map-btn" onclick="toggleMapView('satellite')">
+                        <i class="fas fa-satellite"></i> Satellite
+                      </button>
+                      <button class="map-btn" onclick="getDirections()">
+                        <i class="fas fa-route"></i> Directions
+                      </button>
+                    </div>
+                  </div>
+                  <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29792.905824636655!2d105.803421!3d21.028155!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab424a50fff9%3A0xbe3a7f3670c0a45f!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyBHaWFvIFRow7RuZyBW4bqtbiBU4bqjaQ!5e0!3m2!1svi!2sus!4v1759772626743!5m2!1svi!2sus" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0; border-radius: 12px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="map-overlay">
+                      <a href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+H%E1%BB%8Dc+Giao+Th%C3%B4ng+V%E1%BA%ADn+T%E1%BA%A3i/@21.0281445,105.8034943,17z/data=!4m6!3m5!1s0x3135ab424a50fff9:0xbe3a7f3670c0a45f!8m2!3d21.0281545!4d105.8034205!16s%2Fm%2F0vb3l_2?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" 
+                         target="_blank" 
+                         class="view-larger-map">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Larger Map
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-4">
+                <div class="location-info-modern">
+                  <div class="info-header">
+                    <h3><i class="fas fa-compass"></i> How to Find Us</h3>
+                  </div>
+                  
+                  <div class="transport-options">
+                    <div class="transport-card metro">
+                      <div class="transport-icon">
+                        <i class="fas fa-subway"></i>
+                      </div>
+                      <div class="transport-details">
+                        <h4>By Metro</h4>
+                        <p>Line 1 to Cau Giay Station</p>
+                        <span class="duration">1 min walk</span>
+                      </div>
+                    </div>
+                    
+                    <div class="transport-card bus">
+                      <div class="transport-icon">
+                        <i class="fas fa-bus"></i>
+                      </div>
+                      <div class="transport-details">
+                        <h4>By Bus</h4>
+                        <p>Routes 03, 19, 36</p>
+                        <span class="duration">Nearby stops</span>
+                      </div>
+                    </div>
+                    
+                    <div class="transport-card car">
+                      <div class="transport-icon">
+                        <i class="fas fa-car"></i>
+                      </div>
+                      <div class="transport-details">
+                        <h4>By Car</h4>
+                        <p>Parking available</p>
+                        <span class="duration">In building</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="contact-quick-actions">
+                    <h4><i class="fas fa-phone"></i> Need Help Finding Us?</h4>
+                    <div class="quick-actions">
+                      <a href="tel:+84123456789" class="action-btn call">
+                        <i class="fas fa-phone"></i> Call Us
+                      </a>
+                      <a href="mailto:info@pathway.vn" class="action-btn email">
+                        <i class="fas fa-envelope"></i> Email
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer" class="footer"></footer>
+      <script>
+        load("#footer", "../template/footer.html");
+      </script>
+
+      <!-- Contact Page Scripts -->
+      <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+          const tabInputs = document.querySelectorAll('.navtab-input');
+          const tabContents = document.querySelectorAll('.tab-content');
+          
+          tabInputs.forEach(input => {
+            input.addEventListener('change', function() {
+              if (this.checked) {
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                  content.style.display = 'none';
+                });
+                
+                // Show selected tab content
+                const targetContent = document.getElementById(this.id + '-content');
+                if (targetContent) {
+                  targetContent.style.display = 'block';
+                }
+              }
+            });
+          });
+        });
+
+        // FAQ Search functionality
+        function searchFAQ() {
+          const searchTerm = document.getElementById('faqSearch').value.toLowerCase();
+          const faqItems = document.querySelectorAll('.faq-item');
+          
+          faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+            const answer = item.querySelector('.faq-answer p').textContent.toLowerCase();
+            
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+              item.style.display = 'block';
+              if (searchTerm.length > 0) {
+                item.classList.add('highlight');
+              }
+            } else {
+              item.style.display = searchTerm.length > 0 ? 'none' : 'block';
+            }
+          });
+          
+          // Switch to FAQ tab if searching
+          if (searchTerm.length > 0) {
+            document.getElementById('faq').checked = true;
+            document.querySelectorAll('.tab-content').forEach(content => {
+              content.style.display = 'none';
+            });
+            document.getElementById('faq-content').style.display = 'block';
+          }
+        }
+
+    // Modern FAQ Toggle functionality
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.faq-question') || e.target.closest('.faq-question-modern')) {
+        const faqItem = e.target.closest('.faq-item') || e.target.closest('.modern-faq-item');
+        const isActive = faqItem.classList.contains('active');
+        
+        // Close all FAQ items
+        document.querySelectorAll('.faq-item, .modern-faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      }
+    });
+
+    // Character counter for message textarea
+    document.addEventListener('input', function(e) {
+      if (e.target.id === 'message') {
+        const charCount = e.target.value.length;
+        const charCountElement = document.getElementById('charCount');
+        if (charCountElement) {
+          charCountElement.textContent = charCount;
+          
+          // Change color based on character count
+          const parent = charCountElement.parentElement;
+          if (charCount > 450) {
+            parent.style.color = '#dc3545';
+          } else if (charCount > 400) {
+            parent.style.color = '#ffc107';
+          } else {
+            parent.style.color = '#6c757d';
+          }
+        }
+      }
+    });
+
+    // Enhanced FAQ search functionality
+    function filterFAQ() {
+      const searchTerm = document.getElementById('faqSearchInput').value.toLowerCase();
+      const faqItems = document.querySelectorAll('.modern-faq-item');
+      let visibleCount = 0;
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.question-text h3').textContent.toLowerCase();
+        const answer = item.querySelector('.answer-content').textContent.toLowerCase();
+        const category = item.getAttribute('data-category');
+        
+        if (question.includes(searchTerm) || answer.includes(searchTerm) || category.includes(searchTerm)) {
+          item.style.display = 'block';
+          item.classList.toggle('highlight', searchTerm.length > 0);
+          visibleCount++;
+        } else {
+          item.style.display = searchTerm.length > 0 ? 'none' : 'block';
+          item.classList.remove('highlight');
+          if (searchTerm.length === 0) visibleCount++;
+        }
+      });
+      
+      // Show/hide clear button
+      const clearBtn = document.querySelector('.clear-search');
+      if (clearBtn) {
+        clearBtn.style.display = searchTerm.length > 0 ? 'block' : 'none';
+      }
+      
+      // Show no results message
+      showNoResultsMessage(visibleCount === 0 && searchTerm.length > 0);
+    }
+
+    function clearFAQSearch() {
+      const searchInput = document.getElementById('faqSearchInput');
+      searchInput.value = '';
+      filterFAQ();
+    }
+
+    function showNoResultsMessage(show) {
+      let noResultsMsg = document.querySelector('.no-results-message');
+      
+      if (show && !noResultsMsg) {
+        noResultsMsg = document.createElement('div');
+        noResultsMsg.className = 'no-results-message';
+        noResultsMsg.innerHTML = `
+          <div style="text-align: center; padding: 3rem; color: #6c757d;">
+            <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+            <h3>No results found</h3>
+            <p>Try searching with different keywords or browse our categories.</p>
+          </div>
+        `;
+        document.querySelector('.modern-faq-list').appendChild(noResultsMsg);
+      } else if (!show && noResultsMsg) {
+        noResultsMsg.remove();
+      }
+    }
+
+    // Category filtering
+    function filterByCategory(category) {
+      const faqItems = document.querySelectorAll('.modern-faq-item');
+      const categoryBtns = document.querySelectorAll('.category-btn');
+      
+      // Update active button
+      categoryBtns.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      // Filter items
+      faqItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        if (category === 'all' || itemCategory === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      
+      // Clear search
+      const searchInput = document.getElementById('faqSearchInput');
+      if (searchInput) {
+        searchInput.value = '';
+      }
+    }
+
+    // Popular topic search
+    function searchFAQTopic(topic) {
+      const searchInput = document.getElementById('faqSearchInput');
+      if (searchInput) {
+        searchInput.value = topic;
+        filterFAQ();
+      }
+      
+      // Switch to FAQ tab
+      document.getElementById('faq').checked = true;
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.style.display = 'none';
+      });
+      document.getElementById('faq-content').style.display = 'block';
+    }
+
+    // Enhanced Contact Form Submission
+    document.addEventListener('submit', function(e) {
+      if (e.target.id === 'contactForm') {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+        
+        // Enhanced validation
+        if (!data.firstName || !data.lastName || !data.email || !data.subject || !data.message) {
+          showFormNotification('Please fill in all required fields.', 'error');
+          return;
+        }
+        
+        if (!data.terms) {
+          showFormNotification('Please agree to the Terms of Service and Privacy Policy.', 'error');
+          return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
+          showFormNotification('Please enter a valid email address.', 'error');
+          return;
+        }
+        
+        // Simulate form submission with modern loading
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnIcon = submitBtn.querySelector('.btn-icon');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        
+        // Show loading state
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+          // Success state
+          submitBtn.classList.remove('loading');
+          submitBtn.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+          btnText.textContent = 'Message Sent!';
+          btnIcon.innerHTML = '<i class="fas fa-check"></i>';
+          
+          showFormNotification('Thank you for contacting us! We will respond within 24 hours.', 'success');
+          
+          // Reset form after delay
+          setTimeout(() => {
+            e.target.reset();
+            submitBtn.disabled = false;
+            submitBtn.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+            btnText.textContent = 'Send Message';
+            btnIcon.innerHTML = '<i class="fas fa-paper-plane"></i>';
+            
+            // Reset character counter
+            const charCount = document.getElementById('charCount');
+            if (charCount) {
+              charCount.textContent = '0';
+              charCount.parentElement.style.color = '#6c757d';
+            }
+          }, 3000);
+        }, 2000);
+      }
+    });
+
+    // Form notification system
+    function showFormNotification(message, type) {
+      // Remove existing notifications
+      const existingNotifications = document.querySelectorAll('.form-notification');
+      existingNotifications.forEach(notification => notification.remove());
+      
+      const notification = document.createElement('div');
+      notification.className = `form-notification ${type}`;
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        color: white;
+        font-weight: 500;
+        z-index: 1000;
+        max-width: 400px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        animation: slideInRight 0.3s ease;
+        ${type === 'success' ? 
+          'background: linear-gradient(135deg, #28a745 0%, #20c997 100%);' : 
+          'background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);'
+        }
+      `;
+      
+      notification.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-triangle'}"></i>
+          <span>${message}</span>
+          <button onclick="this.parentElement.parentElement.remove()" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer; margin-left: auto;">×</button>
+        </div>
+      `;
+      
+      document.body.appendChild(notification);
+      
+      // Add animation styles
+      if (!document.querySelector('#notification-styles')) {
+        const style = document.createElement('style');
+        style.id = 'notification-styles';
+        style.textContent = `
+          @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+      
+      // Auto remove after 5 seconds
+      setTimeout(() => {
+        if (notification.parentElement) {
+          notification.style.animation = 'slideInRight 0.3s ease reverse';
+          setTimeout(() => notification.remove(), 300);
+        }
+      }, 5000);
+    }
+
+    // Map control functions
+    function toggleMapView(viewType) {
+      if (viewType === 'satellite') {
+        // This would typically change the map view, but since we're using an iframe,
+        // we'll show a notification instead
+        showNotification('Satellite view - Click "View Larger Map" to access satellite view on Google Maps');
+      }
+    }
+
+    function getDirections() {
+      const destination = "Trường Đại Học Giao Thông Vận Tải, 3 Cau Giay street, Lang Ha ward, Dong Da District, Ha Noi Capital, Vietnam";
+      const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
+      window.open(googleMapsUrl, '_blank');
+    }
+
+    function showNotification(message) {
+      // Create a simple notification
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0,123,255,0.3);
+        z-index: 1000;
+        font-size: 0.9rem;
+        max-width: 300px;
+        animation: slideIn 0.3s ease;
+      `;
+      notification.textContent = message;
+      document.body.appendChild(notification);
+
+      // CSS styles have been moved to main.css
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes slideIn {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Remove notification after 4 seconds
+      setTimeout(() => {
+        notification.style.animation = 'slideIn 0.3s ease reverse';
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 300);
+      }, 4000);
+    }
+
+    // CSS styles have been moved to main.css
+    // All contact page styling is now in assets/css/main.css
+  </script>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer"></footer>
   <script>
-    load("#footer", "./template/footer.html");
     load("#footer", "../template/footer.html");
   </script>
+
+</body>
+</html>
 </body>
