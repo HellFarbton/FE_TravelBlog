@@ -29,6 +29,7 @@
             overflow: hidden;
             border: none;
             padding: 0.5rem 1rem;
+            vertical-align: middle !important;
         }
 
         .card {
@@ -46,6 +47,14 @@
             bottom: 0;
             background: #f8f9fa;
             z-index: 2;
+        }
+        .status-pill {
+            display: inline-block;
+            border: 2px solid;
+            border-radius: 9999px;
+            padding: 6px 18px;
+            background-color: transparent;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -72,6 +81,13 @@
                         </button>
                     </div>
                 </div>
+                <ul class="nav nav-tabs mb-3 blog-status-tabs">
+                    <li class="nav-item"><a class="nav-link active" data-status="all" href="#">All</a></li>
+                    <li class="nav-item"><a class="nav-link" data-status="1" href="#">In Review</a></li>
+                    <li class="nav-item"><a class="nav-link" data-status="2" href="#">Approved</a></li>
+                    <li class="nav-item"><a class="nav-link" data-status="3" href="#">Rejected</a></li>
+                </ul>
+
                 <div class="card">
                     <div class="card-body p-0">
                         <div id="table" class="table-responsive"
@@ -82,8 +98,9 @@
                                         <th>No.</th>
                                         <th>Title</th>
                                         <th>Category</th>
+                                        <th>Destination</th>
                                         <th>Article</th>
-                                        <th style="padding-left: 24px;">Actions</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody class="blog-table-body">
@@ -91,7 +108,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td colspan="3">
+                                        <td colspan="7">
                                             <nav aria-label="pagination">
                                                 <ul class="pagination justify-content-center m-0">
 

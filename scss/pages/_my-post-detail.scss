@@ -1,0 +1,106 @@
+$post-color-green: #27ae60;
+$post-color-orange: #f39c12;
+$post-color-red: #c0392b;
+$post-color-gray: #7f8c8d;
+
+.post-detail {
+  max-width: 900px;
+  margin: auto;
+  padding-top: 158px;
+  padding-bottom: 70px;
+  font-size: 1.3rem;
+  font-family: "Manrope", sans-serif;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  &__btn {
+    padding: 12px 22px;
+    font-size: 1.6rem;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    transition: 0.25s;
+
+    &--back {
+      padding: 0px;
+
+      &:hover {
+        color: #e74c3c;
+      }
+    }
+
+    &--cancel {
+      background: $post-color-red;
+      color: white;
+
+      &:hover {
+        background: darken($post-color-red, 7%);
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 5px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__status {
+    padding: 6px 18px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+
+    &--publish {
+      background: $post-color-green;
+    }
+    &--in-review {
+      background: $post-color-orange;
+    }
+    &--cancelled {
+      background: $post-color-red;
+    }
+    &--all {
+      background: $post-color-gray;
+    }
+  }
+
+  &__thumbnail {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin: 25px 0;
+
+    @media (max-width: 768px) {
+      height: 300px;
+    }
+  }
+
+  &__info {
+    font-size: 1.25rem;
+    color: #555;
+
+    p {
+      margin: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  }
+
+  &__content {
+    margin-top: 32px;
+    line-height: 1.65;
+    font-size: 1.25rem;
+  }
+}

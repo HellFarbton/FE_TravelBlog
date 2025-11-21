@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Blogs</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
+    <!-- Font Manrope -->
+    <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css" />
+  </head>
+  <body>
+    <header id="header" class="header"></header>
+
+    <main class="post-detail container">
+      <div class="post-detail__header">
+        <button
+          class="post-detail__btn post-detail__btn--back"
+          onclick="history.back()"
+        >
+          ← Back
+        </button>
+
+        <button
+          id="btn-cancel"
+          class="post-detail__btn post-detail__btn--cancel"
+          style="display: none"
+        >
+          Cancel Request
+        </button>
+      </div>
+
+      <h1 class="post-detail__title">
+        <span id="post-title"></span>
+        <span id="post-status" class="post-detail__status"></span>
+      </h1>
+
+      <img id="post-thumbnail" class="post-detail__thumbnail" alt="Thumbnail" />
+
+      <div class="post-detail__info">
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          <span id="post-destination"></span>
+        </p>
+        <p><b>Category:</b> <span id="post-category"></span></p>
+      </div>
+
+      <hr />
+
+      <div id="post-content" class="post-detail__content"></div>
+    </main>
+
+    <footer id="footer" class="footer"></footer>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script>
+      load("#header", "../template/header.html");
+      load("#footer", "../template/footer.html");
+    </script>
+    <script type="module" src="../assets/js/my-post-detail.js"></script>
+  </body>
+</html>

@@ -40,6 +40,7 @@
         z-index: 1;
         max-width: 85%;
         height: auto;
+        object-fit: cover;
     }
 }
 
@@ -89,6 +90,7 @@
         font-size: 20px;
         line-height: 1;
         &::before { content: "+"; }
+        object-fit: cover;
     }
     &__answer {
         max-height: 0;

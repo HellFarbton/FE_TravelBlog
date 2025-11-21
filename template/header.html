@@ -4,14 +4,14 @@
     <button class="header__more js-toggle d-none d-lg-block " toggle-target="#navbar">
       <img src="../assets/icon/more.svg" alt="" class="header__more-icon" />
     </button>
-    <div class="logo">
+    <a href="../index.html" class="logo">
       <img
         src="../assets/images/logos/favicon.png"
         alt="Pathway Logo"
         class="me-2"
       />
-      <span>Pathway</span>
-    </div>
+      TravelBlogs
+    </a>
 
     <!-- Menu -->
     <nav class="nav hide" id="navbar">
@@ -20,21 +20,33 @@
       </button>
       <ul class="nav-list">
         <li><a href="../page/destination.html">Destinations</a></li>
-        <li><a href="#!">About</a></li>
+        <li><a href="../page/about.html">About</a></li>
         <li><a href="../page/blog.html">Blog</a></li>
-        <li><a href="#!">Page</a></li>
+        <li><a href="../page/contact.html">Contact</a></li>
         <div class="nav-seperator show-on-mobile"></div>
-        <li class="show-on-mobile"><a href="#!" >Sign In</a></li>
-        <li class="show-on-mobile"><a href="#!" >Sign Up</a></li>
+        <li class="show-on-mobile"><a href="../page/sign-in.html" >Sign In</a></li>
+        <li class="show-on-mobile"><a href="../page/sign-up.html" >Sign Up</a></li>
       </ul>
     </nav>
 
-    <!-- Auth buttons -->
-    <div class="auth d-sm-none">
-      <a href="#!" class="login">Log In</a>
-      <a href="#!" class="btn btn__signup">Sign Up</a>
+    <div class="auth d-sm-none d-lg-flex">
+      <div class="auth__guest">
+        <a href="../page/sign-in.html" class="login">Sign In</a>
+        <a href="../page/sign-up.html" class="btn btn__signup">Sign Up</a>
+      </div>
+
+      <div class="auth__user">
+        <div>Hello, <span class="auth__name">User Name</span></div>
+        <span class="auth__avatar"><i class="fa fa-user"></i></span>
+        <div class="auth__menu">
+          <a href="../page/my-posts.html" class="auth__link">
+            <i class="fa-solid fa-blog"></i>
+            <p>My Posts</p>
+          </a>
+          <button class="auth__logout">Log Out</button>
+        </div>
+      </div>
     </div>
     <div class="nav__overlay js-toggle" toggle-target="#navbar"></div>
   </div>
 </div>
-

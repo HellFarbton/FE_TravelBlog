@@ -57,14 +57,41 @@
                     </div>
                 </div>
                 <br>
-                <p>Category</p>
-                <div class="category mb-4">
-                    <label for="categorySelect"></label>
-                    <select id="categorySelect" class="form-select">
-                        <option value="">-- Select Category --</option>
-                    </select>
+                 <p>Title</p>
+                <div class="card">
+                    <div class="card-body p-0">
+                        <input id="title-input" type="text" placeholder="Enter blog's title"
+                            style="width: 100%; border: 0px; border-radius: 5px; padding: 10px; margin-left: 10px;">
+                    </div>
                 </div>
-                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Destination</p>
+                        <div class="mb-4 row">
+                            <div class="col-6">
+                                <label for="countrySelect"></label>
+                                <select id="countrySelect" class="form-select">
+                                    <option value="">-- Select Country --</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label for="destinationSelect"></label>
+                                <select id="destinationSelect" class="form-select">
+                                    <option value="">-- Select Destination --</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <p>Category</p>
+                        <div class="category mb-4">
+                            <label for="categorySelect"></label>
+                            <select id="categorySelect" class="form-select">
+                                <option value="">-- Select Category --</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 <p>Thumbnail</p>
                 <div class="thumbnail mb-4">
                     <div id="preview" class="mb-4">
@@ -78,13 +105,7 @@
                     </label>
                     <input id="file-input" accept="image/*" type="file" style="display: none;">
                 </div>
-                <p>Title</p>
-                <div class="card">
-                    <div class="card-body p-0">
-                        <input id="title-input" type="text" placeholder="Enter blog's title"
-                            style="width: 100%; border: 0px; border-radius: 5px; padding: 10px; margin-left: 10px;">
-                    </div>
-                </div>
+               
                 <p>Content</p>
                 <div class="card">
                     <div class="card-body p-0">

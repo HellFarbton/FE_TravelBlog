@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spot Detail</title>
+    <title>Travel Blogs - Spot Detail</title>
     <!-- Favicon -->
     <link
       rel="icon"
@@ -25,7 +25,14 @@
     <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="../assets/css/main.css" />
-    <!-- Scripts -->
+    <!-- CDN Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="../assets/js/scripts.js"></script>
   </head>
 
@@ -143,7 +150,7 @@
                   (we’re not sure who’s willing to check that fact!).
                 </p>
               </div>
-              <button class="btn btn__suggest">Suggest an Edit</button>
+              <a href="../page/suggestion.html" class="btn btn__suggest">Suggest an Edit</a>
             </div>
           </div>
         </div>
@@ -156,7 +163,9 @@
           <button class="btn btn__more-destination">More Destinations</button>
         </div>
         <div class="detail-related__list">
-          <div class="row row-cols-xl-3 row-cols-lg-2 row-cols-md-2 row-cols-sm-1 gy-4">
+          <div
+            class="row row-cols-xl-3 row-cols-lg-2 row-cols-md-2 row-cols-sm-1 gy-4"
+          >
             <div class="col">
               <div class="detail-related__card">
                 <figure class="detail-related__card-img-wrap">
@@ -226,9 +235,9 @@
       </div>
     </section>
     <footer id="footer" class="footer"></footer>
+    <script src="../assets/js/scripts.js"></script>
     <script>
       load("#footer", "../template/footer.html");
     </script>
   </body>
-  
 </html>

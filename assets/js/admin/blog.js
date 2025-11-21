@@ -1,5 +1,6 @@
 import { callApi } from "../apiHelper.js";
-import { authentication } from "../credentials.js";
+
+const token = localStorage.getItem("admin_token");
 
 var apiBlogSearch = "api/v1/admin/blogs/search";
 var apiUserSearch = "api/v1/admin/user/search";
@@ -9,9 +10,23 @@ let users = [];
 let userMap = {};
 var currentPage = 1;
 var pageSize = 10;
+let selectedStatus = "all";
+
+const BlogStatus = {
+  0: "Draft",
+  1: "In Review",
+  2: "Approved",
+  3: "Rejected",
+};
+
+const StatusClass = {
+  0: "border-secondary text-secondary",
+  1: "border-warning text-warning",
+  2: "border-success text-success",
+  3: "border-danger text-danger",
+};
 
 $(document).ready(async function () {
-  await authentication();
   await fetchUsers();
   await fetchBlogs();
 });
@@ -20,9 +35,67 @@ $(document).on("click", ".btnPostBlog.btn.btn-primary", function () {
   window.location.href = `page/admin/blog-editor.html`;
 });
 
-async function fetchUsers() {
-  const token = localStorage.getItem("token");
+$(document).on("click", ".blog-status-tabs .nav-link", function (e) {
+  e.preventDefault();
+  $(".blog-status-tabs .nav-link").removeClass("active");
+  $(this).addClass("active");
 
+  selectedStatus = $(this).data("status");
+
+  currentPage = 1;
+  updateTable();
+});
+
+$(document).on("click", ".btn-approve", async function () {
+  const id = $(this).data("id");
+
+  try {
+    const result = await callApi({
+      url: "api/v1/admin/blog-request/" + id + "/approval",
+      method: "POST",
+      data: JSON.stringify({
+        approverId: 1,
+      }),
+      token: token,
+    });
+
+    alert("Blog approved successfully!");
+    const blog = blogs.find((b) => b.id == id);
+    if (blog) blog.status = 2;
+    currentPage = 1;
+    updateTable();
+  } catch (err) {
+    alert("Failed to approve blog!");
+    console.error(err);
+    return;
+  }
+});
+
+$(document).on("click", ".btn-reject", async function () {
+  const id = $(this).data("id");
+  try {
+    const result = await callApi({
+      url: "api/v1/admin/blog-request/" + id + "/reject",
+      method: "POST",
+      data: JSON.stringify({
+        rejectorId: 1,
+      }),
+      token: token,
+    });
+
+    alert("Blog rejected successfully!");
+    const blog = blogs.find((b) => b.id == id);
+    if (blog) blog.status = 3;
+    currentPage = 1;
+    updateTable();
+  } catch (err) {
+    alert("Failed to reject blog!");
+    console.error(err);
+    return;
+  }
+});
+
+async function fetchUsers() {
   try {
     const res = await callApi({
       url: apiUserSearch,
@@ -49,8 +122,6 @@ async function fetchUsers() {
 }
 
 async function fetchBlogs() {
-  const token = localStorage.getItem("token");
-
   try {
     const res = await callApi({
       url: apiBlogSearch,
@@ -68,9 +139,11 @@ async function fetchBlogs() {
     const result = res.result;
     blogs = Array.isArray(result.data) ? result.data : [];
     currentPage = 1;
+    updateTable();
   } catch (err) {
     console.error("Failed to fetch blogs:", err);
     blogs = [];
+    updateTable();
   }
 }
 
@@ -78,30 +151,53 @@ function renderTable(page) {
   const $tbody = $("#table tbody");
   $tbody.empty();
 
-  if (blogs.length === 0) {
+  // Lọc theo status
+  const filteredBlogs =
+    selectedStatus === "all"
+      ? blogs
+      : blogs.filter((b) => b.status == selectedStatus);
+
+  if (filteredBlogs.length === 0) {
     $tbody.html(
-      '<tr><td colspan="5" class="text-center py-3">Không có dữ liệu</td></tr>'
+      '<tr><td colspan="6" class="text-center py-3">Không có dữ liệu</td></tr>'
     );
     return;
   }
 
   const start = (page - 1) * pageSize;
-  const pageData = blogs.slice(start, start + pageSize);
-
+  const pageData = filteredBlogs.slice(start, start + pageSize);
   let rows = "";
+
   pageData.forEach((blog, idx) => {
     const author = userMap[blog.authorId] || "N/A";
 
-    rows += `<tr>
-                    <td>${start + idx + 1}</td>
-                    <td>${escapeHtml(blog.title || "")}</td>
-                    <td>${escapeHtml(blog.categoryId || "")}</td>
-                    <td>${escapeHtml(author || "")}</td>
-                    <td>
-                        <button class="btnEditBlog btn btn-sm btn-link text-primary" title="Edit"><i class="ti ti-edit"></i></button>
-                        <button class="btn btn-sm btn-link text-danger" title="Archive"><i class="ti ti-archive"></i></button>
-                    </td>
-                </tr>`;
+    let statusCell = `
+      <span class="status-pill ${StatusClass[blog.status]}">
+        ${escapeHtml(BlogStatus[blog.status])}
+      </span>
+    `;
+
+    // Nếu đang In Review ⇒ thêm hai nút
+    if (blog.status == 1) {
+      statusCell = `
+        <button class="btn-approve ms-2 btn btn-sm btn-outline-success" data-id="${blog.id}">
+          <i class="ti ti-check"></i>
+        </button>
+        <button class="btn-reject ms-1 btn btn-sm btn-outline-danger" data-id="${blog.id}">
+          <i class="ti ti-x"></i>
+        </button>
+      `;
+    }
+
+    rows += `
+      <tr>
+        <td>${start + idx + 1}</td>
+        <td>${escapeHtml(blog.title || "")}</td>
+        <td>${escapeHtml(blog.category?.name || "")}</td>
+        <td>${escapeHtml(blog.destination?.name || "")}</td>
+        <td>${escapeHtml(author)}</td>
+        <td>${statusCell}</td>
+      </tr>`;
   });
 
   $tbody.html(rows);
@@ -111,7 +207,12 @@ function renderPagination() {
   const $ul = $("#table tfoot .pagination");
   $ul.empty();
 
-  const totalPages = Math.ceil(blogs.length / pageSize);
+  const filteredBlogs =
+    selectedStatus === "all"
+      ? blogs
+      : blogs.filter((b) => b.status == selectedStatus);
+
+  const totalPages = Math.ceil(filteredBlogs.length / pageSize);
 
   if (blogs.length === 0 || totalPages === 0) {
     $ul.closest("nav").hide();

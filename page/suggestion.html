@@ -1,114 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Suggestion</title>
-  <link rel="stylesheet" href="../assets/css/main.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="../favicon/favicon-96x96.png"
-      sizes="96x96"
-    />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Blogs - Suggestion</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
     <link rel="shortcut icon" href="../favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../favicon/apple-touch-icon.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
     <link rel="manifest" href="../favicon/site.webmanifest" />
-    <!-- Font Manrope -->
     <link rel="stylesheet" href="../assets/font/Manrope/stylesheet.css" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body></body>
+  <body>
+    <header id="header" class="header"></header>
 
-<body></body>
-<body>
-  <header id="header" class="header"></header>
+    <main class="suggestion-page">
+      <section class="container">
+        <h1 class="suggestion-page__heading">Submit a request</h1>
+        <form class="suggestion-form">
+          <div class="suggestion-form__group">
+            <label for="name" class="suggestion-form__label">Your name</label>
+            <input type="text" id="name" class="suggestion-form__control" value="" />
+          </div>
 
-  <main class="suggestion-page">
-    <section class="container">
-      <h1 class="suggestion-page__heading">Submit a request</h1>
-      <form class="suggestion-form">
-        <div class="suggestion-form__group">
-          <label for="name" class="form-label">Your name</label>
-          <input type="text" id="name" class="form-control" value="Quốc Minh">
-        </div>
+          <div class="suggestion-form__group">
+            <label for="email" class="suggestion-form__label"
+              >Your email address</label
+            >
+            <input type="email" id="email" class="suggestion-form__control" />
+          </div>
 
-        <div class="suggestion-form__group">
-          <label for="email" class="form-label">Your email address</label>
-          <input type="email" id="email" class="form-control">
-        </div>
+          <div class="suggestion-form__group">
+            <label for="phone" class="suggestion-form__label">Your phone number</label>
+            <input type="tel" id="phone" class="suggestion-form__control" />
+          </div>
 
-        <div class="suggestion-form__group">
-          <label for="phone" class="form-label">Your phone number</label>
-          <input type="tel" id="phone" class="form-control">
-        </div>
+          <div class="suggestion-form__group">
+            <label for="feedback-type" class="suggestion-form__label">I'd like to...</label>
+            <select id="feedback-type" class="suggestion-form__select">
+              <option>Give Feedback</option>
+              <option>Ask a Question</option>
+              <option>Report a Bug</option>
+              <option>Other</option>
+            </select>
+          </div>
 
-        <div class="suggestion-form__group">
-          <label for="feedback-type" class="form-label">I'd like to...</label>
-          <select id="feedback-type" class="form-select">
-            <option>Give Feedback</option>
-            <option>Ask a Question</option>
-            <option>Report a Bug</option>
-            <option>Other</option>
-          </select>
-        </div>
+          <div class="suggestion-form__group">
+            <label for="feedback-regarding" class="suggestion-form__label">What is your feedback regarding?</label>
+            <select id="feedback-regarding" class="suggestion-form__select">
+              <option>Other Feedback</option>
+              <option>Booking</option>
+              <option>Account</option>
+              <option>Payments</option>
+              <option>Website</option>
+            </select>
+          </div>
 
-        <div class="suggestion-form__group">
-          <label for="feedback-regarding" class="form-label">What is your feedback regarding?</label>
-          <select id="feedback-regarding" class="form-select">
-            <option>Other Feedback</option>
-            <option>Booking</option>
-            <option>Account</option>
-            <option>Payments</option>
-            <option>Website</option>
-          </select>
-        </div>
+          <div class="suggestion-form__group">
+            <label for="inquiry" class="suggestion-form__label">Submit your inquiry here</label>
+            <textarea id="inquiry" class="suggestion-form__control" rows="6"></textarea>
+          </div>
 
-        <div class="suggestion-form__group">
-          <label for="inquiry" class="form-label">Submit your inquiry here</label>
-          <textarea id="inquiry" class="form-control" rows="6"></textarea>
-        </div>
-        
-        <div class="suggestion-form__group">
-          <label for="file-upload" class="form-label">Add files or drop files here</label>
-          <input type="file" id="file-upload" multiple hidden>
-          <button type="button" class="file-drop-area" id="file-drop-area">
-            <i class="fa-solid fa-cloud-arrow-up file-drop-area__icon"></i>
+          <div class="suggestion-form__group">
+            <label for="file-upload" class="suggestion-form__label"
+              >Add files or drop files here</label
+            >
+            <input type="file" id="file-upload" multiple hidden />
+            <button type="button" class="suggestion-form__drop-area" id="file-drop-area">
+              <i class="fa-solid fa-cloud-arrow-up suggestion-form__drop-icon"></i>
+            </button>
+            <div id="file-preview"class="suggestion-form__preview-container"></div>
+          </div>
+
+          <p class="suggestion-form__divider">Or you can</p>
+          <div class="suggestion-form__upload-group">
+            <button type="button" class="suggestion-form__upload-btn">
+              <span>Upload from Google Drive</span>
+              <i class="fa-brands fa-google-drive suggestion-form__upload-icon--google"></i>
+            </button>
+            <button type="button" class="suggestion-form__upload-btn">
+              <span>Upload from Dropbox</span>
+              <i class="fa-brands fa-dropbox suggestion-form__upload-icon--dropbox"></i>
+            </button>
+            <button type="button" class="suggestion-form__upload-btn">
+              <span>Upload from Microsoft Onedrive</span>
+              <i class="fa-solid fa-cloud suggestion-form__upload-icon--onedrive"></i>
+            </button>
+          </div>
+          <button type="submit" class="btn suggestion-form__submit">
+            Submit Your Request
           </button>
-          <div id="file-preview" class="file-preview-container"></div>
-        </div>
+        </form>
+      </section>
+    </main>
 
-        <p class="form-text-divider">Or you can</p>
-        <div class="upload-group">
-          <button type="button" class="btn-upload">
-            <span>Upload from Google Drive</span>
-            <i class="fa-brands fa-google-drive btn-upload__icon--google"></i>
-          </button>
-          <button type="button" class="btn-upload">
-            <span>Upload from Dropbox</span>
-            <i class="fa-brands fa-dropbox btn-upload__icon--dropbox"></i>
-          </button>
-          <button type="button" class="btn-upload">
-            <span>Upload from Microsoft Onedrive</span>
-            <i class="fa-solid fa-cloud btn-upload__icon--onedrive"></i>
-          </button>
-        </div>
-        <button type="submit" class="btn btn-submit">Submit Your Request</button>
-      </form>
-    </section>
-  </main>
+    <footer id="footer" class="footer"></footer>
 
-  <footer id="footer" class="footer"></footer>
-
-  <script src="../assets/js/scripts.js"></script>
-  <script>
-    load("#header", "../template/header.html");
-    load("#footer", "../template/footer.html");
-  </script>
-</body>
+    <script src="../assets/js/scripts.js"></script>
+    <script>
+      load("#header", "../template/header.html");
+      load("#footer", "../template/footer.html");
+    </script>
+  </body>
 </html>

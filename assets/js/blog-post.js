@@ -1,18 +1,44 @@
-import { callApi, uploadFileApi } from "./apiHelper.js";
-import { authentication } from "./credentials.js";
+import { callApi } from "./apiHelper.js";
 
-var countryId = "";
-var thumbnailId = "";
 var blogId = "1";
-var blogApi = "api/v1/admin/blogs/";
-var userApi = "api/v1/admin/user/";
-var fileStorageApi = "api/v1/file-storage/";
-var destinationApi = "api/v1/destinations/";
+var blogApi = "api/v1/blogs/";
+var commentApi = "api/v1/comment/";
 var jq = jQuery.noConflict();
 
 jq(document).ready(async function () {
-  await authentication();
+  const token = localStorage.getItem("token");
+  // const postId = getPostIdFromURL();
   await loadPost(blogId);
+
+  if (!token) {
+    jq(".blog-comments__login-required").show();
+  } else {
+    jq(".blog-comments__form").show();
+  }
+
+  jq(".blog-comments__submit").click(function () {
+    const content = jq(".blog-comments__input").val().trim();
+    if (!content) return alert("Bạn chưa nhập bình luận");
+
+    jq.ajax({
+      url: commentApi + postId,
+      method: "POST",
+      contentType: "application/json",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+      data: JSON.stringify({ content }),
+      success: function () {
+        jq(".blog-comments__input").val("");
+        loadComments();
+      },
+    });
+  });
+
+  jq(".btn-login-comment").click(function () {
+    console.log("clicked");
+    window.location.href = "sign-in.html";
+  });
 });
 
 async function loadPost(id) {
@@ -20,58 +46,26 @@ async function loadPost(id) {
   const response = await callApi({
     url: blogApi + id,
     method: "GET",
-    token: token
+    token: token,
   });
   renderBlogDetail(response.result);
-
-  if (!token) {
-    await authentication();
-  }
 }
 
 async function renderBlogDetail(blog) {
   jq(".blog-detail__title").text(blog.title);
   jq(".blog-detail__date").text(new Date(blog.createdOn).toLocaleDateString());
   jq(".blog-detail__time-read").text(blog.timeRead);
-
-  await Promise.all([
-    getAuthor(blog.authorId),
-    getDestination(blog.destinationId),
-    getThumbnail(blog.thumbnailId),
-  ]);
+  jq(".blog-detail__destination").text(blog.destination.name);
 
   renderBlogContent(blog.content);
-}
 
-async function getDestination(id) {
-  const response = await callApi({
-    url: destinationApi + id,
-  });
-  jq(".blog-detail__destination").text(response.result.name);
-}
-
-async function getThumbnail(id) {
-  const response = await uploadFileApi({
-    url: fileStorageApi + id,
-  })
-  const fullPath =
-    response.result.fullPathUrl || "../assets/images/destination/Bali.jpg";
-  jq(".blog-detail__thumbnail").attr("src", fullPath).show();
-}
-
-async function getAuthor(id) {
-  const token = localStorage.getItem("token");
-  const response = await callApi({
-    url: userApi + id,
-    method: "Get",
-    token: token
-  })
-
-  const result = response.result;
+  jq(".blog-detail__thumbnail").attr("src", blog.thumbnail.fullPathUrl).show();
   jq(".blog-detail__author").html(`
     <b>Author:</b>
-    <h6 class="blog-detail__author-value">${result.fullName}</h6>
+    <h6 class="blog-detail__author-value">${blog.author.fullName}</h6>
   `);
+
+  loadComments(blog.comments);
 }
 
 function renderBlogContent(content) {
@@ -107,4 +101,22 @@ function renderBlogContent(content) {
         console.log("Unsupported block type:", block.type);
     }
   });
+}
+
+function loadComments(list) {
+  const html = list
+    .map(
+      (c) => `
+            <div class="comment-item">
+              <b>${c.authorName}</b>
+              <p>${c.content}</p>
+              <span class="comment-date">${new Date(
+                c.createdAt
+              ).toLocaleString()}</span>
+            </div>
+          `
+    )
+    .join("");
+
+  jq(".blog-comments__list").html(html);
 }

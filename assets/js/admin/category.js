@@ -1,15 +1,13 @@
 import { callApi } from "../apiHelper.js";
-import { authentication } from "../credentials.js";
 
-var apiSearch = BASE_URL + "api/v1/admin/categories/search";
-var categoryApi = BASE_URL + "api/v1/admin/categories";
+var apiSearch = "api/v1/admin/categories/search";
+var categoryApi = "api/v1/admin/categories";
 
 let allData = [];
 var currentPage = 1;
 var pageSize = 10;
 
 $(document).ready(async function () {
-  await authentication();
   await fetchCategories();
 });
 
@@ -46,11 +44,11 @@ $(document).on(
 );
 
 async function fetchCategories() {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("admin_token");
   try {
     const response = await callApi({
       url: apiSearch,
-      type: "POST",
+      method: "POST",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
         pageNumber: 0,
@@ -69,6 +67,22 @@ async function fetchCategories() {
     console.error("Failed to fetch categories:", err);
     allData = [];
     updateTable();
+  }
+}
+
+async function getCategoryById(id) {
+  const token = localStorage.getItem("admin_token");
+  
+  try {
+    const response = await callApi({
+      url: categoryApi + "/" + id,
+      method: "GET",
+      token: token
+    });
+
+    return response.result;
+  } catch (err) {
+    console.error("Failed to fetch categories:", err);
   }
 }
 
@@ -169,10 +183,10 @@ function escapeHtml(text) {
 }
 
 async function addNewCategory(name) {
-  var token = localStorage.getItem("token");
+  var token = localStorage.getItem("admin_token");
   var response = await callApi({
     url: categoryApi,
-    type: "POST",
+    method: "POST",
     contentType: "application/json; charset=utf-8",
     data: JSON.stringify({
       name: name,
