@@ -1,12 +1,12 @@
 // --- Variables ---
-$font-heading: 'Syne' ;
-$font-body: 'Manrope';
+$font-heading: 'Syne', sans-serif;
+$font-body: 'Manrope', sans-serif;
 $color-primary: #191B1D;
 $color-desc: #5B5D5F;
 $color-accent: #FF5B2D;
 $color-bg-hero: #fffbea; 
 
-// --- Hero Section ---
+// HERO SECTION
 .hero-places {
     position: relative;
     padding-top: 120px;
@@ -25,9 +25,8 @@ $color-bg-hero: #fffbea;
         height: auto;
         object-fit: contain;
         z-index: 0;
-        opacity: 1; 
+        opacity: 1; // Map rõ nét
         mix-blend-mode: multiply; 
-        
         pointer-events: none;
     }
 
@@ -38,9 +37,10 @@ $color-bg-hero: #fffbea;
     
     &__heading {
         font-family: $font-heading; 
-        font-weight: 700;           
-        font-size: 5.6rem;          
+        font-weight: 600;           
+        font-size: 7.2rem;        
         line-height: 1;            
+        letter-spacing: -0.02em;
         color: $color-primary;
         margin-bottom: 24px;
         display: inline-block;  
@@ -57,7 +57,7 @@ $color-bg-hero: #fffbea;
         font-size: 1.8rem;
         color: $color-desc;
         line-height: 1.6;
-        max-width: 700px;
+        max-width: 600px;
         margin: 0 auto 80px;
     }
 
@@ -91,8 +91,7 @@ $color-bg-hero: #fffbea;
         }
     }
 }
-
-
+// LIST & FILTER SECTION
 .places-list {
     padding-top: 80px;
     padding-bottom: 120px;
@@ -108,6 +107,13 @@ $color-bg-hero: #fffbea;
     }
 }
 
+// --- FILTER RADIO LOGIC (Mới) ---
+// 1. Ẩn nút radio mặc định
+.filter-input {
+    display: none;
+}
+
+// 2. Style cho Label (nút bấm)
 .btn-filter {
     font-family: $font-body;
     font-weight: 600;
@@ -119,24 +125,27 @@ $color-bg-hero: #fffbea;
     border-radius: 99px;
     cursor: pointer;
     transition: all 0.3s;
+    user-select: none; 
 
     &:hover {
         background-color: #f9f9f9;
         border-color: #ddd;
     }
+}
 
-    &--active {
-        background-color: $color-accent;
-        color: #fff;
-        border-color: $color-accent;
-        box-shadow: 0 4px 12px rgba(255, 91, 45, 0.25);
+// 3. Khi Radio được Checked -> Đổi màu Label đứng ngay sau nó
+.filter-input:checked + .btn-filter {
+    background-color: $color-accent;
+    color: #fff;
+    border-color: $color-accent;
+    box-shadow: 0 4px 12px rgba(255, 91, 45, 0.25);
 
-        &:hover {
-            background-color: darken($color-accent, 5%);
-        }
+    &:hover {
+        background-color: darken($color-accent, 5%);
     }
 }
 
+// CARD COMPONENT
 .place-card {
     width: 370px;
     height: 528px;
@@ -144,6 +153,7 @@ $color-bg-hero: #fffbea;
     flex-direction: column;
     transition: transform 0.5s ease;
     
+    // Hover Effect: Nhấc card + Zoom ảnh
     &:hover {
         transform: translateY(-10px);
         .place-card__img {
@@ -156,17 +166,16 @@ $color-bg-hero: #fffbea;
         width: 100%;
         height: 340px;
         border-radius: 20px;
-        overflow: hidden;
+        overflow: hidden; 
         margin-bottom: 20px;
         flex-shrink: 0; 
-        overflow: hidden;
     }
 
     &__img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        transition: transform 0.5s ease; 
     }
 
     &__tag {
@@ -177,7 +186,7 @@ $color-bg-hero: #fffbea;
         padding: 8px 16px;
         border-radius: 8px;
         font-family: $font-body;
-        font-weight: 700;
+        font-weight: 600;
         font-size: 1.4rem;
         color: $color-primary;
         display: flex;
@@ -185,12 +194,12 @@ $color-bg-hero: #fffbea;
         gap: 6px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         z-index: 1;
+
         img {
             width: 12px;
             height: auto;
         }
     }
-    // ---------------------------------
 
     &__content {
         flex: 1;
@@ -200,12 +209,15 @@ $color-bg-hero: #fffbea;
 
     &__title {
         font-family: $font-heading; 
-        font-weight: 700;
+        font-weight: 600;
         font-size: 2.2rem; 
         color: $color-primary;
         margin-bottom: 12px;
+        
+        // Căn chỉnh thẳng hàng
         line-height: 28px; 
         min-height: 56px; 
+        
         display: -webkit-box;
         -webkit-line-clamp: 2;
         line-clamp: 2; 
@@ -215,6 +227,7 @@ $color-bg-hero: #fffbea;
 
     &__desc {
         font-family: $font-body; 
+        font-size: 1.6rem;
         color: #7D7D7D;
         line-height: 1.75;
         margin-bottom: 16px;
@@ -238,6 +251,8 @@ $color-bg-hero: #fffbea;
         color: $color-primary;
     }
 }
+
+// LOAD MORE BUTTON (Gradient Style)
 .places-list__btn {
     background-image: linear-gradient(to right, #FF512F 0%, #F09819 51%, #FF512F 100%);
     padding: 15px 45px;
@@ -266,22 +281,63 @@ $color-bg-hero: #fffbea;
     }
 }
 
-// --- Responsive ---
-// md : 991.98px , lg : 1199.98px , sm : 767.98px , xs : 374.98px
+// RESPONSIVE CONFIGURATION (lg, md, sm)=
 
-@media (max-width: 991.98px) {
+// 1. TABLET & MOBILE NGANG (Dưới 1200px)
+@media (max-width: 1199.98px) {
     .hero-places {
-        &__bg-map {
-            top: 60%; 
-            opacity: 0.6; 
+        &__heading {
+            font-size: 5.6rem; 
+        }
+        &__circle-item {
+            width: 220px;
+            height: 220px;
         }
     }
 }
 
-@media (max-width: 767.98px) {
-    
+// 2. TABLET DỌC (Dưới 992px) - "md"
+@media (max-width: 991.98px) {
     .hero-places {
-        padding-top: 80px;
+        padding-top: 100px;
+
+        &__heading {
+            font-size: 4.8rem;
+        }
+
+        &__bg-map {
+            top: 60%;
+            opacity: 0.5; 
+        }
+
+        &__gallery {
+            gap: 20px;
+        }
+
+        &__circle-item {
+            width: 180px;
+            height: 180px;
+            &:nth-child(even) {
+                transform: translateY(20px);
+            }
+        }
+    }
+
+    // Card tự co giãn theo cột grid
+    .place-card {
+        width: 100%; 
+        height: auto; 
+        &__thumb {
+            height: 300px;
+        }
+    }
+}
+
+// 3. MOBILE (Dưới 768px) - "sm"
+@media (max-width: 767.98px) {
+    // --- Hero Section ---
+    .hero-places {
+        padding-top: 60px;
         padding-bottom: 60px;
 
         &__heading {
@@ -290,76 +346,69 @@ $color-bg-hero: #fffbea;
         }
 
         &__emoji {
-            width: 50px;   
+            width: 50px;
             height: 32px;
             margin-left: 4px;
         }
 
         &__desc {
             font-size: 1.6rem;
-            padding: 0 20px; 
             margin-bottom: 40px;
-        }
-
-        &__gallery {
-            gap: 15px; 
+            padding: 0 15px;
         }
 
         &__circle-item {
             width: 140px;
             height: 140px;
-
+            // Bỏ so le
             &:nth-child(even) {
                 transform: none; 
             }
         }
     }
 
+    // --- Filter & List ---
     .places-list {
-        padding-top: 40px;
-        padding-bottom: 80px;
+        padding-top: 30px;
+        padding-bottom: 60px;
 
         &__filter {
-            flex-wrap: wrap; 
             gap: 10px;
-            margin-bottom: 40px;
+            flex-wrap: wrap; 
+            margin-bottom: 30px;
         }
     }
 
     .btn-filter {
-        padding: 8px 20px; 
         font-size: 1.4rem;
+        padding: 8px 20px;
     }
 
+    // --- Card ---
     .place-card {
-        width: 100%; 
         max-width: 370px; 
-        height: auto;     
-        margin: 0 auto;   
-
+        margin: 0 auto;
+        
         &__thumb {
-            height: 280px; 
+            height: 260px;
         }
-
-        &__content {
-            padding-bottom: 10px; 
-        }
-
+        
         &__title {
-            font-size: 2rem; 
-            line-height: 26px;
-            min-height: 52px; 
+            font-size: 2rem;
+            line-height: 1.3;
+            min-height: 52px;
         }
     }
+
     .places-list__btn {
-        width: 100%;         
-        max-width: 200px;    
-        padding: 12px 30px;
-        font-size: 1.4rem;
+        width: 100%;
+        max-width: 220px;
         margin-top: 30px;
+        font-size: 1.4rem;
     }
 }
 
+// 4. VERY SMALL MOBILE (Dưới 375px)
 @media (max-width: 374.98px) {
     .hero-places__circle-item {
         width: 120px;

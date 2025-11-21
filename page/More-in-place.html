@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>More In Place</title>
-    <!-- Favicon -->
+       <!-- Favicon -->
     <link
       rel="icon"
       type="image/png"
@@ -75,11 +75,20 @@
       <section class="places-list">
         <div class="container">
           <div class="places-list__filter">
-            <button class="btn-filter btn-filter--active">Sights</button>
-            <button class="btn-filter">Restaurants</button>
-            <button class="btn-filter">Entertainment</button>
-            <button class="btn-filter">Shopping</button>
-            <button class="btn-filter">Hotels</button>
+            <input type="radio" name="filter" id="f-sights" class="filter-input" checked hidden>
+            <label for="f-sights" class="btn-filter">Sights</label>
+
+            <input type="radio" name="filter" id="f-restaurants" class="filter-input" hidden>
+            <label for="f-restaurants" class="btn-filter">Restaurants</label>
+
+            <input type="radio" name="filter" id="f-entertainment" class="filter-input" hidden>
+            <label for="f-entertainment" class="btn-filter">Entertainment</label>
+
+            <input type="radio" name="filter" id="f-shopping" class="filter-input" hidden>
+            <label for="f-shopping" class="btn-filter">Shopping</label>
+
+            <input type="radio" name="filter" id="f-hotels" class="filter-input" hidden>
+            <label for="f-hotels" class="btn-filter">Hotels</label>
           </div>
 
           <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-5 justify-content-center">
@@ -326,5 +335,6 @@
       load("#header", "../template/header.html");
       load("#footer", "../template/footer.html");
     </script>
+    
   </body>
 </html>

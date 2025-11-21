@@ -3387,10 +3387,11 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
 }
 .hero-places__heading {
-  font-family: "Syne";
-  font-weight: 700;
-  font-size: 5.6rem;
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
+  font-size: 7.2rem;
   line-height: 1;
+  letter-spacing: -0.02em;
   color: #191B1D;
   margin-bottom: 24px;
   display: inline-block;
@@ -3401,11 +3402,11 @@ h1, h2, h3, h4, h5, h6 {
   vertical-align: top;
 }
 .hero-places__desc {
-  font-family: "Manrope";
+  font-family: "Manrope", sans-serif;
   font-size: 1.8rem;
   color: #5B5D5F;
   line-height: 1.6;
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto 80px;
 }
 .hero-places__gallery {
@@ -3450,8 +3451,12 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid #EEEEEE;
 }
 
+.filter-input {
+  display: none;
+}
+
 .btn-filter {
-  font-family: "Manrope";
+  font-family: "Manrope", sans-serif;
   font-weight: 600;
   font-size: 1.6rem;
   color: #191B1D;
@@ -3461,18 +3466,20 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 99px;
   cursor: pointer;
   transition: all 0.3s;
+  user-select: none;
 }
 .btn-filter:hover {
   background-color: #f9f9f9;
   border-color: #ddd;
 }
-.btn-filter--active {
+
+.filter-input:checked + .btn-filter {
   background-color: #FF5B2D;
   color: #fff;
   border-color: #FF5B2D;
   box-shadow: 0 4px 12px rgba(255, 91, 45, 0.25);
 }
-.btn-filter--active:hover {
+.filter-input:checked + .btn-filter:hover {
   background-color: rgb(255, 71.0857142857, 19.5);
 }
 
@@ -3497,7 +3504,6 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   margin-bottom: 20px;
   flex-shrink: 0;
-  overflow: hidden;
 }
 .place-card__img {
   width: 100%;
@@ -3512,8 +3518,8 @@ h1, h2, h3, h4, h5, h6 {
   background: #fff;
   padding: 8px 16px;
   border-radius: 8px;
-  font-family: "Manrope";
-  font-weight: 700;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
   font-size: 1.4rem;
   color: #191B1D;
   display: flex;
@@ -3532,8 +3538,8 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
 }
 .place-card__title {
-  font-family: "Syne";
-  font-weight: 700;
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
   font-size: 2.2rem;
   color: #191B1D;
   margin-bottom: 12px;
@@ -3546,7 +3552,8 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 .place-card__desc {
-  font-family: "Manrope";
+  font-family: "Manrope", sans-serif;
+  font-size: 1.6rem;
   color: #7D7D7D;
   line-height: 1.75;
   margin-bottom: 16px;
@@ -3561,7 +3568,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: "Manrope";
+  font-family: "Manrope", sans-serif;
   font-weight: 600;
   font-size: 1.4rem;
   color: #191B1D;
@@ -3592,15 +3599,47 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
+@media (max-width: 1199.98px) {
+  .hero-places__heading {
+    font-size: 5.6rem;
+  }
+  .hero-places__circle-item {
+    width: 220px;
+    height: 220px;
+  }
+}
 @media (max-width: 991.98px) {
+  .hero-places {
+    padding-top: 100px;
+  }
+  .hero-places__heading {
+    font-size: 4.8rem;
+  }
   .hero-places__bg-map {
     top: 60%;
-    opacity: 0.6;
+    opacity: 0.5;
+  }
+  .hero-places__gallery {
+    gap: 20px;
+  }
+  .hero-places__circle-item {
+    width: 180px;
+    height: 180px;
+  }
+  .hero-places__circle-item:nth-child(even) {
+    transform: translateY(20px);
+  }
+  .place-card {
+    width: 100%;
+    height: auto;
+  }
+  .place-card__thumb {
+    height: 300px;
   }
 }
 @media (max-width: 767.98px) {
   .hero-places {
-    padding-top: 80px;
+    padding-top: 60px;
     padding-bottom: 60px;
   }
   .hero-places__heading {
@@ -3614,11 +3653,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   .hero-places__desc {
     font-size: 1.6rem;
-    padding: 0 20px;
     margin-bottom: 40px;
-  }
-  .hero-places__gallery {
-    gap: 15px;
+    padding: 0 15px;
   }
   .hero-places__circle-item {
     width: 140px;
@@ -3628,41 +3664,35 @@ h1, h2, h3, h4, h5, h6 {
     transform: none;
   }
   .places-list {
-    padding-top: 40px;
-    padding-bottom: 80px;
+    padding-top: 30px;
+    padding-bottom: 60px;
   }
   .places-list__filter {
-    flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
   }
   .btn-filter {
-    padding: 8px 20px;
     font-size: 1.4rem;
+    padding: 8px 20px;
   }
   .place-card {
-    width: 100%;
     max-width: 370px;
-    height: auto;
     margin: 0 auto;
   }
   .place-card__thumb {
-    height: 280px;
-  }
-  .place-card__content {
-    padding-bottom: 10px;
+    height: 260px;
   }
   .place-card__title {
     font-size: 2rem;
-    line-height: 26px;
+    line-height: 1.3;
     min-height: 52px;
   }
   .places-list__btn {
     width: 100%;
-    max-width: 200px;
-    padding: 12px 30px;
-    font-size: 1.4rem;
+    max-width: 220px;
     margin-top: 30px;
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 374.98px) {
