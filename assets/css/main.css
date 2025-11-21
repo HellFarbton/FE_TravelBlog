@@ -4155,6 +4155,29 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0;
 }
 
+.navtab {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.navtab input.navtab-input {
+  display: none;
+}
+.navtab label.navtab-label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  border-radius: 24px;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .blog-detail {
   padding: 40px 0;
   margin-top: 60px;

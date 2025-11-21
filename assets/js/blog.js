@@ -1,33 +1,104 @@
 import { callApi } from "./apiHelper.js";
 
-var blogApi = "api/v1/blogs"
+var blogApi = "api/v1/blogs";
 var jq = jQuery.noConflict();
+let blog = [];
 
-jq(document).ready(async function() {
-    await loadLastestBlogs();
-    await loadHostestBlogs();
+jq(document).ready(async function () {
+  await Promise.all([
+    loadLastestBlogs(),
+    loadHostestBlogs(),
+    renderCategories(),
+  ]);
+
+  jq("#navCategory").on("change", "input.navtab-input", async function () {
+    const selectedCategoryId = this.id;
+    if (selectedCategoryId === "allarticles") {
+      await loadLastestBlogs();
+    } else {
+      await loadBlogsByCategory(selectedCategoryId);
+    }
+  });
 });
 
-async function loadLastestBlogs() {
-    const response = await callApi({
-        url: blogApi + "/search",
-        method: "POST",
-        data: JSON.stringify({
-          "advancedFilter": {
-            "field": "status",
-            "operator": "eq",
-            "value": 2
+async function loadBlogsByCategory(categoryId) {
+  const response = await callApi({
+    url: blogApi + "/search",
+    method: "POST",
+    data: JSON.stringify({
+      advancedFilter: {
+        logic: "and",
+        filters: [
+          {
+            field: "categoryId",
+            operator: "eq",
+            value: parseInt(categoryId),
           },
-          "pageNumber": 1,
-          "pageSize": 5,
-          "orderBy": [
-            "createdOn"
-          ]
-        })
-    });
+          {
+            field: "status",
+            operator: "eq",
+            value: 2,
+          },
+        ],
+      },
+      pageNumber: 1,
+      pageSize: 5,
+      orderBy: ["createdOn"],
+    }),
+  });
 
-    const blog = response.result.data;
-    let content = `
+  blog = response.result.data;
+  loadBlogsContent(blog);
+}
+
+async function renderCategories() {
+  const response = await callApi({
+    url: "api/v1/categories/has-blog",
+    method: "GET",
+  });
+
+  const categories = response.result;
+  let content = `<input
+            type="radio"
+            id="allarticles"
+            name="tab"
+            class="navtab-input"
+            checked
+          />
+          <label for="allarticles" class="navtab-label">All Articles</label>`;
+
+  categories.forEach((cat) => {
+    content += `
+         <!-- ${cat.name} -->
+          <input type="radio" id="${cat.id}" name="tab" class="navtab-input" />
+          <label for="${cat.id}" class="navtab-label">${cat.name}</label>
+    `;
+  });
+  jq("#navCategory").html(content);
+}
+
+async function loadLastestBlogs() {
+  const response = await callApi({
+    url: blogApi + "/search",
+    method: "POST",
+    data: JSON.stringify({
+      advancedFilter: {
+        field: "status",
+        operator: "eq",
+        value: 2,
+      },
+      pageNumber: 1,
+      pageSize: 5,
+      orderBy: ["createdOn"],
+    }),
+  });
+
+  blog = response.result.data;
+  loadBlogsContent(blog);
+}
+
+function loadBlogsContent(blog) {
+  let content = `
         <h2 class="blog__heading--small">Lastest</h2>
         <div class="row">
           <div class="col-7">
@@ -62,37 +133,38 @@ async function loadLastestBlogs() {
           </div>
         </div>
         <div class="seperator"></div>
-        <div class="row row-cols-lg-3">
-          ${renderNextBlogs(blog.slice(2))}
-        </div>
     `;
 
-    jq('#lastestBlogs').html(content)
+  if (blog.length > 2) {
+    content += `<div class="row row-cols-lg-3">
+          ${renderNextBlogs(blog.slice(2))}
+        </div>`;
+  }
+
+  jq("#lastestBlogs").html(content);
 }
 
 async function loadHostestBlogs() {
-    const response = await callApi({
-        url: blogApi + "/search",
-        method: "POST",
-        data: JSON.stringify({
-          "advancedFilter": {
-            "field": "status",
-            "operator": "eq",
-            "value": 2
-          },
-          "pageNumber": 2,
-          "pageSize": 5,
-          "orderBy": [
-            "createdOn"
-          ]
-        })
-    });
+  const response = await callApi({
+    url: blogApi + "/search",
+    method: "POST",
+    data: JSON.stringify({
+      advancedFilter: {
+        field: "status",
+        operator: "eq",
+        value: 2,
+      },
+      pageNumber: 2,
+      pageSize: 5,
+      orderBy: ["createdOn"],
+    }),
+  });
 
-    const blogs = response.result.data; 
-    let content = '';
+  const blogs = response.result.data;
+  let content = "";
 
-    blogs.forEach(item => {
-        content += `
+  blogs.forEach((item) => {
+    content += `
             <div class="col">
             <div class="blog-card">
               <a href="blog-post.html?id=${item.id}" class="blog-card__img-wrap">
@@ -108,17 +180,17 @@ async function loadHostestBlogs() {
               <a href="#!" class="blog-card__more">By ${item.author.fullName}</a>
             </div>
           </div>
-        `
-    });
+        `;
+  });
 
-    jq('#hostestBlog').html(content);
+  jq("#hostestBlog").html(content);
 }
 
 function renderNextBlogs(blog) {
-    let result = '';
+  let result = "";
 
-    blog.forEach(item => {
-        result += `
+  blog.forEach((item) => {
+    result += `
             <div class="col">
             <div class="blog-card">
               <a href="blog-post.html?id=${item.id}" class="blog-card__img-wrap">
@@ -134,8 +206,8 @@ function renderNextBlogs(blog) {
               <a href="#!" class="blog-card__more">By ${item.author.fullName}</a>
             </div>
           </div>
-        `
-    });
+        `;
+  });
 
-    return result;
+  return result;
 }
